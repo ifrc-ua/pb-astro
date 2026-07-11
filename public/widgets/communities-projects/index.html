@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Проєкти по населених пунктах — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Інтерактивна мапа 19 громад Івано-Франківської МТГ: скільки проєктів Бюджету участі подано й виграно в кожній громаді за категоріями, та як голосували мешканці. Доба МТГ: проєкти 2020–2026, голосування 2021–2026.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+<script src="content.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Інтерактивна мапа-хороплет 19 громад Івано-Франківської
+  міської територіальної громади. Угорі — перемикач рівня: вся громада, місто
+  Івано-Франківськ або села (у режимі «Села» місто не враховано в шкалі, щоб
+  його чисельність не перекривала різниці між селами). Заливка показує, скільки
+  проєктів Бюджету участі подано в громаді в обраній кампанії або за 2020–2026.
+  Оберіть громаду на мапі (Tab і Enter) чи зі списку — праворуч з'являться два
+  кільцеві чарти (подані та переможні проєкти за категоріями) і картка з
+  числами: скільки проєктів подано й виграно, скільки мешканців голосувало (за
+  проживанням) і скільки голосів зібрали проєкти громади (за місцем проєкту).</p>
+
+  <header class="head">
+    <span class="overline" id="overline"></span>
+    <h1 class="title" id="title"></h1>
+  </header>
+
+  <div class="controls">
+    <div class="modes" id="modesBox" role="radiogroup" aria-label="Рівень перегляду">
+      <button type="button" class="mode-btn" id="modeHromada" role="radio" aria-checked="true">Вся громада</button>
+      <button type="button" class="mode-btn" id="modeCity" role="radio" aria-checked="false">Місто</button>
+      <button type="button" class="mode-btn" id="modeVillages" role="radio" aria-checked="false">Села</button>
+    </div>
+    <div class="years" id="yearsBox" role="group" aria-label="Кампанія. Стрілками — між роками">
+      <span class="years-label">Кампанія</span>
+      <div class="year-axis" id="yearAxis"></div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <section class="scene" aria-label="Мапа 19 громад">
+      <div class="map-wrap" id="mapWrap">
+        <svg id="map" role="group" aria-label="Хороплет громад за кількістю поданих проєктів"></svg>
+        <div class="map-year" id="mapYear" aria-hidden="true"></div>
+        <div class="tooltip" id="tooltip" role="presentation" hidden></div>
+      </div>
+      <div class="metric" id="metricBox" role="radiogroup" aria-label="Що показує заливка мапи">
+        <span class="metric-label">Заливка мапи</span>
+        <button type="button" class="metric-btn" id="metricAbsolute" role="radio" aria-checked="true"></button>
+        <button type="button" class="metric-btn" id="metricPer1000" role="radio" aria-checked="false"></button>
+        <button type="button" class="metric-btn" id="metricTurnout" role="radio" aria-checked="false"></button>
+      </div>
+      <div class="legend-block">
+        <div class="legend-head">
+          <span class="legend-title" id="legendTitle">Подано проєктів</span>
+          <span class="legend-cap" id="legendCap"></span>
+        </div>
+        <svg class="legend-bar" id="legendBar" aria-hidden="true"></svg>
+      </div>
+      <p class="scene-cap" id="sceneCap"></p>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" aria-label="Деталі обраної громади">
+      <label class="d-select-label" for="districtSelect" id="selectLabel">Громада</label>
+      <select class="d-select" id="districtSelect"></select>
+      <div id="panelBody"></div>
+    </aside>
+  </div>
+
+  <footer class="notes">
+    <ul class="note-list" id="noteList"></ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Завантаження даних…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

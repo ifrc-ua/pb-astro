@@ -1,0 +1,1023 @@
+{
+  "meta": {
+    "generated": "2026-06-14",
+    "title": "Населення Івано-Франківської МТГ по 19 громадах ADM4",
+    "source": "Скани офіційних джерел: держстат — наявне населення (оцінка) 01.01.2021, 01.01.2022; реєстр ДМС (зареєстровані особи) 17.01.2024, 01.10.2025, 01.04.2026.",
+    "communities": 19,
+    "years_total_population": [
+      2021,
+      2022,
+      2024,
+      2025,
+      2026
+    ],
+    "years_sex_18plus": [
+      2024,
+      2025,
+      2026
+    ],
+    "note_18plus": "2024: у джерелі Ч/Ж — вже дорослі 18+ (діти винесені окремо, унісекс). 2025/2026: 18+ = всього мінус вікові групи 0-6,7-14,15-17 (з реєстру за статтю).",
+    "note_estimate": "2021/2022 — наявне населення держстату (оцінка; перепис 2001 застарів). 2024-2026 — зареєстровані особи реєстру ДМС (реєстр завищує зареєстрованих, але відсутніх — виїзд/за кордоном; найсильніше в місті).",
+    "note_levels": "Рівні джерел різні (держстат ~287 тис.; реєстр ~249-258 тис.).",
+    "note_metrics": "РІШЕННЯ 2026-06-14: усі нормовані метрики (проєктів/1000, голосуючих/1000, явка, коеф. активності) рахуються на базі ДОРОСЛИХ 18+ реєстру ДМС, лише 2024/2025/2026. Причина: голосують зареєстровані дорослі 18+ — знаменник має бути 18+, а не все населення з дітьми. Тотали держстату 2021/2022 лишені як ДОВІДКА (історія розміру МТГ), у нормуванні НЕ використовуються (інше джерело + усі віки).",
+    "note_residual": "У реєстрі сума Ч+Ж на ~195-228 осіб (<0,1%) менша за 'зареєстровано всього' — записи без зазначеної статі.",
+    "verification": "Усі суми по 19 громадах = підсумок документа до одиниці (2021/2022/2024/2025/2026); числа звірені проти сканів 2026-06-14."
+  },
+  "by_district": [
+    {
+      "district": "Івано-Франківськ",
+      "year": 2021,
+      "total": 237855,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Івано-Франківськ",
+      "year": 2022,
+      "total": 238196,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Івано-Франківськ",
+      "year": 2024,
+      "total": 196430,
+      "M_18plus": 70870,
+      "F_18plus": 94625,
+      "adults_18plus": 165495,
+      "children_under14": 22152,
+      "children_14_17": 8580,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Івано-Франківськ",
+      "year": 2025,
+      "total": 201414,
+      "M": 88254,
+      "F": 112982,
+      "M_18plus": 71392,
+      "F_18plus": 96557,
+      "adults_18plus": 167949,
+      "M_under18": 16862,
+      "F_under18": 16425,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Івано-Франківськ",
+      "year": 2026,
+      "total": 202350,
+      "M": 88690,
+      "F": 113488,
+      "M_18plus": 71624,
+      "F_18plus": 97167,
+      "adults_18plus": 168791,
+      "M_under18": 17066,
+      "F_under18": 16321,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Березівка",
+      "year": 2021,
+      "total": 1289,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Березівка",
+      "year": 2022,
+      "total": 1282,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Березівка",
+      "year": 2024,
+      "total": 1278,
+      "M_18plus": 445,
+      "F_18plus": 582,
+      "adults_18plus": 1027,
+      "children_under14": 176,
+      "children_14_17": 75,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Березівка",
+      "year": 2025,
+      "total": 1285,
+      "M": 583,
+      "F": 702,
+      "M_18plus": 457,
+      "F_18plus": 584,
+      "adults_18plus": 1041,
+      "M_under18": 126,
+      "F_under18": 118,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Березівка",
+      "year": 2026,
+      "total": 1284,
+      "M": 579,
+      "F": 705,
+      "M_18plus": 457,
+      "F_18plus": 590,
+      "adults_18plus": 1047,
+      "M_under18": 122,
+      "F_under18": 115,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Братківці",
+      "year": 2021,
+      "total": 2230,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Братківці",
+      "year": 2022,
+      "total": 2216,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Братківці",
+      "year": 2024,
+      "total": 2180,
+      "M_18plus": 797,
+      "F_18plus": 1006,
+      "adults_18plus": 1803,
+      "children_under14": 264,
+      "children_14_17": 113,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Братківці",
+      "year": 2025,
+      "total": 2188,
+      "M": 972,
+      "F": 1216,
+      "M_18plus": 799,
+      "F_18plus": 1027,
+      "adults_18plus": 1826,
+      "M_under18": 173,
+      "F_under18": 189,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Братківці",
+      "year": 2026,
+      "total": 2190,
+      "M": 971,
+      "F": 1219,
+      "M_18plus": 800,
+      "F_18plus": 1028,
+      "adults_18plus": 1828,
+      "M_under18": 171,
+      "F_under18": 191,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Вовчинець",
+      "year": 2021,
+      "total": 4691,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Вовчинець",
+      "year": 2022,
+      "total": 4660,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Вовчинець",
+      "year": 2024,
+      "total": 6997,
+      "M_18plus": 2018,
+      "F_18plus": 3164,
+      "adults_18plus": 5182,
+      "children_under14": 1457,
+      "children_14_17": 355,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Вовчинець",
+      "year": 2025,
+      "total": 7612,
+      "M": 3206,
+      "F": 4403,
+      "M_18plus": 2137,
+      "F_18plus": 3426,
+      "adults_18plus": 5563,
+      "M_under18": 1069,
+      "F_under18": 977,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Вовчинець",
+      "year": 2026,
+      "total": 7738,
+      "M": 3262,
+      "F": 4473,
+      "M_18plus": 2185,
+      "F_18plus": 3478,
+      "adults_18plus": 5663,
+      "M_under18": 1077,
+      "F_under18": 995,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Добровляни",
+      "year": 2021,
+      "total": 200,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Добровляни",
+      "year": 2022,
+      "total": 199,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Добровляни",
+      "year": 2024,
+      "total": 162,
+      "M_18plus": 62,
+      "F_18plus": 81,
+      "adults_18plus": 143,
+      "children_under14": 16,
+      "children_14_17": 3,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Добровляни",
+      "year": 2025,
+      "total": 165,
+      "M": 72,
+      "F": 93,
+      "M_18plus": 59,
+      "F_18plus": 81,
+      "adults_18plus": 140,
+      "M_under18": 13,
+      "F_under18": 12,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Добровляни",
+      "year": 2026,
+      "total": 163,
+      "M": 73,
+      "F": 90,
+      "M_18plus": 61,
+      "F_18plus": 78,
+      "adults_18plus": 139,
+      "M_under18": 12,
+      "F_under18": 12,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Драгомирчани",
+      "year": 2021,
+      "total": 1544,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Драгомирчани",
+      "year": 2022,
+      "total": 1535,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Драгомирчани",
+      "year": 2024,
+      "total": 1795,
+      "M_18plus": 659,
+      "F_18plus": 832,
+      "adults_18plus": 1491,
+      "children_under14": 212,
+      "children_14_17": 92,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Драгомирчани",
+      "year": 2025,
+      "total": 1849,
+      "M": 832,
+      "F": 1017,
+      "M_18plus": 677,
+      "F_18plus": 855,
+      "adults_18plus": 1532,
+      "M_under18": 155,
+      "F_under18": 162,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Драгомирчани",
+      "year": 2026,
+      "total": 1854,
+      "M": 834,
+      "F": 1020,
+      "M_18plus": 682,
+      "F_18plus": 861,
+      "adults_18plus": 1543,
+      "M_under18": 152,
+      "F_under18": 159,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Камінне",
+      "year": 2021,
+      "total": 1094,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Камінне",
+      "year": 2022,
+      "total": 1088,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Камінне",
+      "year": 2024,
+      "total": 970,
+      "M_18plus": 370,
+      "F_18plus": 424,
+      "adults_18plus": 794,
+      "children_under14": 120,
+      "children_14_17": 56,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Камінне",
+      "year": 2025,
+      "total": 988,
+      "M": 452,
+      "F": 536,
+      "M_18plus": 372,
+      "F_18plus": 437,
+      "adults_18plus": 809,
+      "M_under18": 80,
+      "F_under18": 99,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Камінне",
+      "year": 2026,
+      "total": 977,
+      "M": 449,
+      "F": 528,
+      "M_18plus": 371,
+      "F_18plus": 434,
+      "adults_18plus": 805,
+      "M_under18": 78,
+      "F_under18": 94,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Колодіївка",
+      "year": 2021,
+      "total": 543,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Колодіївка",
+      "year": 2022,
+      "total": 539,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Колодіївка",
+      "year": 2024,
+      "total": 421,
+      "M_18plus": 174,
+      "F_18plus": 194,
+      "adults_18plus": 368,
+      "children_under14": 35,
+      "children_14_17": 18,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Колодіївка",
+      "year": 2025,
+      "total": 417,
+      "M": 197,
+      "F": 220,
+      "M_18plus": 169,
+      "F_18plus": 193,
+      "adults_18plus": 362,
+      "M_under18": 28,
+      "F_under18": 27,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Колодіївка",
+      "year": 2026,
+      "total": 421,
+      "M": 200,
+      "F": 221,
+      "M_18plus": 169,
+      "F_18plus": 195,
+      "adults_18plus": 364,
+      "M_under18": 31,
+      "F_under18": 26,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Крихівці",
+      "year": 2021,
+      "total": 7283,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Крихівці",
+      "year": 2022,
+      "total": 7236,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Крихівці",
+      "year": 2024,
+      "total": 11827,
+      "M_18plus": 3194,
+      "F_18plus": 5204,
+      "adults_18plus": 8398,
+      "children_under14": 2827,
+      "children_14_17": 594,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Крихівці",
+      "year": 2025,
+      "total": 12925,
+      "M": 5292,
+      "F": 7625,
+      "M_18plus": 3380,
+      "F_18plus": 5742,
+      "adults_18plus": 9122,
+      "M_under18": 1912,
+      "F_under18": 1883,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Крихівці",
+      "year": 2026,
+      "total": 13285,
+      "M": 5434,
+      "F": 7843,
+      "M_18plus": 3469,
+      "F_18plus": 5912,
+      "adults_18plus": 9381,
+      "M_under18": 1965,
+      "F_under18": 1931,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Микитинці",
+      "year": 2021,
+      "total": 5771,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Микитинці",
+      "year": 2022,
+      "total": 5733,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Микитинці",
+      "year": 2024,
+      "total": 4023,
+      "M_18plus": 1423,
+      "F_18plus": 1837,
+      "adults_18plus": 3260,
+      "children_under14": 573,
+      "children_14_17": 187,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Микитинці",
+      "year": 2025,
+      "total": 3916,
+      "M": 1719,
+      "F": 2194,
+      "M_18plus": 1330,
+      "F_18plus": 1817,
+      "adults_18plus": 3147,
+      "M_under18": 389,
+      "F_under18": 377,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Микитинці",
+      "year": 2026,
+      "total": 3929,
+      "M": 1720,
+      "F": 2206,
+      "M_18plus": 1324,
+      "F_18plus": 1826,
+      "adults_18plus": 3150,
+      "M_under18": 396,
+      "F_under18": 380,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Підлужжя",
+      "year": 2021,
+      "total": 1660,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Підлужжя",
+      "year": 2022,
+      "total": 1649,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Підлужжя",
+      "year": 2024,
+      "total": 1725,
+      "M_18plus": 637,
+      "F_18plus": 766,
+      "adults_18plus": 1403,
+      "children_under14": 229,
+      "children_14_17": 93,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Підлужжя",
+      "year": 2025,
+      "total": 1756,
+      "M": 810,
+      "F": 946,
+      "M_18plus": 637,
+      "F_18plus": 789,
+      "adults_18plus": 1426,
+      "M_under18": 173,
+      "F_under18": 157,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Підлужжя",
+      "year": 2026,
+      "total": 1764,
+      "M": 812,
+      "F": 952,
+      "M_18plus": 636,
+      "F_18plus": 801,
+      "adults_18plus": 1437,
+      "M_under18": 176,
+      "F_under18": 151,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Підпечери",
+      "year": 2021,
+      "total": 2435,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Підпечери",
+      "year": 2022,
+      "total": 2419,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Підпечери",
+      "year": 2024,
+      "total": 2414,
+      "M_18plus": 917,
+      "F_18plus": 1074,
+      "adults_18plus": 1991,
+      "children_under14": 309,
+      "children_14_17": 112,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Підпечери",
+      "year": 2025,
+      "total": 2446,
+      "M": 1147,
+      "F": 1296,
+      "M_18plus": 919,
+      "F_18plus": 1090,
+      "adults_18plus": 2009,
+      "M_under18": 228,
+      "F_under18": 206,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Підпечери",
+      "year": 2026,
+      "total": 2445,
+      "M": 1146,
+      "F": 1297,
+      "M_18plus": 928,
+      "F_18plus": 1088,
+      "adults_18plus": 2016,
+      "M_under18": 218,
+      "F_under18": 209,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Радча",
+      "year": 2021,
+      "total": 2899,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Радча",
+      "year": 2022,
+      "total": 2879,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Радча",
+      "year": 2024,
+      "total": 3090,
+      "M_18plus": 1099,
+      "F_18plus": 1321,
+      "adults_18plus": 2420,
+      "children_under14": 517,
+      "children_14_17": 153,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Радча",
+      "year": 2025,
+      "total": 3134,
+      "M": 1455,
+      "F": 1678,
+      "M_18plus": 1100,
+      "F_18plus": 1334,
+      "adults_18plus": 2434,
+      "M_under18": 355,
+      "F_under18": 344,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Радча",
+      "year": 2026,
+      "total": 3125,
+      "M": 1448,
+      "F": 1676,
+      "M_18plus": 1101,
+      "F_18plus": 1333,
+      "adults_18plus": 2434,
+      "M_under18": 347,
+      "F_under18": 343,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Тисменичани",
+      "year": 2021,
+      "total": 3021,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Тисменичани",
+      "year": 2022,
+      "total": 3001,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Тисменичани",
+      "year": 2024,
+      "total": 2726,
+      "M_18plus": 1021,
+      "F_18plus": 1241,
+      "adults_18plus": 2262,
+      "children_under14": 327,
+      "children_14_17": 137,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Тисменичани",
+      "year": 2025,
+      "total": 2771,
+      "M": 1225,
+      "F": 1546,
+      "M_18plus": 1024,
+      "F_18plus": 1251,
+      "adults_18plus": 2275,
+      "M_under18": 201,
+      "F_under18": 295,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Тисменичани",
+      "year": 2026,
+      "total": 2775,
+      "M": 1229,
+      "F": 1546,
+      "M_18plus": 1026,
+      "F_18plus": 1255,
+      "adults_18plus": 2281,
+      "M_under18": 203,
+      "F_under18": 291,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Угорники",
+      "year": 2021,
+      "total": 5693,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Угорники",
+      "year": 2022,
+      "total": 5656,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Угорники",
+      "year": 2024,
+      "total": 4786,
+      "M_18plus": 1442,
+      "F_18plus": 2127,
+      "adults_18plus": 3569,
+      "children_under14": 960,
+      "children_14_17": 253,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Угорники",
+      "year": 2025,
+      "total": 5202,
+      "M": 2226,
+      "F": 2972,
+      "M_18plus": 1509,
+      "F_18plus": 2344,
+      "adults_18plus": 3853,
+      "M_under18": 717,
+      "F_under18": 628,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Угорники",
+      "year": 2026,
+      "total": 5301,
+      "M": 2263,
+      "F": 3034,
+      "M_18plus": 1545,
+      "F_18plus": 2391,
+      "adults_18plus": 3936,
+      "M_under18": 718,
+      "F_under18": 643,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Узин",
+      "year": 2021,
+      "total": 881,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Узин",
+      "year": 2022,
+      "total": 874,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Узин",
+      "year": 2024,
+      "total": 743,
+      "M_18plus": 287,
+      "F_18plus": 331,
+      "adults_18plus": 618,
+      "children_under14": 91,
+      "children_14_17": 33,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Узин",
+      "year": 2025,
+      "total": 741,
+      "M": 346,
+      "F": 394,
+      "M_18plus": 288,
+      "F_18plus": 328,
+      "adults_18plus": 616,
+      "M_under18": 58,
+      "F_under18": 66,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Узин",
+      "year": 2026,
+      "total": 742,
+      "M": 345,
+      "F": 396,
+      "M_18plus": 285,
+      "F_18plus": 331,
+      "adults_18plus": 616,
+      "M_under18": 60,
+      "F_under18": 65,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Хриплин",
+      "year": 2021,
+      "total": 3343,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Хриплин",
+      "year": 2022,
+      "total": 3321,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Хриплин",
+      "year": 2024,
+      "total": 1829,
+      "M_18plus": 699,
+      "F_18plus": 852,
+      "adults_18plus": 1551,
+      "children_under14": 205,
+      "children_14_17": 72,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Хриплин",
+      "year": 2025,
+      "total": 1829,
+      "M": 854,
+      "F": 974,
+      "M_18plus": 703,
+      "F_18plus": 842,
+      "adults_18plus": 1545,
+      "M_under18": 151,
+      "F_under18": 132,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Хриплин",
+      "year": 2026,
+      "total": 1847,
+      "M": 865,
+      "F": 981,
+      "M_18plus": 711,
+      "F_18plus": 848,
+      "adults_18plus": 1559,
+      "M_under18": 154,
+      "F_under18": 133,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Черніїв",
+      "year": 2021,
+      "total": 3765,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Черніїв",
+      "year": 2022,
+      "total": 3741,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Черніїв",
+      "year": 2024,
+      "total": 3668,
+      "M_18plus": 1399,
+      "F_18plus": 1707,
+      "adults_18plus": 3106,
+      "children_under14": 399,
+      "children_14_17": 162,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Черніїв",
+      "year": 2025,
+      "total": 3728,
+      "M": 1693,
+      "F": 2034,
+      "M_18plus": 1396,
+      "F_18plus": 1725,
+      "adults_18plus": 3121,
+      "M_under18": 297,
+      "F_under18": 309,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Черніїв",
+      "year": 2026,
+      "total": 3739,
+      "M": 1687,
+      "F": 2051,
+      "M_18plus": 1388,
+      "F_18plus": 1737,
+      "adults_18plus": 3125,
+      "M_under18": 299,
+      "F_under18": 314,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Чукалівка",
+      "year": 2021,
+      "total": 1336,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Чукалівка",
+      "year": 2022,
+      "total": 1326,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Чукалівка",
+      "year": 2024,
+      "total": 1890,
+      "M_18plus": 669,
+      "F_18plus": 840,
+      "adults_18plus": 1509,
+      "children_under14": 270,
+      "children_14_17": 109,
+      "source": "dms_registry",
+      "note": "M/F=18+; діти окремо (унісекс)"
+    },
+    {
+      "district": "Чукалівка",
+      "year": 2025,
+      "total": 1972,
+      "M": 906,
+      "F": 1064,
+      "M_18plus": 701,
+      "F_18plus": 874,
+      "adults_18plus": 1575,
+      "M_under18": 205,
+      "F_under18": 190,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Чукалівка",
+      "year": 2026,
+      "total": 1982,
+      "M": 908,
+      "F": 1072,
+      "M_18plus": 702,
+      "F_18plus": 885,
+      "adults_18plus": 1587,
+      "M_under18": 206,
+      "F_under18": 187,
+      "source": "dms_registry"
+    }
+  ],
+  "mtg_total": [
+    {
+      "district": "Івано-Франківська МТГ (разом)",
+      "year": 2021,
+      "total": 287533,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Івано-Франківська МТГ (разом)",
+      "year": 2022,
+      "total": 287550,
+      "source": "derzhstat_present_estimate"
+    },
+    {
+      "district": "Івано-Франківська МТГ (разом)",
+      "year": 2024,
+      "total": 248954,
+      "M_18plus": 88182,
+      "F_18plus": 118208,
+      "adults_18plus": 206390,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Івано-Франківська МТГ (разом)",
+      "year": 2025,
+      "total": 256338,
+      "M": 112241,
+      "F": 143892,
+      "M_18plus": 89049,
+      "F_18plus": 121296,
+      "adults_18plus": 210345,
+      "source": "dms_registry"
+    },
+    {
+      "district": "Івано-Франківська МТГ (разом)",
+      "year": 2026,
+      "total": 257911,
+      "M": 112915,
+      "F": 144798,
+      "M_18plus": 89464,
+      "F_18plus": 122238,
+      "adults_18plus": 211702,
+      "source": "dms_registry"
+    }
+  ]
+}

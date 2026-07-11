@@ -1,0 +1,1222 @@
+{
+ "meta": {
+  "generated": "2026-06-15",
+  "k_threshold": 5,
+  "years": [
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "districts": [
+   "Івано-Франківськ",
+   "Березівка",
+   "Братківці",
+   "Вовчинець",
+   "Добровляни",
+   "Драгомирчани",
+   "Камінне",
+   "Колодіївка",
+   "Крихівці",
+   "Микитинці",
+   "Підлужжя",
+   "Підпечери",
+   "Радча",
+   "Тисменичани",
+   "Угорники",
+   "Узин",
+   "Хриплин",
+   "Черніїв",
+   "Чукалівка"
+  ],
+  "channels": {
+   "electronic": "Електронний",
+   "paper": "Паперовий"
+  },
+  "totals": {
+   "label": "Уся МТГ",
+   "votes": [
+    {
+     "year": 2021,
+     "electronic": 91365,
+     "paper": 32237
+    },
+    {
+     "year": 2023,
+     "electronic": 57715,
+     "paper": 12383
+    },
+    {
+     "year": 2024,
+     "electronic": 101418,
+     "paper": 26855
+    },
+    {
+     "year": 2025,
+     "electronic": 104802,
+     "paper": 19569
+    },
+    {
+     "year": 2026,
+     "electronic": 187347,
+     "paper": 30519
+    }
+   ],
+   "people": {
+    "only_online": 83963,
+    "only_paper": 15672,
+    "mixed": 6905
+   },
+   "migration": {
+    "paper_to_online": 4083,
+    "online_to_paper": 1173,
+    "stayed_paper": 6131,
+    "stayed_online": 53818
+   },
+   "sex": {
+    "F": 66971,
+    "M": 39576
+   },
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 14956,
+     "total": 66965
+    },
+    "M": {
+     "cnap_ever": 7620,
+     "total": 39574
+    }
+   }
+  },
+  "notes": {
+   "votes": "Голоси (не люди) за громадою виборця × рік × канал. Виключено: голоси виборців поза громадою (15768) і канал «невідомо» (16).",
+   "people": "Унікальні люди (за всі кампанії разом): канал-профіль лише-онлайн / лише-ЦНАП / змішаний. Громада людини — стан за останнім роком. «Хоч раз через ЦНАП» = (only_paper + mixed) / усі; це інша міра, ніж частка ЦНАП-голосів (votes).",
+   "migration": "Люди з 2+ кампаніями: канал першого року → канал останнього (канал року — переважний у межах року).",
+   "sex": "Унікальні люди за статтю (всі кампанії разом); стать виведена з по-батькові/імені (ISO 5218), 1 невизначену особу виключено.",
+   "suppression": "Значення 1–4 замінені на null (поле suppressed) — k-анонімність; справжні нулі лишаються нулями."
+  }
+ },
+ "votes": [
+  {
+   "district": "Івано-Франківськ",
+   "year": 2021,
+   "electronic": 79315,
+   "paper": 13253
+  },
+  {
+   "district": "Івано-Франківськ",
+   "year": 2023,
+   "electronic": 48512,
+   "paper": 3579
+  },
+  {
+   "district": "Івано-Франківськ",
+   "year": 2024,
+   "electronic": 87413,
+   "paper": 11994
+  },
+  {
+   "district": "Івано-Франківськ",
+   "year": 2025,
+   "electronic": 90598,
+   "paper": 14351
+  },
+  {
+   "district": "Івано-Франківськ",
+   "year": 2026,
+   "electronic": 155943,
+   "paper": 18043
+  },
+  {
+   "district": "Березівка",
+   "year": 2021,
+   "electronic": 414,
+   "paper": 1786
+  },
+  {
+   "district": "Березівка",
+   "year": 2023,
+   "electronic": 167,
+   "paper": 1143
+  },
+  {
+   "district": "Березівка",
+   "year": 2024,
+   "electronic": 209,
+   "paper": 2004
+  },
+  {
+   "district": "Березівка",
+   "year": 2025,
+   "electronic": 191,
+   "paper": 71
+  },
+  {
+   "district": "Березівка",
+   "year": 2026,
+   "electronic": 365,
+   "paper": 557
+  },
+  {
+   "district": "Братківці",
+   "year": 2021,
+   "electronic": 243,
+   "paper": 958
+  },
+  {
+   "district": "Братківці",
+   "year": 2023,
+   "electronic": 280,
+   "paper": 716
+  },
+  {
+   "district": "Братківці",
+   "year": 2024,
+   "electronic": 268,
+   "paper": 213
+  },
+  {
+   "district": "Братківці",
+   "year": 2025,
+   "electronic": 331,
+   "paper": 14
+  },
+  {
+   "district": "Братківці",
+   "year": 2026,
+   "electronic": 606,
+   "paper": 339
+  },
+  {
+   "district": "Вовчинець",
+   "year": 2021,
+   "electronic": 842,
+   "paper": 178
+  },
+  {
+   "district": "Вовчинець",
+   "year": 2023,
+   "electronic": 590,
+   "paper": 51
+  },
+  {
+   "district": "Вовчинець",
+   "year": 2024,
+   "electronic": 1024,
+   "paper": 88
+  },
+  {
+   "district": "Вовчинець",
+   "year": 2025,
+   "electronic": 1052,
+   "paper": 123
+  },
+  {
+   "district": "Вовчинець",
+   "year": 2026,
+   "electronic": 2116,
+   "paper": 260
+  },
+  {
+   "district": "Добровляни",
+   "year": 2021,
+   "electronic": 41,
+   "paper": 44
+  },
+  {
+   "district": "Добровляни",
+   "year": 2023,
+   "electronic": 18,
+   "paper": 20
+  },
+  {
+   "district": "Добровляни",
+   "year": 2024,
+   "electronic": 55,
+   "paper": 103
+  },
+  {
+   "district": "Добровляни",
+   "year": 2025,
+   "electronic": 117,
+   "paper": 201
+  },
+  {
+   "district": "Добровляни",
+   "year": 2026,
+   "electronic": 177,
+   "paper": 265
+  },
+  {
+   "district": "Драгомирчани",
+   "year": 2021,
+   "electronic": 511,
+   "paper": 1991
+  },
+  {
+   "district": "Драгомирчани",
+   "year": 2023,
+   "electronic": 623,
+   "paper": 1315
+  },
+  {
+   "district": "Драгомирчани",
+   "year": 2024,
+   "electronic": 875,
+   "paper": 3175
+  },
+  {
+   "district": "Драгомирчани",
+   "year": 2025,
+   "electronic": 436,
+   "paper": 222
+  },
+  {
+   "district": "Драгомирчани",
+   "year": 2026,
+   "electronic": 1214,
+   "paper": 744
+  },
+  {
+   "district": "Камінне",
+   "year": 2021,
+   "electronic": 117,
+   "paper": 964
+  },
+  {
+   "district": "Камінне",
+   "year": 2023,
+   "electronic": 104,
+   "paper": 238
+  },
+  {
+   "district": "Камінне",
+   "year": 2024,
+   "electronic": 141,
+   "paper": 90
+  },
+  {
+   "district": "Камінне",
+   "year": 2025,
+   "electronic": 275,
+   "paper": 156
+  },
+  {
+   "district": "Камінне",
+   "year": 2026,
+   "electronic": 417,
+   "paper": 52
+  },
+  {
+   "district": "Колодіївка",
+   "year": 2021,
+   "electronic": 82,
+   "paper": 151
+  },
+  {
+   "district": "Колодіївка",
+   "year": 2023,
+   "electronic": 71,
+   "paper": 152
+  },
+  {
+   "district": "Колодіївка",
+   "year": 2024,
+   "electronic": 57,
+   "paper": 153
+  },
+  {
+   "district": "Колодіївка",
+   "year": 2025,
+   "electronic": 85,
+   "paper": 195
+  },
+  {
+   "district": "Колодіївка",
+   "year": 2026,
+   "electronic": 163,
+   "paper": 148
+  },
+  {
+   "district": "Крихівці",
+   "year": 2021,
+   "electronic": 2978,
+   "paper": 886
+  },
+  {
+   "district": "Крихівці",
+   "year": 2023,
+   "electronic": 2116,
+   "paper": 258
+  },
+  {
+   "district": "Крихівці",
+   "year": 2024,
+   "electronic": 3556,
+   "paper": 670
+  },
+  {
+   "district": "Крихівці",
+   "year": 2025,
+   "electronic": 4018,
+   "paper": 498
+  },
+  {
+   "district": "Крихівці",
+   "year": 2026,
+   "electronic": 8374,
+   "paper": 1001
+  },
+  {
+   "district": "Микитинці",
+   "year": 2021,
+   "electronic": 781,
+   "paper": 932
+  },
+  {
+   "district": "Микитинці",
+   "year": 2023,
+   "electronic": 373,
+   "paper": 34
+  },
+  {
+   "district": "Микитинці",
+   "year": 2024,
+   "electronic": 644,
+   "paper": 157
+  },
+  {
+   "district": "Микитинці",
+   "year": 2025,
+   "electronic": 752,
+   "paper": 138
+  },
+  {
+   "district": "Микитинці",
+   "year": 2026,
+   "electronic": 1268,
+   "paper": 235
+  },
+  {
+   "district": "Підлужжя",
+   "year": 2021,
+   "electronic": 379,
+   "paper": 234
+  },
+  {
+   "district": "Підлужжя",
+   "year": 2023,
+   "electronic": 282,
+   "paper": 273
+  },
+  {
+   "district": "Підлужжя",
+   "year": 2024,
+   "electronic": 492,
+   "paper": 147
+  },
+  {
+   "district": "Підлужжя",
+   "year": 2025,
+   "electronic": 491,
+   "paper": 44
+  },
+  {
+   "district": "Підлужжя",
+   "year": 2026,
+   "electronic": 1139,
+   "paper": 237
+  },
+  {
+   "district": "Підпечери",
+   "year": 2021,
+   "electronic": 630,
+   "paper": 439
+  },
+  {
+   "district": "Підпечери",
+   "year": 2023,
+   "electronic": 279,
+   "paper": 89
+  },
+  {
+   "district": "Підпечери",
+   "year": 2024,
+   "electronic": 664,
+   "paper": 561
+  },
+  {
+   "district": "Підпечери",
+   "year": 2025,
+   "electronic": 742,
+   "paper": 628
+  },
+  {
+   "district": "Підпечери",
+   "year": 2026,
+   "electronic": 1725,
+   "paper": 1091
+  },
+  {
+   "district": "Радча",
+   "year": 2021,
+   "electronic": 698,
+   "paper": 1971
+  },
+  {
+   "district": "Радча",
+   "year": 2023,
+   "electronic": 710,
+   "paper": 1036
+  },
+  {
+   "district": "Радча",
+   "year": 2024,
+   "electronic": 1429,
+   "paper": 4211
+  },
+  {
+   "district": "Радча",
+   "year": 2025,
+   "electronic": 1031,
+   "paper": 1168
+  },
+  {
+   "district": "Радча",
+   "year": 2026,
+   "electronic": 4428,
+   "paper": 4243
+  },
+  {
+   "district": "Тисменичани",
+   "year": 2021,
+   "electronic": 482,
+   "paper": 2585
+  },
+  {
+   "district": "Тисменичани",
+   "year": 2023,
+   "electronic": 1163,
+   "paper": 1425
+  },
+  {
+   "district": "Тисменичани",
+   "year": 2024,
+   "electronic": 1037,
+   "paper": 2156
+  },
+  {
+   "district": "Тисменичани",
+   "year": 2025,
+   "electronic": 536,
+   "paper": 758
+  },
+  {
+   "district": "Тисменичани",
+   "year": 2026,
+   "electronic": 1514,
+   "paper": 814
+  },
+  {
+   "district": "Угорники",
+   "year": 2021,
+   "electronic": 1383,
+   "paper": 273
+  },
+  {
+   "district": "Угорники",
+   "year": 2023,
+   "electronic": 817,
+   "paper": 69
+  },
+  {
+   "district": "Угорники",
+   "year": 2024,
+   "electronic": 1423,
+   "paper": 68
+  },
+  {
+   "district": "Угорники",
+   "year": 2025,
+   "electronic": 1653,
+   "paper": 217
+  },
+  {
+   "district": "Угорники",
+   "year": 2026,
+   "electronic": 2984,
+   "paper": 690
+  },
+  {
+   "district": "Узин",
+   "year": 2021,
+   "electronic": 95,
+   "paper": 346
+  },
+  {
+   "district": "Узин",
+   "year": 2023,
+   "electronic": 60,
+   "paper": 32
+  },
+  {
+   "district": "Узин",
+   "year": 2024,
+   "electronic": 52,
+   "paper": 59
+  },
+  {
+   "district": "Узин",
+   "year": 2025,
+   "electronic": 115,
+   "paper": 229
+  },
+  {
+   "district": "Узин",
+   "year": 2026,
+   "electronic": 210,
+   "paper": 244
+  },
+  {
+   "district": "Хриплин",
+   "year": 2021,
+   "electronic": 370,
+   "paper": 982
+  },
+  {
+   "district": "Хриплин",
+   "year": 2023,
+   "electronic": 232,
+   "paper": 194
+  },
+  {
+   "district": "Хриплин",
+   "year": 2024,
+   "electronic": 198,
+   "paper": 80
+  },
+  {
+   "district": "Хриплин",
+   "year": 2025,
+   "electronic": 396,
+   "paper": 79
+  },
+  {
+   "district": "Хриплин",
+   "year": 2026,
+   "electronic": 972,
+   "paper": 188
+  },
+  {
+   "district": "Черніїв",
+   "year": 2021,
+   "electronic": 1359,
+   "paper": 4008
+  },
+  {
+   "district": "Черніїв",
+   "year": 2023,
+   "electronic": 993,
+   "paper": 1679
+  },
+  {
+   "district": "Черніїв",
+   "year": 2024,
+   "electronic": 1187,
+   "paper": 677
+  },
+  {
+   "district": "Черніїв",
+   "year": 2025,
+   "electronic": 1261,
+   "paper": 359
+  },
+  {
+   "district": "Черніїв",
+   "year": 2026,
+   "electronic": 2321,
+   "paper": 1183
+  },
+  {
+   "district": "Чукалівка",
+   "year": 2021,
+   "electronic": 645,
+   "paper": 256
+  },
+  {
+   "district": "Чукалівка",
+   "year": 2023,
+   "electronic": 325,
+   "paper": 80
+  },
+  {
+   "district": "Чукалівка",
+   "year": 2024,
+   "electronic": 694,
+   "paper": 249
+  },
+  {
+   "district": "Чукалівка",
+   "year": 2025,
+   "electronic": 722,
+   "paper": 118
+  },
+  {
+   "district": "Чукалівка",
+   "year": 2026,
+   "electronic": 1411,
+   "paper": 185
+  }
+ ],
+ "people": [
+  {
+   "district": "Івано-Франківськ",
+   "only_online": 73502,
+   "only_paper": 8380,
+   "mixed": 4236,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 8902,
+     "total": 54194
+    },
+    "M": {
+     "cnap_ever": 3713,
+     "total": 31923
+    }
+   }
+  },
+  {
+   "district": "Березівка",
+   "only_online": 128,
+   "only_paper": 619,
+   "mixed": 135,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 449,
+     "total": 532
+    },
+    "M": {
+     "cnap_ever": 305,
+     "total": 350
+    }
+   }
+  },
+  {
+   "district": "Братківці",
+   "only_online": 242,
+   "only_paper": 456,
+   "mixed": 130,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 361,
+     "total": 506
+    },
+    "M": {
+     "cnap_ever": 225,
+     "total": 322
+    }
+   }
+  },
+  {
+   "district": "Вовчинець",
+   "only_online": 915,
+   "only_paper": 99,
+   "mixed": 72,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 127,
+     "total": 734
+    },
+    "M": {
+     "cnap_ever": 44,
+     "total": 352
+    }
+   }
+  },
+  {
+   "district": "Добровляни",
+   "only_online": 45,
+   "only_paper": 43,
+   "mixed": 20,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 35,
+     "total": 65
+    },
+    "M": {
+     "cnap_ever": 28,
+     "total": 43
+    }
+   }
+  },
+  {
+   "district": "Драгомирчани",
+   "only_online": 319,
+   "only_paper": 793,
+   "mixed": 244,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 569,
+     "total": 772
+    },
+    "M": {
+     "cnap_ever": 468,
+     "total": 584
+    }
+   }
+  },
+  {
+   "district": "Камінне",
+   "only_online": 153,
+   "only_paper": 316,
+   "mixed": 62,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 220,
+     "total": 315
+    },
+    "M": {
+     "cnap_ever": 158,
+     "total": 216
+    }
+   }
+  },
+  {
+   "district": "Колодіївка",
+   "only_online": 56,
+   "only_paper": 108,
+   "mixed": 33,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 81,
+     "total": 115
+    },
+    "M": {
+     "cnap_ever": 60,
+     "total": 82
+    }
+   }
+  },
+  {
+   "district": "Крихівці",
+   "only_online": 2867,
+   "only_paper": 561,
+   "mixed": 302,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 610,
+     "total": 2529
+    },
+    "M": {
+     "cnap_ever": 253,
+     "total": 1201
+    }
+   }
+  },
+  {
+   "district": "Микитинці",
+   "only_online": 696,
+   "only_paper": 252,
+   "mixed": 99,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 204,
+     "total": 643
+    },
+    "M": {
+     "cnap_ever": 147,
+     "total": 404
+    }
+   }
+  },
+  {
+   "district": "Підлужжя",
+   "only_online": 428,
+   "only_paper": 177,
+   "mixed": 84,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 164,
+     "total": 440
+    },
+    "M": {
+     "cnap_ever": 97,
+     "total": 249
+    }
+   }
+  },
+  {
+   "district": "Підпечери",
+   "only_online": 534,
+   "only_paper": 307,
+   "mixed": 103,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 257,
+     "total": 584
+    },
+    "M": {
+     "cnap_ever": 153,
+     "total": 360
+    }
+   }
+  },
+  {
+   "district": "Радча",
+   "only_online": 512,
+   "only_paper": 944,
+   "mixed": 437,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 847,
+     "total": 1158
+    },
+    "M": {
+     "cnap_ever": 534,
+     "total": 735
+    }
+   }
+  },
+  {
+   "district": "Тисменичани",
+   "only_online": 376,
+   "only_paper": 788,
+   "mixed": 316,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 676,
+     "total": 890
+    },
+    "M": {
+     "cnap_ever": 428,
+     "total": 590
+    }
+   }
+  },
+  {
+   "district": "Угорники",
+   "only_online": 1410,
+   "only_paper": 176,
+   "mixed": 75,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 162,
+     "total": 1077
+    },
+    "M": {
+     "cnap_ever": 89,
+     "total": 584
+    }
+   }
+  },
+  {
+   "district": "Узин",
+   "only_online": 87,
+   "only_paper": 162,
+   "mixed": 29,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 105,
+     "total": 166
+    },
+    "M": {
+     "cnap_ever": 86,
+     "total": 112
+    }
+   }
+  },
+  {
+   "district": "Хриплин",
+   "only_online": 252,
+   "only_paper": 268,
+   "mixed": 97,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 214,
+     "total": 366
+    },
+    "M": {
+     "cnap_ever": 151,
+     "total": 251
+    }
+   }
+  },
+  {
+   "district": "Черніїв",
+   "only_online": 885,
+   "only_paper": 1091,
+   "mixed": 358,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 850,
+     "total": 1427
+    },
+    "M": {
+     "cnap_ever": 599,
+     "total": 907
+    }
+   }
+  },
+  {
+   "district": "Чукалівка",
+   "only_online": 556,
+   "only_paper": 132,
+   "mixed": 73,
+   "channel_by_sex": {
+    "F": {
+     "cnap_ever": 123,
+     "total": 452
+    },
+    "M": {
+     "cnap_ever": 82,
+     "total": 309
+    }
+   }
+  }
+ ],
+ "migration": [
+  {
+   "district": "Івано-Франківськ",
+   "paper_to_online": 2348,
+   "online_to_paper": 832,
+   "stayed_paper": 2855,
+   "stayed_online": 46948
+  },
+  {
+   "district": "Березівка",
+   "paper_to_online": 58,
+   "online_to_paper": 40,
+   "stayed_paper": 367,
+   "stayed_online": 95
+  },
+  {
+   "district": "Братківці",
+   "paper_to_online": 85,
+   "online_to_paper": 16,
+   "stayed_paper": 162,
+   "stayed_online": 148
+  },
+  {
+   "district": "Вовчинець",
+   "paper_to_online": 43,
+   "online_to_paper": 12,
+   "stayed_paper": 28,
+   "stayed_online": 582
+  },
+  {
+   "district": "Добровляни",
+   "paper_to_online": 7,
+   "online_to_paper": null,
+   "stayed_paper": 38,
+   "stayed_online": 34,
+   "suppressed": [
+    "online_to_paper"
+   ]
+  },
+  {
+   "district": "Драгомирчани",
+   "paper_to_online": 143,
+   "online_to_paper": 39,
+   "stayed_paper": 450,
+   "stayed_online": 250
+  },
+  {
+   "district": "Камінне",
+   "paper_to_online": 54,
+   "online_to_paper": null,
+   "stayed_paper": 128,
+   "stayed_online": 96,
+   "suppressed": [
+    "online_to_paper"
+   ]
+  },
+  {
+   "district": "Колодіївка",
+   "paper_to_online": 22,
+   "online_to_paper": 5,
+   "stayed_paper": 51,
+   "stayed_online": 38
+  },
+  {
+   "district": "Крихівці",
+   "paper_to_online": 206,
+   "online_to_paper": 39,
+   "stayed_paper": 157,
+   "stayed_online": 1899
+  },
+  {
+   "district": "Микитинці",
+   "paper_to_online": 74,
+   "online_to_paper": 10,
+   "stayed_paper": 37,
+   "stayed_online": 412
+  },
+  {
+   "district": "Підлужжя",
+   "paper_to_online": 53,
+   "online_to_paper": 12,
+   "stayed_paper": 62,
+   "stayed_online": 282
+  },
+  {
+   "district": "Підпечери",
+   "paper_to_online": 45,
+   "online_to_paper": 29,
+   "stayed_paper": 161,
+   "stayed_online": 339
+  },
+  {
+   "district": "Радча",
+   "paper_to_online": 276,
+   "online_to_paper": 45,
+   "stayed_paper": 582,
+   "stayed_online": 394
+  },
+  {
+   "district": "Тисменичани",
+   "paper_to_online": 234,
+   "online_to_paper": 21,
+   "stayed_paper": 418,
+   "stayed_online": 255
+  },
+  {
+   "district": "Угорники",
+   "paper_to_online": 40,
+   "online_to_paper": 18,
+   "stayed_paper": 53,
+   "stayed_online": 852
+  },
+  {
+   "district": "Узин",
+   "paper_to_online": 21,
+   "online_to_paper": null,
+   "stayed_paper": 41,
+   "stayed_online": 49,
+   "suppressed": [
+    "online_to_paper"
+   ]
+  },
+  {
+   "district": "Хриплин",
+   "paper_to_online": 83,
+   "online_to_paper": null,
+   "stayed_paper": 62,
+   "stayed_online": 148,
+   "suppressed": [
+    "online_to_paper"
+   ]
+  },
+  {
+   "district": "Черніїв",
+   "paper_to_online": 247,
+   "online_to_paper": 34,
+   "stayed_paper": 440,
+   "stayed_online": 612
+  },
+  {
+   "district": "Чукалівка",
+   "paper_to_online": 44,
+   "online_to_paper": 9,
+   "stayed_paper": 39,
+   "stayed_online": 385
+  }
+ ],
+ "sex": [
+  {
+   "district": "Івано-Франківськ",
+   "F": 54198,
+   "M": 31924
+  },
+  {
+   "district": "Березівка",
+   "F": 532,
+   "M": 350
+  },
+  {
+   "district": "Братківці",
+   "F": 506,
+   "M": 322
+  },
+  {
+   "district": "Вовчинець",
+   "F": 734,
+   "M": 352
+  },
+  {
+   "district": "Добровляни",
+   "F": 65,
+   "M": 43
+  },
+  {
+   "district": "Драгомирчани",
+   "F": 773,
+   "M": 584
+  },
+  {
+   "district": "Камінне",
+   "F": 315,
+   "M": 216
+  },
+  {
+   "district": "Колодіївка",
+   "F": 115,
+   "M": 82
+  },
+  {
+   "district": "Крихівці",
+   "F": 2529,
+   "M": 1201
+  },
+  {
+   "district": "Микитинці",
+   "F": 643,
+   "M": 404
+  },
+  {
+   "district": "Підлужжя",
+   "F": 440,
+   "M": 249
+  },
+  {
+   "district": "Підпечери",
+   "F": 584,
+   "M": 361
+  },
+  {
+   "district": "Радча",
+   "F": 1158,
+   "M": 735
+  },
+  {
+   "district": "Тисменичани",
+   "F": 890,
+   "M": 590
+  },
+  {
+   "district": "Угорники",
+   "F": 1077,
+   "M": 584
+  },
+  {
+   "district": "Узин",
+   "F": 166,
+   "M": 112
+  },
+  {
+   "district": "Хриплин",
+   "F": 366,
+   "M": 251
+  },
+  {
+   "district": "Черніїв",
+   "F": 1427,
+   "M": 907
+  },
+  {
+   "district": "Чукалівка",
+   "F": 453,
+   "M": 309
+  }
+ ]
+}

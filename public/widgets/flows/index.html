@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Потоки місто↔села — Бюджет участі Івано-Франківська</title>
+<meta name="description" id="metaDescription" content="Sankey-діаграма: з яких громад Івано-Франківської МТГ приходять голоси і за чиї проєкти вони віддані. Видно, наскільки села голосують «за своє». Кампанії 2021–2026.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+<script src="lib/d3-sankey.min.js" defer></script>
+<script src="content.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+  <p class="sr-only" id="srDesc">Два подання потоків голосів Бюджету участі Івано-Франківської громади. Рівень «Місто / Села» — Sankey-діаграма: ліворуч виборці за місцем проживання (Місто та Села), праворуч проєкти за місцем проєкту (міські та сільські); товщина стрічки — кількість голосів потоку. Рівень «Села: за своє» — рейтинг 18 сіл за часткою голосів, відданих за власні проєкти; кожне село має смугу на всю ширину, поділену на три сегменти: за свої проєкти (тепла охра), за проєкти інших сіл, за міські проєкти; села впорядковані за часткою «за своє» згори вниз. Перемикач кампаній: 2021, 2023, 2024, 2025, 2026 та «Усі» (у 2022 Бюджет участі не проводився). Покрито 93,3% голосів — лише ті, де відома громада і виборця, і проєкту. Висока частка «за своє» зазвичай означає, що в бюлетені села був власний проєкт; де свого не було — голосували переважно за міські.</p>
+  <header class="head">
+    <span class="overline" id="overline">Бюджет участі · Івано-Франківська громада</span>
+    <h1 class="title" id="title">Потоки: хто голосує — за чиї проєкти</h1>
+    <p class="subtitle" id="contextLine">Ліворуч — звідки виборці за місцем проживання/реєстрації, праворуч — за чиї проєкти вони голосували.</p>
+  </header>
+  <div class="controls">
+    <div class="levels" id="levelsBox" role="radiogroup" aria-label="Рівень деталізації">
+      <button type="button" class="level-btn" id="levelGrouped" role="radio" aria-checked="true">Місто / Села</button>
+      <button type="button" class="level-btn" id="levelVillages" role="radio" aria-checked="false">Села: за своє</button>
+    </div>
+    <div class="years" id="yearsBox" role="group" aria-label="Кампанія. Стрілками — між роками">
+      <span class="years-label" id="yearsLabel">Кампанія</span>
+      <div class="year-axis" id="yearAxis"></div>
+    </div>
+  </div>
+  <div class="main">
+    <section class="scene" id="scene" aria-label="Діаграма потоків">
+      <div class="sankey-wrap" id="sankeyWrap">
+        <svg id="sankey" role="group" aria-label="Sankey потоків голосів"></svg>
+        <div class="tooltip" id="tooltip" role="presentation" hidden></div>
+      </div>
+      <p class="scene-cap" id="sceneCap"></p>
+    </section>
+  </div>
+  <footer class="notes">
+    <ul class="note-list" id="noteList"></ul>
+  </footer>
+  <div class="loading" id="loading"><div class="spinner" aria-hidden="true"></div><span id="loadingText">Завантаження даних…</span></div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

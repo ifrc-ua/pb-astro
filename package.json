@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "sync": "node scripts/sync-from-kurs.mjs",
     "astro": "astro"
   },
   "dependencies": {
