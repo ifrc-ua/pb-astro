@@ -1,0 +1,39 @@
+---
+// Хіро статті: заголовок, дек, три ключові числа з сигнатурним count-up.
+// Текст — з канону content.md; числа й підписи — за спекою §2.
+const stats = [
+  { value: 1565, label: "проєктів" },
+  { value: 781, label: "тисяч голосів" },
+  { value: 110, label: "тисяч виборців" },
+];
+---
+<section class="hero">
+  <h1 class="display hero__title">Десять весен івано-франківського бюджету участі</h1>
+  <p class="hero__dek">
+    Франківці голосують на старті кампанії, громаду творять жінки, а малі села активніші
+    за місто: що дані десяти років кажуть про головний експеримент місцевої демократії.
+  </p>
+  <div class="hero__stats">
+    {stats.map((s, i) => (
+      <div class="hero__stat">
+        <span class="stat-number" data-countup={s.value} data-stagger={i * 100}>0</span>
+        <span class="hero__stat-label">{s.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .hero { max-width: 900px; margin-inline: auto; padding: 12dvh 24px 8dvh; text-align: center; }
+  .hero__title { font-weight: 900; font-size: clamp(40px, 8vw, 96px); line-height: 1.0; margin: 0; }
+  .hero__dek { max-width: 640px; margin: 1.4em auto 0; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; color: var(--muted); }
+  .hero__stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 48px; margin-top: 8dvh; }
+  .hero__stat { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .hero__stat .stat-number { font-size: clamp(48px, 9vw, 72px); color: var(--brand); }
+  .hero__stat-label { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+</style>
+
+<script>
+  import { mountCountUps } from "../lib/count-up";
+  mountCountUps();
+</script>
