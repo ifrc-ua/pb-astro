@@ -1,0 +1,16 @@
+/* Дизайн-токени PB (див. дизайн-систему ifrc-ua/pb-design). Світла тема — канон. */
+:root {
+  --canvas: #FDFDFD; --ink: #1A1A1A;
+  --panel: #F6F4FB; --panel-2: #EEEAF7;
+  --muted: #6A6C77; --line: #EFEFF1;
+  --brand: #654EA3; --brand-strong: #4E3C84; --link: #654EA3;
+  --accent: #FFEC08; /* тільки «обране», завжди з ink-обводкою */
+  --card: #FDFDFD;
+}
+:root[data-theme="dark"] {
+  --canvas: #0F0F16; --ink: #EFEFF1;
+  --panel: #1A1A26; --panel-2: #232332;
+  --muted: #9FA0A9; --line: #2E2E3C;
+  --brand: #9C8BCC; --brand-strong: #B7A8DF; --link: #9C8BCC;
+  --card: #FDFDFD; /* iframe-віджети лишаються світлими картками */
+}
