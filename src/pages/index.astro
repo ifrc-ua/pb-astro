@@ -1,21 +1,12 @@
 ---
-import "../styles/global.css";
+import Article from "../layouts/Article.astro";
 ---
 
-<html lang="uk">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>PB Astro</title>
-	</head>
-	<body>
-		<main class="prose">
-			<h1 style="font-size:56px;font-weight:900;">Десять весен</h1>
-			<p>Абзац основного тексту сетом Inter. Перевіряємо ритм, розмір і читабельність вузької колонки на світлому тлі полотна.</p>
-			<p class="stat-number" style="font-size:72px;color:var(--brand);">1 565</p>
-			<p style="color:var(--muted);">проєктів за десять років</p>
-		</main>
-	</body>
-</html>
+<Article title="Десять весен івано-франківського бюджету участі" description="Аналітична історія 10 років Бюджету участі Івано-Франківська, 2016–2026.">
+  <div class="prose">
+    <h1 style="font-size:56px;font-weight:900;">Десять весен</h1>
+    <p>Абзац основного тексту сетом Inter. Перевіряємо ритм, розмір і читабельність вузької колонки на світлому тлі полотна.</p>
+    <p class="stat-number" style="font-size:72px;color:var(--brand);">1 565</p>
+    <p style="color:var(--muted);">проєктів за десять років</p>
+  </div>
+</Article>
