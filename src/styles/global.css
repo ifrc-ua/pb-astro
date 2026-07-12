@@ -18,6 +18,8 @@ h1, h2, h3, .display { font-family: "Phenomena", "Inter Variable", sans-serif; l
 .prose strong { font-weight: 700; }
 .stat-number { font-family: "Phenomena"; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
 a { color: var(--link); }
+/* Інлайн-лінки в прозі: line-height ≥1.55 + вертикальний паддінг на тап (design.md §8) */
+.prose p a, .pb-box__body a { padding-block: 4px; }
 /* Розділювач-віха між смисловими блоками (канонічне «* * *») */
 hr.beat { border: 0; max-width: 680px; margin: 3.2rem auto; text-align: center; }
 hr.beat::before { content: "* * *"; color: var(--muted); letter-spacing: 0.5em; font-size: 18px; }

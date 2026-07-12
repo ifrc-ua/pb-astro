@@ -1,0 +1,33 @@
+---
+// Кольорова поверхня-секція (ритм за design.md §5).
+// tone: canvas (типово) | panel (primary-50) | panel-2 (primary-100) | accent (secondary-100).
+// Full-bleed на мобільному (без полів/заокруглень), rounded-контейнер на десктопі.
+interface Props { tone?: "canvas" | "panel" | "panel-2" | "accent" }
+const { tone = "canvas" } = Astro.props;
+---
+<div class:list={["surface", `surface--${tone}`]}>
+  <slot />
+</div>
+
+<style>
+  .surface { width: 100%; }
+  .surface--canvas { background: var(--canvas); }
+  .surface--panel { background: var(--panel); }
+  .surface--panel-2 { background: var(--panel-2); }
+  /* Жовтий блок: у темній темі лишаємо його світлим акцентом-плашкою (як картки віджетів). */
+  .surface--accent { background: #FFF9B3; color: var(--ink); }
+
+  /* Кольорові блоки дихають зверху й знизу; canvas — без зайвого паддінгу. */
+  .surface--panel, .surface--panel-2, .surface--accent {
+    padding-block: 48px;
+    margin-block: 8px;
+  }
+  @media (min-width: 1024px) {
+    .surface--panel, .surface--panel-2, .surface--accent {
+      max-width: 1080px;
+      margin-inline: auto;
+      padding-block: 72px;
+      border-radius: 24px;
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Article from "../layouts/Article.astro";
 import Hero from "../components/Hero.astro";
+import Surface from "../components/Surface.astro";
 
 // 13 смислових блоків статті (порт канону pb-kurs/content.md).
 // Порядок — за іменем файла (01…13). Між блоками — розділювач-віха.
@@ -8,6 +9,17 @@ const modules = import.meta.glob("../content/article/*.mdx", { eager: true });
 const blocks = Object.keys(modules)
   .sort()
   .map((k) => (modules[k] as { Content: any }).Content);
+
+// Ритм поверхонь (design.md §5): canvas завжди повертається, два кольори не підряд,
+// жовтий — щонайбільше один. Тон за індексом блоку (0-based).
+// panel — рекап «великої картини»; panel-2 — сильний смисловий акцент (війна);
+// accent — єдиний жовтий фінальний акорд. Кольорові тони — на текстових блоках,
+// не на блоках з великими iframe-віджетами (світлі картки на світлому тлі глухнуть).
+const tones: Record<number, "panel" | "panel-2" | "accent"> = {
+  0: "panel",     // Квітневий ритуал (рекап + ключові знахідки)
+  8: "panel-2",   // Війна наскрізно
+  12: "accent",   // Інститут чи воля + фінал
+};
 ---
 
 <Article
@@ -15,12 +27,18 @@ const blocks = Object.keys(modules)
   description="Аналітична історія 10 років Бюджету участі Івано-Франківська, 2016–2026."
 >
   <Hero />
-  {blocks.map((Content, i) => (
-    <>
+  {blocks.map((Content, i) => {
+    const tone = tones[i];
+    const body = (
       <section class="prose">
         <Content />
       </section>
-      {i < blocks.length - 1 && <hr class="beat" />}
-    </>
-  ))}
+    );
+    return (
+      <>
+        {tone ? <Surface tone={tone}>{body}</Surface> : body}
+        {i < blocks.length - 1 && <hr class="beat" />}
+      </>
+    );
+  })}
 </Article>

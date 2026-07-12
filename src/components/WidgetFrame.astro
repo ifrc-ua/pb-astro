@@ -29,7 +29,9 @@ const initialStyle = height ? `height:${height}` : undefined;
   /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
   .pb-widget--fixed iframe { min-height: 420px; }
   :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
-  figcaption { text-align: right; font-size: 13px; margin-top: 6px; }
+  figcaption { text-align: right; font-size: 13px; margin-top: 2px; }
+  /* Тач-ціль лінка ≥44px на мобільному (design.md §8) без роздування тексту */
+  figcaption a { display: inline-block; padding: 14px 4px; }
 </style>
 
 <script>
