@@ -3,7 +3,19 @@
   <span class="tt-dark" aria-hidden="true">☾</span>
 </button>
 <style>
-  #theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 50; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+  /* Напівпрозоре тло + розмиття: 44px тач-ціль, але текст під ним просвічує (не затуляє рядок). */
+  #theme-toggle {
+    position: fixed; top: 12px; right: 12px; z-index: 50;
+    width: 44px; height: 44px; border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+    background: color-mix(in srgb, var(--panel) 62%, transparent);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    color: var(--ink); cursor: pointer; font-size: 18px; line-height: 1;
+    box-shadow: 0 1px 4px rgba(26, 26, 26, 0.08);
+    transition: background 150ms ease-out;
+  }
+  #theme-toggle:hover { background: color-mix(in srgb, var(--panel) 85%, transparent); }
+  #theme-toggle:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
   :root[data-theme="dark"] .tt-dark, :root:not([data-theme="dark"]) .tt-light { display: none; }
 </style>
 <script>
