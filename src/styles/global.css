@@ -10,6 +10,15 @@ body { font-family: "Inter Variable", system-ui, sans-serif; font-size: 20px; li
 h1, h2, h3, .display { font-family: "Phenomena", "Inter Variable", sans-serif; letter-spacing: -0.02em; }
 .prose { max-width: 680px; margin-inline: auto; padding-inline: 24px; }
 .prose p { margin-block: 1.1em; }
+/* Заголовки розділів (Phenomena, responsive за design.md §3) */
+.prose h2 { font-weight: 700; font-size: clamp(28px, 4.5vw, 40px); line-height: 1.15; margin: 1.6em 0 0.5em; }
+.prose h2:first-child { margin-top: 0.2em; }
+.prose ul { margin-block: 1.1em; padding-left: 1.4em; }
+.prose li { margin-block: 0.4em; }
+.prose strong { font-weight: 700; }
 .stat-number { font-family: "Phenomena"; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
 a { color: var(--link); }
+/* Розділювач-віха між смисловими блоками (канонічне «* * *») */
+hr.beat { border: 0; max-width: 680px; margin: 3.2rem auto; text-align: center; }
+hr.beat::before { content: "* * *"; color: var(--muted); letter-spacing: 0.5em; font-size: 18px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

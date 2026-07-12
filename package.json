@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "sync": "node scripts/sync-from-kurs.mjs",
+    "check-numbers": "node scripts/check-numbers.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -23,5 +24,8 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.3.0"
   }
 }

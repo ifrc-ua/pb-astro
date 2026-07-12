@@ -1,8 +1,26 @@
 ---
 import Article from "../layouts/Article.astro";
 import Hero from "../components/Hero.astro";
+
+// 13 смислових блоків статті (порт канону pb-kurs/content.md).
+// Порядок — за іменем файла (01…13). Між блоками — розділювач-віха.
+const modules = import.meta.glob("../content/article/*.mdx", { eager: true });
+const blocks = Object.keys(modules)
+  .sort()
+  .map((k) => (modules[k] as { Content: any }).Content);
 ---
 
-<Article title="Десять весен івано-франківського бюджету участі" description="Аналітична історія 10 років Бюджету участі Івано-Франківська, 2016–2026.">
+<Article
+  title="Десять весен івано-франківського бюджету участі"
+  description="Аналітична історія 10 років Бюджету участі Івано-Франківська, 2016–2026."
+>
   <Hero />
+  {blocks.map((Content, i) => (
+    <>
+      <section class="prose">
+        <Content />
+      </section>
+      {i < blocks.length - 1 && <hr class="beat" />}
+    </>
+  ))}
 </Article>

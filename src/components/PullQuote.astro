@@ -1,0 +1,26 @@
+---
+// Велика врізка (pull-quote) з рядків `> ВРІЗКА:` канону.
+// Phenomena, ліва лінія-акцент кольору бренду. Текст — у слоті.
+---
+<blockquote class="pull-quote">
+  <p><slot /></p>
+</blockquote>
+
+<style>
+  .pull-quote {
+    max-width: 680px;
+    margin: 2.2rem auto;
+    padding: 0.2rem 0 0.2rem 24px;
+    border-left: 4px solid var(--brand);
+  }
+  .pull-quote p {
+    margin: 0;
+    font-family: "Phenomena", "Inter Variable", sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 4.2vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+</style>
