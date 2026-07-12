@@ -37,7 +37,10 @@ const canon = tokens(readFileSync(KURS, "utf8").replace(/\r\n/g, "\n"));
 let mdxText = "";
 for (const f of readdirSync(MDX_DIR).filter((f) => f.endsWith(".mdx")).sort()) {
   let s = readFileSync(path.join(MDX_DIR, f), "utf8").replace(/\r\n/g, "\n");
-  s = s.replace(/^import .*$/gm, "").replace(/\{\/\*[\s\S]*?\*\/\}/g, "");
+  s = s
+    .replace(/^import .*$/gm, "")           // рядки-імпорти
+    .replace(/\{\/\*[\s\S]*?\*\/\}/g, "")   // мітки-коментарі віджетів
+    .replace(/<WidgetFrame[^>]*\/?>/g, ""); // виклики віджетів (title/height — структура, не проза)
   mdxText += s + "\n";
 }
 const mdx = tokens(mdxText);
