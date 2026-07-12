@@ -1,0 +1,53 @@
+---
+// Вбудований віджет (same-origin iframe) з авторозміром висоти через postMessage.
+// Три режими:
+//   • auto (типово)  — висота приходить від віджета ({type:'pb-embed-height', height}).
+//   • fullscreen     — 100dvh, внутрішній скрол (rules-timeline).
+//   • height="…"     — явна висота для «повноекранних» віджетів (мапи: overflow:hidden,
+//                      #map absolute — власної висоти контенту не мають, тож авторозмір
+//                      їм нічого корисного не дасть).
+interface Props { name: string; title: string; fullscreen?: boolean; height?: string }
+const { name, title, fullscreen = false, height } = Astro.props;
+const src = `/widgets/${name}/index.html`;
+const initialStyle = height ? `height:${height}` : undefined;
+---
+<figure class:list={["pb-widget", { "pb-widget--full": fullscreen, "pb-widget--fixed": !!height }]}>
+  <iframe
+    src={src}
+    title={title}
+    loading="lazy"
+    data-widget={name}
+    style={initialStyle}
+  ></iframe>
+  <figcaption><a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a></figcaption>
+</figure>
+
+<style>
+  .pb-widget { margin: 2.5rem 0; max-width: 860px; margin-inline: auto; padding-inline: 24px; }
+  .pb-widget iframe { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--card); }
+  .pb-widget--full iframe { height: 100dvh; border-radius: 0; }
+  /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
+  .pb-widget--fixed iframe { min-height: 420px; }
+  :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
+  figcaption { text-align: right; font-size: 13px; margin-top: 6px; }
+</style>
+
+<script>
+  // Один слухач на сторінку матчить event.source з iframe і виставляє висоту.
+  // Fullscreen і fixed-height iframe не перекриваються (виключені із селектора).
+  interface PbEmbedMsg { type: string; height: number }
+  const w = window as unknown as { __pbEmbed?: boolean };
+  if (!w.__pbEmbed) {
+    w.__pbEmbed = true;
+    window.addEventListener("message", (e: MessageEvent) => {
+      const data = e.data as PbEmbedMsg | null;
+      if (!data || data.type !== "pb-embed-height") return;
+      const frames = document.querySelectorAll<HTMLIFrameElement>(
+        "figure.pb-widget:not(.pb-widget--full):not(.pb-widget--fixed) iframe"
+      );
+      for (const f of frames) {
+        if (f.contentWindow === e.source) f.style.height = `${data.height}px`;
+      }
+    });
+  }
+</script>
