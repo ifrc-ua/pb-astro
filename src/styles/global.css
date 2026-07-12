@@ -1,11 +1,13 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
 @import "./tokens.css";
+@import "./scenes.css";
 
 @font-face { font-family: "Phenomena"; src: url("/fonts/Phenomena-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Phenomena"; src: url("/fonts/Phenomena-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
 
-html { background: var(--canvas); color: var(--ink); }
+/* clip (не hidden!): гасить 100vw-виліт сцен під скролбаром, не ламаючи position: sticky */
+html { background: var(--canvas); color: var(--ink); overflow-x: clip; }
 body { font-family: "Inter Variable", system-ui, sans-serif; font-size: 20px; line-height: 1.5; }
 h1, h2, h3, .display { font-family: "Phenomena", "Inter Variable", sans-serif; letter-spacing: -0.02em; }
 .prose { max-width: 680px; margin-inline: auto; padding-inline: 24px; }

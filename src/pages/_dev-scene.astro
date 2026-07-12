@@ -1,0 +1,16 @@
+---
+// Тест-сторінка скрол-драйвера. Префікс «_» ховає її з роутингу;
+// щоб відкрити в dev, тимчасово перейменуйте на dev-scene.astro.
+import Article from "../layouts/Article.astro";
+import DevScene from "../scenes/DevScene";
+---
+
+<Article title="Тест сцени" description="Тест-сторінка скрол-драйвера (не для публікації).">
+  <section class="prose">
+    <p>Текст до сцени. Прокрутіть нижче: сцена липне на весь екран, картки перемикають кроки на середині вьюпорта.</p>
+  </section>
+  <DevScene client:load />
+  <section class="prose">
+    <p>Текст після сцени — скрол «відпустив» візуалізацію.</p>
+  </section>
+</Article>

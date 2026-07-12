@@ -1,0 +1,51 @@
+/* Sticky-сцени скролітелінгу: візуалізація на весь екран + степ-картки поверх.
+   Сцени вставляються всередині колонки .prose, тож .scene робить full-bleed
+   виліт на всю ширину вьюпорта (100vw + компенсація центрованої колонки);
+   html { overflow-x: clip } у global.css гасить зазор під скролбар. */
+.scene {
+  position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+.scene-sticky {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
+.scene-steps {
+  position: relative;
+  z-index: 2;
+  margin-top: -100dvh;
+  pointer-events: none;
+}
+.scene-step {
+  min-height: 95dvh;
+  display: flex;
+  align-items: center;
+}
+.scene-card {
+  pointer-events: auto;
+  max-width: 420px;
+  margin-left: 6vw;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--canvas) 92%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.06);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.scene-step.is-active .scene-card {
+  border-color: var(--brand);
+}
+@media (max-width: 599px) {
+  .scene-step {
+    align-items: flex-end;
+    padding-bottom: 8dvh;
+  }
+  .scene-card {
+    margin-inline: 12px;
+    font-size: 15px;
+  }
+}
