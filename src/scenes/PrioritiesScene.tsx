@@ -210,7 +210,7 @@ function buildChart(host: HTMLElement, DB: any, reduced: boolean, getStep: () =>
 
     // Шов 2022: пунктир між 2021 і 2023, БЕЗ слота на осі (крок 3)
     const seamX = (g.x(2021) + g.x(2023)) / 2;
-    const seamG = svg.append("g").attr("class", "pr-seam");
+    const seamG = svg.append("g").attr("class", "viz-seam");
     seamG.append("line").attr("class", "seam-line")
       .attr("x1", seamX).attr("x2", seamX)
       .attr("y1", g.padTop - 6).attr("y2", g.H - g.padBottom);

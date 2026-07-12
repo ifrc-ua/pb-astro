@@ -176,20 +176,54 @@
   stroke: var(--line);
   stroke-width: 1;
 }
-.pr-seam {
+.viz-seam {
   opacity: 0;
   transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.pr-seam.show {
+.viz-seam.show {
   opacity: 1;
 }
-.pr-seam .seam-line {
+.viz-seam .seam-line {
   stroke: var(--muted);
   stroke-width: 1.5;
   stroke-dasharray: 3 4;
 }
-.pr-seam .seam-label {
+.viz-seam .seam-label {
   font-size: 11px;
   font-weight: 600;
   fill: var(--muted);
+}
+
+/* ---- Сцена «Клуб постійних» (cohort-river) ---- */
+.cr-chart svg {
+  display: block;
+  width: 100%;
+}
+.cr-viz rect.seg {
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cr-viz .cr-base {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.cr-viz .cr-year {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  fill: var(--muted);
+}
+.cr-viz .cr-total {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  fill: var(--ink);
+}
+.cr-viz .cr-new {
+  fill: var(--muted);
+}
+.viz-tooltip .t-head {
+  font-weight: 600;
+}
+.viz-tooltip .t-num {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
