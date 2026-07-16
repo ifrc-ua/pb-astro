@@ -552,7 +552,7 @@ function donutBlock(title, byCat, total, precat, idp) {
 }
 
 function donutSVG(segs, sum, idp) {
-  const W = 220, H = 200, R = 86, r = 52;
+  const W = 220, H = 68, R = 32, r = 21;
   const pie = d3.pie().value(s => s.n).sort(null).padAngle(.012);
   const arcs = pie(segs);
   const arc = d3.arc().innerRadius(r).outerRadius(R).cornerRadius(2);
@@ -562,8 +562,8 @@ function donutSVG(segs, sum, idp) {
     const pct = a.data.n / sum * 100;
     s += `<path class="donut-arc" d="${arc(a)}" fill="${a.data.color}" tabindex="0" role="img"\n      data-label="${a.data.label}" data-n="${a.data.n}" data-pct="${pct.toFixed(1)}"\n      aria-label="${a.data.label}: ${fmtInt(a.data.n)}, ${fmtPct(pct)}"></path>`;
   });
-  s += `<text class="donut-center-n" text-anchor="middle" dy="-2">${fmtInt(sum)}</text>`;
-  s += `<text class="donut-center-l" text-anchor="middle" dy="14">за категоріями</text>`;
+  s += `<text class="donut-center-n" text-anchor="middle" dy="-1">${fmtInt(sum)}</text>`;
+  s += `<text class="donut-center-l" text-anchor="middle" dy="8">за категоріями</text>`;
   s += `</g></svg>`;
   return s;
 }
