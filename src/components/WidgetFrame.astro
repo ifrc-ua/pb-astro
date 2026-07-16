@@ -43,7 +43,7 @@ const MAX_WIDTH: Record<string, number> = {
 const wMax = MAX_WIDTH[name] ?? WIDE;
 ---
 <figure
-  class:list={["pb-widget", { "pb-widget--fixed": !!height }]}
+  class:list={["pb-widget", { "pb-widget--fixed": !!height, "pb-widget--fs": fullscreen }]}
   style={`--w-max:${wMax}px`}
 >
   <iframe
@@ -68,6 +68,13 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
   /* Тач-ціль лінка ≥44px на мобільному (design.md §8) без роздування тексту */
   figcaption a { display: inline-block; padding: 14px 4px; }
 
+  /* Пристрої без Fullscreen API (iPhone Safari): віджет із власним фулскріном не може
+     відкритися на весь екран, тож його «На весь екран» грає ВСЕРЕДИНІ iframe. Даємо
+     повний екран край-у-край (100vw × 100dvh), щоб таймлайну було де розгорнутись.
+     Клас додається з JS (детект нижче); на десктопі/Android його немає. */
+  .pb-widget--nofs { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); padding-inline: 0; }
+  .pb-widget--nofs iframe { height: 100dvh; border-radius: 0; max-width: none; }
+
   /* Десктоп (≥1024px): вивід поза колонкою тексту (full-bleed, як .scene) — вмикає
      вбудований двоколонковий макет віджета. Ширина iframe/підпису — per-widget через
      --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw. */
@@ -88,16 +95,47 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
 
 <script>
   // Один слухач на сторінку матчить event.source з iframe і виставляє висоту.
-  // Fixed-height iframe (мапи) виключені — їхня висота задана пропом height.
+  // Fixed-height iframe (мапи) і no-fullscreen (iPhone) виключені — їхня висота фіксована.
   interface PbEmbedMsg { type: string; height: number }
   const w = window as unknown as { __pbEmbed?: boolean };
   if (!w.__pbEmbed) {
     w.__pbEmbed = true;
+
+    // Пристрої без Fullscreen API (iPhone Safari): fullscreen-віджет (rules-timeline)
+    // не може відкритися на весь екран через кнопку, тож грає всередині iframe. Даємо
+    // йому повний екран (клас .pb-widget--nofs → 100vw×100dvh) і підкидаємо в iframe
+    // layout-шим html,body{height:100%} — без нього is-fs-розкладка віджета розсипається
+    // (у віджета html/body без height). Файли віджета НЕ змінюються; шим лише про висоту.
+    const fsOk = !!(
+      (document as Document & { webkitFullscreenEnabled?: boolean }).fullscreenEnabled ||
+      (document as Document & { webkitFullscreenEnabled?: boolean }).webkitFullscreenEnabled
+    );
+    if (!fsOk) {
+      for (const fig of document.querySelectorAll<HTMLElement>("figure.pb-widget--fs")) {
+        fig.classList.add("pb-widget--nofs");
+        const f = fig.querySelector("iframe");
+        if (!f) continue;
+        const shim = () => {
+          try {
+            const d = f.contentDocument;
+            if (d && d.head && !d.getElementById("pb-fs-shim")) {
+              const s = d.createElement("style");
+              s.id = "pb-fs-shim";
+              s.textContent = "html,body{height:100%}";
+              d.head.appendChild(s);
+            }
+          } catch { /* cross-origin (не наш випадок) */ }
+        };
+        f.addEventListener("load", shim);
+        shim();
+      }
+    }
+
     window.addEventListener("message", (e: MessageEvent) => {
       const data = e.data as PbEmbedMsg | null;
       if (!data || data.type !== "pb-embed-height") return;
       const frames = document.querySelectorAll<HTMLIFrameElement>(
-        "figure.pb-widget:not(.pb-widget--fixed) iframe"
+        "figure.pb-widget:not(.pb-widget--fixed):not(.pb-widget--nofs) iframe"
       );
       for (const f of frames) {
         // +1px: віджет шле Math.ceil(scrollHeight) (ціле), а реальна висота буває
