@@ -100,7 +100,10 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
         "figure.pb-widget:not(.pb-widget--fixed) iframe"
       );
       for (const f of frames) {
-        if (f.contentWindow === e.source) f.style.height = `${data.height}px`;
+        // +1px: віджет шле Math.ceil(scrollHeight) (ціле), а реальна висота буває
+        // дробовою (напр. 341.281px) — рівно ціле лишає суб-піксельний виліт і
+        // внутрішній скролбар. Зайвий піксель тла невидимий.
+        if (f.contentWindow === e.source) f.style.height = `${data.height + 1}px`;
       }
     });
   }
