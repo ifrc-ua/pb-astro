@@ -14,8 +14,23 @@ const { tone = "canvas" } = Astro.props;
   .surface--canvas { background: var(--canvas); }
   .surface--panel { background: var(--panel); }
   .surface--panel-2 { background: var(--panel-2); }
-  /* Жовтий блок: у темній темі лишаємо його світлим акцентом-плашкою (як картки віджетів). */
-  .surface--accent { background: #FFF9B3; color: var(--ink); }
+  /* Жовтий блок лишається світлою плашкою в обох темах (як картки віджетів),
+     тож текстові токени фіксуємо ТЕМНИМИ локально: інакше нічна тема кладе
+     світлий --ink на світло-жовте тло — нечитабельно. Перевизначення змінних
+     каскадом покриває і вкладені компоненти (pb-box, лінки, hr.beat). */
+  .surface--accent {
+    background: #FFF9B3;
+    --ink: #1A1A1A;
+    --muted: #3F4049;
+    --link: #4E3C84;
+    --brand: #654EA3;
+    --brand-strong: #4E3C84;
+    --line: color-mix(in srgb, #1A1A1A 22%, #FFF9B3);
+    --canvas: #FFFDF0;
+    --panel: #FFFCE0;
+    --panel-2: #FFF6D0;
+    color: var(--ink);
+  }
 
   /* Кольорові блоки дихають зверху й знизу; canvas — без зайвого паддінгу. */
   .surface--panel, .surface--panel-2, .surface--accent {

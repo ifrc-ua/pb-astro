@@ -17,8 +17,15 @@
 // Ширина обгортки — per-widget через --w-max: віджети з двоколонковим гридом (7fr/5fr
 // при ≥1024px) отримують повну ширину; прості чарти, що самі себе обмежують, лишаються
 // вужчими, щоб не плавати в порожнечі. На мобільному (<1024px) — вертикальна колонка.
-interface Props { name: string; title: string; fullscreen?: boolean; height?: string }
-const { name, title, fullscreen = false, height } = Astro.props;
+interface Props { name: string; title: string; fullscreen?: boolean; height?: string; source?: string }
+const {
+  name,
+  title,
+  fullscreen = false,
+  height,
+  // Атрибуція даних під віджетом (зліва); формулювання можна перекрити per-widget
+  source = "Дані: Бюджет участі Івано-Франківської міськради, 2016–2026",
+} = Astro.props;
 const src = `/widgets/${name}/index.html`;
 
 // Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета):
@@ -54,7 +61,10 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
     allow={fullscreen ? "fullscreen" : undefined}
     style={height ? `height:${height}` : undefined}
   ></iframe>
-  <figcaption><a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a></figcaption>
+  <figcaption>
+    <span class="pb-widget__src">{source}</span>
+    <a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a>
+  </figcaption>
 </figure>
 
 <style>
@@ -64,9 +74,20 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
   /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
   .pb-widget--fixed iframe { min-height: 420px; }
   :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
-  figcaption { text-align: right; font-size: 13px; margin-top: 2px; }
+  /* Підпис: атрибуція даних зліва, «відкрити окремо» справа */
+  figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0 16px;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .pb-widget__src { color: var(--muted); padding-block: 14px; }
   /* Тач-ціль лінка ≥44px на мобільному (design.md §8) без роздування тексту */
-  figcaption a { display: inline-block; padding: 14px 4px; }
+  figcaption a { display: inline-block; padding: 14px 4px; margin-left: auto; }
+  .pb-widget--nofs figcaption { padding-inline: 16px; }
 
   /* Пристрої без Fullscreen API (iPhone Safari): віджет із власним фулскріном не може
      відкритися на весь екран, тож його «На весь екран» грає ВСЕРЕДИНІ iframe. Даємо
