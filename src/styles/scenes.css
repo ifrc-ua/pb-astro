@@ -600,6 +600,151 @@
   }
 }
 
+/* ---- Сцена «Місто зблизька» (city-heatmap) ---- */
+.mh-glmap {
+  display: none;
+}
+.mh-viz.gl .mh-glmap {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.mh-viz.gl .mh-svgwrap {
+  display: none;
+}
+/* SVG-фолбек: той самий рендер, що у віджеті, по центру sticky-екрана */
+.mh-svgwrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px clamp(16px, 4vw, 48px) 40px;
+}
+@media (min-width: 1024px) {
+  .mh-svgwrap {
+    padding-left: calc(6vw + 452px);
+  }
+}
+.mh-svg {
+  display: block;
+  width: min(760px, 100%);
+  max-height: 100%;
+  border-radius: 12px;
+  background: radial-gradient(120% 120% at 50% 0%, #43444f 0%, #2e2f38 70%);
+  padding: 8px;
+}
+.mh-hex {
+  stroke: #2e2f38;
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+  transition: fill 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mh-hex:hover {
+  stroke: #ffffff;
+  stroke-width: 1.6px;
+}
+.mh-hex:focus-visible {
+  outline: none;
+  stroke: var(--brand);
+  stroke-width: 2.4px;
+}
+/* «обрана» сота: жовтий лише з ink-тінню (канон дизайн-системи) */
+.mh-hex.is-active {
+  stroke: #ffec08;
+  stroke-width: 2.6px;
+  filter: drop-shadow(0 0 1.4px rgba(26, 26, 26, 0.75));
+}
+.mh-legend {
+  padding: 10px 14px;
+  width: min(320px, 100%);
+}
+.mh-legend-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.mh-legendbar {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin-top: 4px;
+}
+.mh-legendbar text {
+  font-size: 11px;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.mh-scenecap {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.mh-scenecap strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mh-tooltip {
+  position: absolute;
+  z-index: 8;
+  pointer-events: none;
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.12);
+  padding: 9px 12px;
+  font-size: 13px;
+}
+.mh-tooltip[hidden] {
+  display: none;
+}
+.mh-tooltip .tt-val {
+  font-family: "Phenomena", "Inter Variable", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-strong, var(--brand));
+}
+.mh-tooltip .tt-lab {
+  display: block;
+  color: var(--muted);
+  margin-top: 1px;
+}
+/* атрибуція OpenFreeMap на темній мапі */
+.mh-viz .maplibregl-ctrl-attrib {
+  font-size: 10px;
+  background: rgba(253, 253, 253, 0.75);
+}
+/* нотатка не накладається на атрибуцію OpenFreeMap унизу праворуч */
+.mh-viz .mv-note {
+  bottom: 34px;
+  color: #cacad1;
+}
+@media (max-width: 599px) {
+  .mh-legend {
+    width: min(240px, 60vw);
+    padding: 8px 10px;
+  }
+  .mh-scenecap {
+    display: none;
+  }
+  .mh-svgwrap {
+    padding: 64px 12px 34dvh;
+  }
+  /* кнопка-перемикач атрибуції — повноцінна тач-ціль */
+  .mh-viz .maplibregl-ctrl-attrib-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 /* ---- Сцена «Клуб постійних» (cohort-river) ---- */
 .cr-chart svg {
   display: block;

@@ -31,10 +31,12 @@ for (const w of WIDTHS) {
   // горизонтальний скрол?
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   // найменша «кнопкова» тач-ціль (правило ≥44px, design.md §8).
-  // Інлайн-лінки в прозі мають окреме правило (line-height+паддінг), тож виключені.
+  // Інлайн-лінки в прозі мають окреме правило (line-height+паддінг), тож виключені;
+  // те саме — текстові лінки атрибуції мапи (кнопка-перемикач ⓘ лишається під правилом).
   const minTap = await page.evaluate(() => {
     const sel = "button, summary, [role=button], a";
-    const isInlineProse = (el) => el.tagName === "A" && el.closest(".prose p, .pb-box__body");
+    const isInlineProse = (el) =>
+      el.tagName === "A" && el.closest(".prose p, .pb-box__body, .maplibregl-ctrl-attrib");
     let min = Infinity, worst = "";
     for (const el of document.querySelectorAll(sel)) {
       if (isInlineProse(el)) continue;
