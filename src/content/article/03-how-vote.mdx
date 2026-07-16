@@ -1,4 +1,5 @@
 import PullQuote from "../../components/PullQuote.astro";
+import ClockMapScene from "../../scenes/ClockMapScene";
 
 ## Як голосують
 
@@ -8,7 +9,7 @@ import PullQuote from "../../components/PullQuote.astro";
 
 Хвиля анонсу на старті працює сильніше за страх дедлайну.
 
-{/* widget: clock-map */}
+<ClockMapScene client:visible />
 
 Цей сплеск на старті не випадковий. Бюджет участі — це кампанія, і автори ведуть її як невеликі передвиборчі штаби. Готують роздаткові матеріали, знімають відеоролики, вигадують, чим зачепити сусідів і колег, а тоді запускають усе одразу, щойно відкривається голосування.
 

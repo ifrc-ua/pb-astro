@@ -5,6 +5,14 @@
   "engines": {
     "node": ">=22.12.0"
   },
+  "overrides": {
+    "@luma.gl/constants": "~9.1.2",
+    "@luma.gl/core": "~9.1.2",
+    "@luma.gl/engine": "~9.1.2",
+    "@luma.gl/shadertools": "~9.1.2",
+    "@luma.gl/webgl": "~9.1.2",
+    "@luma.gl/gltf": "~9.1.2"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
