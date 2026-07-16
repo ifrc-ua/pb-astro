@@ -607,10 +607,12 @@ function buildClock(host: HTMLElement, sectionEl: HTMLElement, DB: any, geo: any
       // мобільний: степ-картки наїжджають знизу — лишаємо мапі верхні ~2/3
       return { top: 84, bottom: Math.round(h * 0.3), left: 12, right: 12 };
     }
-    // десктоп: колонка степ-карток ліворуч (як .scene-viz), метадані згори
+    // десктоп: колонка степ-карток ліворуч (як .scene-viz); справа резерв під
+    // колонку метаданих (лічильник/легенда), щоб мапа центрувалась між ними
     const wide = window.matchMedia("(min-width: 1024px)").matches;
     const left = wide ? Math.round(window.innerWidth * 0.06) + 452 : Math.max(16, Math.min(36, w * 0.04));
-    return { top: Math.max(96, Math.min(150, h * 0.18)), bottom: Math.max(24, Math.min(48, h * 0.08)), left, right: Math.max(16, Math.min(36, w * 0.04)) };
+    const right = wide ? 300 : Math.max(16, Math.min(36, w * 0.04));
+    return { top: Math.max(88, Math.min(128, h * 0.15)), bottom: Math.max(24, Math.min(48, h * 0.08)), left, right };
   }
 
   function fitAll(animate?: boolean) {
@@ -636,6 +638,10 @@ function buildClock(host: HTMLElement, sectionEl: HTMLElement, DB: any, geo: any
     const bounds: any = [[minX, minY], [maxX, maxY]];
     state.bounds = bounds;
     const paint = themePaint();
+    // Кооперативні жести лише на тачі (один палець гортає сторінку, два — мапа).
+    // На десктопі вони перехоплюють wheel і показують оверлей «Утримуйте Ctrl»
+    // на скрол сторінки над повноекранною мапою — сцені wheel-зум не потрібен.
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
     map = new maplibregl.Map({
       container: el.map,
       style: {
@@ -656,7 +662,7 @@ function buildClock(host: HTMLElement, sectionEl: HTMLElement, DB: any, geo: any
       pitchWithRotate: false,
       touchPitch: false,
       attributionControl: false,
-      cooperativeGestures: true,
+      cooperativeGestures: coarse,
       locale: {
         "CooperativeGesturesHandler.WindowsHelpText": "Утримуйте Ctrl і прокручуйте, щоб масштабувати мапу",
         "CooperativeGesturesHandler.MacHelpText": "Утримуйте ⌘ і прокручуйте, щоб масштабувати мапу",
@@ -664,6 +670,9 @@ function buildClock(host: HTMLElement, sectionEl: HTMLElement, DB: any, geo: any
       },
     });
     map.touchZoomRotate.disableRotation();
+    // Скрол сторінки над мапою ніколи не зумить: і в кроках, і у вільному
+    // режимі зум — кнопками/pinch/double-click, а wheel гортає статтю
+    map.scrollZoom.disable();
     filterExt = new DataFilterExtension({ filterSize: 1 });
     overlay = new MapboxOverlay({ interleaved: false, layers: [] });
     map.addControl(overlay);

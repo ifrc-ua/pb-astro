@@ -105,6 +105,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
   let ro: ResizeObserver | null = null;
   let refitTimer: ReturnType<typeof setTimeout> | undefined;
   let topTipTimer: ReturnType<typeof setTimeout> | undefined;
+  let camTimer: ReturnType<typeof setTimeout> | undefined;
 
   // найгустіша сота — «обрана» на кроці контрастів
   const topHex = M.hexes.reduce((a: any, b: any) => (a.people > b.people ? a : b));
@@ -137,6 +138,10 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
   function initGLMap() {
     const { maplibregl, MapboxOverlay } = libs!;
     const [[minX, minY], [maxX, maxY]] = M.bounds;
+    // Кооперативні жести лише на тачі (один палець гортає сторінку, два — мапа).
+    // На десктопі вони перехоплюють wheel і показують оверлей «Утримуйте Ctrl»
+    // на скрол сторінки над повноекранною мапою — сцені wheel-зум не потрібен.
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
     map = new maplibregl.Map({
       container: els.glMap,
       style: CONFIG.STYLE_URL,
@@ -149,7 +154,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       pitchWithRotate: false,
       touchPitch: false,
       attributionControl: { compact: true },
-      cooperativeGestures: true,
+      cooperativeGestures: coarse,
       locale: {
         "CooperativeGesturesHandler.WindowsHelpText": "Утримуйте Ctrl і прокручуйте, щоб масштабувати мапу",
         "CooperativeGesturesHandler.MacHelpText": "Утримуйте ⌘ і прокручуйте, щоб масштабувати мапу",
@@ -157,6 +162,9 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       },
     });
     map.touchZoomRotate.disableRotation();
+    // Скрол сторінки над мапою ніколи не зумить мапу: камерою керують кроки,
+    // а wheel (зокрема тачпад-pinch як Ctrl+wheel) гортає статтю далі
+    map.scrollZoom.disable();
     overlay = new MapboxOverlay({
       interleaved: false,
       layers: buildHexLayers(),
@@ -446,6 +454,16 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     }
   }
 
+  // Дебаунс камери: при швидкому скролі кроки миготять частіше, ніж триває
+  // політ (1400 мс), і перервані flyTo смикають мапу туди-сюди. Летимо лише
+  // до кроку, на якому читач реально зупинився.
+  function scheduleCamera(i: number) {
+    clearTimeout(camTimer);
+    camTimer = setTimeout(() => {
+      if (!disposed && state.step === i) applyCamera(i);
+    }, 220);
+  }
+
   function applyStep(i: number) {
     state.step = i;
     if (state.mode === "svg") {
@@ -458,17 +476,17 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     if (i === 2) {
       state.active = topHex.hex_id;
       overlay.setProps({ layers: buildHexLayers() });
-      applyCamera(2);
+      scheduleCamera(2);
       // тултип — після прибуття камери; таймер надійніший за once("moveend"),
       // який губиться, коли maplibre скорочує анімацію
       clearTimeout(topTipTimer);
       topTipTimer = setTimeout(() => {
         if (!disposed && state.step === 2) showTopTooltip();
-      }, 1600);
+      }, 1850);
     } else {
       clearTimeout(topTipTimer);
       clearActive();
-      applyCamera(i);
+      scheduleCamera(i);
     }
   }
 
@@ -478,6 +496,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       disposed = true;
       clearTimeout(refitTimer);
       clearTimeout(topTipTimer);
+      clearTimeout(camTimer);
       teardownGL();
     },
   };
