@@ -2,7 +2,11 @@
 // Вбудований віджет (same-origin iframe) з авторозміром висоти через postMessage.
 // Три режими:
 //   • auto (типово)  — висота приходить від віджета ({type:'pb-embed-height', height}).
-//   • fullscreen     — 100dvh, внутрішній скрол (rules-timeline).
+//   • fullscreen     — віджет має власний повноекранний режим: у сторінці показує
+//                      компактний тизер (авторозмір), а кнопка «На весь екран» відкриває
+//                      справжній фулскрін браузера (Fullscreen API). Тож iframe дістає
+//                      allow="fullscreen"; висота — по тизеру (НЕ 100dvh, інакше під
+//                      тизером зяяв би пустий екран). rules-timeline.
 //   • height="…"     — явна висота для «повноекранних» віджетів (мапи: overflow:hidden,
 //                      #map absolute — власної висоти контенту не мають, тож авторозмір
 //                      їм нічого корисного не дасть).
@@ -20,7 +24,7 @@ const src = `/widgets/${name}/index.html`;
 // Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета):
 //   WIDE   — грід 7fr/5fr при min-width:1024px, внутрішня стеля 1280px
 //   MEDIUM — самообмежені (flows ~980px) і постер spotlight (фікс. висота 560px)
-//   NARROW — прості чарти зі стелею 760px (тайли, скатер, смуги) — ~як зараз
+//   NARROW — прості чарти зі стелею 760px (тайли, скатер, смуги, тизер rules-timeline)
 const WIDE = 1280;
 const MEDIUM = 1040;
 const NARROW = 860;
@@ -34,11 +38,12 @@ const MAX_WIDTH: Record<string, number> = {
   "at-a-glance": NARROW,
   "votes-vs-money": NARROW,
   "budget-bars": NARROW,
+  "rules-timeline": NARROW,
 };
 const wMax = MAX_WIDTH[name] ?? WIDE;
 ---
 <figure
-  class:list={["pb-widget", { "pb-widget--full": fullscreen, "pb-widget--fixed": !!height }]}
+  class:list={["pb-widget", { "pb-widget--fixed": !!height }]}
   style={`--w-max:${wMax}px`}
 >
   <iframe
@@ -46,6 +51,7 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
     title={title}
     loading="lazy"
     data-widget={name}
+    allow={fullscreen ? "fullscreen" : undefined}
     style={height ? `height:${height}` : undefined}
   ></iframe>
   <figcaption><a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a></figcaption>
@@ -55,11 +61,6 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
   /* Мобільний / базовий (<1024px): вертикальна колонка в потоці тексту. */
   .pb-widget { margin: 2.5rem 0; max-width: 860px; margin-inline: auto; padding-inline: 24px; }
   .pb-widget iframe { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--card); }
-  /* Fullscreen (rules-timeline) — повноекранна секція КРАЙ-У-КРАЙ на всіх ширинах
-     (спека §3.5), а не картка в колонці: 100vw, 100dvh, без --w-max і паддінгів.
-     html{overflow-x:clip} у global.css гасить зазор 100vw. Авторозміру не стосується. */
-  .pb-widget--full { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); padding-inline: 0; }
-  .pb-widget--full iframe { height: 100dvh; border-radius: 0; max-width: none; }
   /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
   .pb-widget--fixed iframe { min-height: 420px; }
   :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
@@ -71,14 +72,14 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
      вбудований двоколонковий макет віджета. Ширина iframe/підпису — per-widget через
      --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw. */
   @media (min-width: 1024px) {
-    .pb-widget:not(.pb-widget--full) {
+    .pb-widget {
       width: 100vw;
       max-width: none;
       margin-inline: calc(50% - 50vw);
       padding-inline: clamp(16px, 2vw, 40px);
     }
-    .pb-widget:not(.pb-widget--full) > iframe,
-    .pb-widget:not(.pb-widget--full) > figcaption {
+    .pb-widget > iframe,
+    .pb-widget > figcaption {
       max-width: var(--w-max, 1280px);
       margin-inline: auto;
     }
@@ -87,7 +88,7 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
 
 <script>
   // Один слухач на сторінку матчить event.source з iframe і виставляє висоту.
-  // Fullscreen і fixed-height iframe не перекриваються (виключені із селектора).
+  // Fixed-height iframe (мапи) виключені — їхня висота задана пропом height.
   interface PbEmbedMsg { type: string; height: number }
   const w = window as unknown as { __pbEmbed?: boolean };
   if (!w.__pbEmbed) {
@@ -96,7 +97,7 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
       const data = e.data as PbEmbedMsg | null;
       if (!data || data.type !== "pb-embed-height") return;
       const frames = document.querySelectorAll<HTMLIFrameElement>(
-        "figure.pb-widget:not(.pb-widget--full):not(.pb-widget--fixed) iframe"
+        "figure.pb-widget:not(.pb-widget--fixed) iframe"
       );
       for (const f of frames) {
         if (f.contentWindow === e.source) f.style.height = `${data.height}px`;
