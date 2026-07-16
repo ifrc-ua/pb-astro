@@ -6,23 +6,53 @@
 //   • height="…"     — явна висота для «повноекранних» віджетів (мапи: overflow:hidden,
 //                      #map absolute — власної висоти контенту не мають, тож авторозмір
 //                      їм нічого корисного не дасть).
+//
+// Ширина (Task F1): на десктопі (≥1024px) віджет виводиться широко, поза колонкою
+// тексту (той самий full-bleed, що в .scene), щоб ширина iframe перевалила за 1024px і
+// всередині віджета сам увімкнувся двоколонковий макет «чарт + панель» (як на PB10).
+// Ширина обгортки — per-widget через --w-max: віджети з двоколонковим гридом (7fr/5fr
+// при ≥1024px) отримують повну ширину; прості чарти, що самі себе обмежують, лишаються
+// вужчими, щоб не плавати в порожнечі. На мобільному (<1024px) — вертикальна колонка.
 interface Props { name: string; title: string; fullscreen?: boolean; height?: string }
 const { name, title, fullscreen = false, height } = Astro.props;
 const src = `/widgets/${name}/index.html`;
-const initialStyle = height ? `height:${height}` : undefined;
+
+// Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета):
+//   WIDE   — грід 7fr/5fr при min-width:1024px, внутрішня стеля 1280px
+//   MEDIUM — самообмежені (flows ~980px) і постер spotlight (фікс. висота 560px)
+//   NARROW — прості чарти зі стелею 760px (тайли, скатер, смуги) — ~як зараз
+const WIDE = 1280;
+const MEDIUM = 1040;
+const NARROW = 860;
+const MAX_WIDTH: Record<string, number> = {
+  "who-builds": WIDE,
+  "digital-divide": WIDE,
+  "communities-projects": WIDE,
+  "vote-breadth": WIDE,
+  "flows": MEDIUM,
+  "spotlight": MEDIUM,
+  "at-a-glance": NARROW,
+  "votes-vs-money": NARROW,
+  "budget-bars": NARROW,
+};
+const wMax = MAX_WIDTH[name] ?? WIDE;
 ---
-<figure class:list={["pb-widget", { "pb-widget--full": fullscreen, "pb-widget--fixed": !!height }]}>
+<figure
+  class:list={["pb-widget", { "pb-widget--full": fullscreen, "pb-widget--fixed": !!height }]}
+  style={`--w-max:${wMax}px`}
+>
   <iframe
     src={src}
     title={title}
     loading="lazy"
     data-widget={name}
-    style={initialStyle}
+    style={height ? `height:${height}` : undefined}
   ></iframe>
   <figcaption><a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a></figcaption>
 </figure>
 
 <style>
+  /* Мобільний / базовий (<1024px): вертикальна колонка в потоці тексту. */
   .pb-widget { margin: 2.5rem 0; max-width: 860px; margin-inline: auto; padding-inline: 24px; }
   .pb-widget iframe { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--card); }
   .pb-widget--full iframe { height: 100dvh; border-radius: 0; }
@@ -32,6 +62,24 @@ const initialStyle = height ? `height:${height}` : undefined;
   figcaption { text-align: right; font-size: 13px; margin-top: 2px; }
   /* Тач-ціль лінка ≥44px на мобільному (design.md §8) без роздування тексту */
   figcaption a { display: inline-block; padding: 14px 4px; }
+
+  /* Десктоп (≥1024px): вивід поза колонкою тексту (full-bleed, як .scene) — вмикає
+     вбудований двоколонковий макет віджета. Ширина iframe/підпису — per-widget через
+     --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw.
+     Fullscreen (rules-timeline) не чіпаємо — лишається у своєму режимі. */
+  @media (min-width: 1024px) {
+    .pb-widget:not(.pb-widget--full) {
+      width: 100vw;
+      max-width: none;
+      margin-inline: calc(50% - 50vw);
+      padding-inline: clamp(16px, 2vw, 40px);
+    }
+    .pb-widget:not(.pb-widget--full) > iframe,
+    .pb-widget:not(.pb-widget--full) > figcaption {
+      max-width: var(--w-max, 1280px);
+      margin-inline: auto;
+    }
+  }
 </style>
 
 <script>
