@@ -55,7 +55,11 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
   /* Мобільний / базовий (<1024px): вертикальна колонка в потоці тексту. */
   .pb-widget { margin: 2.5rem 0; max-width: 860px; margin-inline: auto; padding-inline: 24px; }
   .pb-widget iframe { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--card); }
-  .pb-widget--full iframe { height: 100dvh; border-radius: 0; }
+  /* Fullscreen (rules-timeline) — повноекранна секція КРАЙ-У-КРАЙ на всіх ширинах
+     (спека §3.5), а не картка в колонці: 100vw, 100dvh, без --w-max і паддінгів.
+     html{overflow-x:clip} у global.css гасить зазор 100vw. Авторозміру не стосується. */
+  .pb-widget--full { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); padding-inline: 0; }
+  .pb-widget--full iframe { height: 100dvh; border-radius: 0; max-width: none; }
   /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
   .pb-widget--fixed iframe { min-height: 420px; }
   :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
@@ -65,8 +69,7 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
 
   /* Десктоп (≥1024px): вивід поза колонкою тексту (full-bleed, як .scene) — вмикає
      вбудований двоколонковий макет віджета. Ширина iframe/підпису — per-widget через
-     --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw.
-     Fullscreen (rules-timeline) не чіпаємо — лишається у своєму режимі. */
+     --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw. */
   @media (min-width: 1024px) {
     .pb-widget:not(.pb-widget--full) {
       width: 100vw;
