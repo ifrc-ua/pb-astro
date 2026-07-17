@@ -619,7 +619,8 @@
 .mh-viz.gl .mh-svgwrap {
   display: none;
 }
-/* SVG-фолбек: той самий рендер, що у віджеті, по центру sticky-екрана */
+/* SVG-фолбек: той самий рендер, що у віджеті, по центру sticky-екрана;
+   фон — темний на весь екран, як у GL-сцени (не «картинка в рамці») */
 .mh-svgwrap {
   position: absolute;
   inset: 0;
@@ -627,6 +628,7 @@
   align-items: center;
   justify-content: center;
   padding: 72px clamp(16px, 4vw, 48px) 40px;
+  background: #16161d;
 }
 @media (min-width: 1024px) {
   .mh-svgwrap {
@@ -637,8 +639,6 @@
   display: block;
   width: min(760px, 100%);
   max-height: 100%;
-  border-radius: 12px;
-  background: radial-gradient(120% 120% at 50% 0%, #43444f 0%, #2e2f38 70%);
   padding: 8px;
 }
 .mh-hex {
@@ -729,10 +729,13 @@
   font-size: 10px;
   background: rgba(253, 253, 253, 0.75);
 }
-/* нотатка не накладається на атрибуцію OpenFreeMap унизу праворуч */
+/* нотатка не накладається на атрибуцію OpenFreeMap унизу праворуч;
+   більша і контрастніша за базову — на темній мапі 11px губився */
 .mh-viz .mv-note {
   bottom: 34px;
-  color: #cacad1;
+  font-size: 13px;
+  color: #e2e2e6;
+  max-width: 52ch;
 }
 @media (max-width: 599px) {
   .mh-legend {

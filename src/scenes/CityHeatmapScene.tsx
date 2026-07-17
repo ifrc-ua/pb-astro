@@ -1,8 +1,9 @@
 // Сцена «Місто зблизька»: скрол-керована теплова H3-мапа виборців міста.
 // Порт рендера віджета «Де живуть виборці» (pb-kurs/city-heatmap/app.js):
 // модель і шкала 1:1 (корінь-шкала на 5 стопах choropleth, design-data §8),
-// maplibre dark (OpenFreeMap) + вуаль + deck.gl H3HexagonLayer; SVG-фолбек
-// віджета перенесено разом — без WebGL кроки перемикають стани SVG.
+// maplibre dark (OpenFreeMap) + вуаль + deck.gl H3HexagonLayer. Якщо тайли
+// не догрузились, а WebGL живий — GL лишається на локальному темному тлі
+// (без мережі); SVG-фолбек віджета — лише зовсім без WebGL.
 // Камера статична: один кадр міста (fitBounds на ініціалізації та resize);
 // кроки не літають камерою, а перемикають лише підсвітку — на кроці (3)
 // найгустіша сота стає «обраною» (жовтий лише з ink-обводкою) з тултипом.
@@ -134,7 +135,15 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     return { top: Math.max(90, Math.min(140, h * 0.16)), bottom: Math.max(24, Math.min(48, h * 0.08)), left, right: Math.max(16, Math.min(36, w * 0.04)) };
   }
 
-  function initGLMap() {
+  // Локальний стиль без мережі: коли тайли OpenFreeMap не догрузились, сцена
+  // не деградує до SVG-картинки, а лишає deck.gl-соти на темному тлі
+  const LOCAL_DARK_STYLE = {
+    version: 8,
+    sources: {},
+    layers: [{ id: "bg", type: "background", paint: { "background-color": CONFIG.VEIL.color } }],
+  };
+
+  function initGLMap(style: string | object) {
     const { maplibregl, MapboxOverlay } = libs!;
     const [[minX, minY], [maxX, maxY]] = M.bounds;
     // Кооперативні жести лише на тачі (один палець гортає сторінку, два — мапа).
@@ -143,7 +152,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     map = new maplibregl.Map({
       container: els.glMap,
-      style: CONFIG.STYLE_URL,
+      style: style as any,
       bounds: M.bounds,
       fitBoundsOptions: { padding: scenePadding() },
       maxBounds: [[minX - 0.18, minY - 0.12], [maxX + 0.18, maxY + 0.12]],
@@ -484,11 +493,19 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       state.mode = "gl";
       host.classList.add("gl");
       try {
-        await initGLMap();
+        await initGLMap(CONFIG.STYLE_URL);
       } catch (e) {
-        console.warn("Мапа-підложка недоступна, вмикаю SVG-фолбек:", e);
+        // тайли/стиль не догрузились — WebGL живий, тож лишаємо GL-сцену
+        // на локальному темному тлі (та сама мапа, лише без вулиць-підложки)
+        console.warn("Тайли OpenFreeMap недоступні, GL на локальному тлі:", e);
         teardownGL();
-        startSVGFallback();
+        try {
+          await initGLMap(LOCAL_DARK_STYLE);
+        } catch (e2) {
+          console.warn("Мапа-підложка недоступна, вмикаю SVG-фолбек:", e2);
+          teardownGL();
+          startSVGFallback();
+        }
       }
     } else {
       startSVGFallback();
