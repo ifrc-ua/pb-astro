@@ -225,7 +225,7 @@ svg#map{ display:block; width:100%; height:auto; max-height:82vh; }
 .donut-title{ font-size:13px; font-weight:700; margin:0 0 2px; }
 .donut-svg{ display:block; width:100%; height:auto; }
 .donut-arc{
-  stroke:var(--p50); stroke-width:1px; cursor:pointer;
+  stroke:var(--p50); stroke-width:0.5px; cursor:pointer;
   transition:opacity 150ms ease-out;
 }
 .donut-arc:hover{ opacity:0.82; }

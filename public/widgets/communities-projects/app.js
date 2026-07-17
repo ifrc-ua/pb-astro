@@ -553,9 +553,9 @@ function donutBlock(title, byCat, total, precat, idp) {
 
 function donutSVG(segs, sum, idp) {
   const W = 120, H = 68, R = 32, r = 21;
-  const pie = d3.pie().value(s => s.n).sort(null).padAngle(.012);
+  const pie = d3.pie().value(s => s.n).sort(null).padAngle(.004);
   const arcs = pie(segs);
-  const arc = d3.arc().innerRadius(r).outerRadius(R).cornerRadius(2);
+  const arc = d3.arc().innerRadius(r).outerRadius(R).cornerRadius(1);
   let s = `<svg class="donut-svg" viewBox="0 0 ${W} ${H}" role="img"\n    aria-label="${segs.map(x => `${x.label}: ${fmtInt(x.n)}`).join(", ")}">`;
   s += `<g transform="translate(${W / 2},${H / 2})">`;
   arcs.forEach((a, i) => {
