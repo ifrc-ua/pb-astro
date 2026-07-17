@@ -1,6 +1,7 @@
 ---
 // Велика врізка (pull-quote) з рядків `> ВРІЗКА:` канону.
-// Phenomena, ліва лінія-акцент кольору бренду. Текст — у слоті.
+// Формат як у публікації на КУРСі: світла панель, жовта смуга-акцент зліва,
+// жирний текст основним шрифтом. Текст — у слоті.
 ---
 <blockquote class="pull-quote">
   <p><slot /></p>
@@ -10,23 +11,16 @@
   .pull-quote {
     max-width: 680px;
     margin: 2.2rem auto;
-    padding: 18px 24px;
-    border-left: 4px solid var(--brand);
-    border-radius: 0 12px 12px 0;
-    /* Ледь жовтий фон — врізка відділяється від потоку тексту */
-    background: #fff9e8;
-  }
-  /* Нічна тема: той самий «теплий» тон, але темний — світлий фон з'їв би контраст */
-  :global(:root[data-theme="dark"]) .pull-quote {
-    background: color-mix(in srgb, #ffec08 7%, var(--canvas));
+    padding: 22px 28px;
+    border-left: 6px solid var(--accent);
+    border-radius: 0 16px 16px 0;
+    background: var(--panel);
   }
   .pull-quote p {
     margin: 0;
-    font-family: "Phenomena", "Inter Variable", sans-serif;
     font-weight: 700;
-    font-size: clamp(24px, 4.2vw, 40px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(19px, 3vw, 24px);
+    line-height: 1.35;
     color: var(--ink);
     text-wrap: balance;
   }

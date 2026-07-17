@@ -552,7 +552,7 @@ function donutBlock(title, byCat, total, precat, idp) {
 }
 
 function donutSVG(segs, sum, idp) {
-  const W = 220, H = 68, R = 32, r = 21;
+  const W = 120, H = 68, R = 32, r = 21;
   const pie = d3.pie().value(s => s.n).sort(null).padAngle(.012);
   const arcs = pie(segs);
   const arc = d3.arc().innerRadius(r).outerRadius(R).cornerRadius(2);

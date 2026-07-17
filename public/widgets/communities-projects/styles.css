@@ -217,12 +217,9 @@ svg#map{ display:block; width:100%; height:auto; max-height:82vh; }
 .hero-percap.dim{ color:var(--n500); font-style:italic; }
 
 .donuts{
-  display:grid; grid-template-columns:1fr; gap:8px;
+  display:grid; grid-template-columns:1fr 1fr; gap:12px;
   margin-top:16px; border-top:1px solid var(--p100); padding-top:14px;
 }
-@media (min-width: 560px){ .donuts{ grid-template-columns:1fr 1fr; gap:12px; } }
-@media (min-width: 1024px){ .donuts{ grid-template-columns:1fr; } }
-@media (min-width: 1480px){ .donuts{ grid-template-columns:1fr 1fr; } }
 
 .donut-block{ min-width:0; }
 .donut-title{ font-size:13px; font-weight:700; margin:0 0 2px; }

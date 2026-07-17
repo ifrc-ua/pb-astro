@@ -15,10 +15,15 @@ const { summary, open = false } = Astro.props;
     max-width: 680px;
     margin: 1.8rem auto;
     padding: 4px 24px;
-    background: var(--panel);
-    /* Помітніша плашка: рамка від ink (адаптується до теми) + легка тінь level-2,
-       щоб блок не губився на тлі тексту */
-    border: 1px solid color-mix(in srgb, var(--ink) 20%, var(--panel));
+    /* Фірмовий фіолетовий з білим текстом — однаковий в обох темах,
+       тож токени фіксуємо локально; #FDFDFD на #654EA3 = 6.7:1 AA.
+       Лінки — блідо-жовті (secondary-100), інакше на фіолетовому їх не видно. */
+    background: #654EA3;
+    --ink: #FDFDFD;
+    --link: #FFF9B3;
+    --line: rgba(253, 253, 253, 0.3);
+    color: var(--ink);
+    border: 1px solid #4E3C84;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(26, 26, 26, 0.06);
   }
@@ -76,5 +81,6 @@ const { summary, open = false } = Astro.props;
     background: var(--accent);
     border: 1px solid #1a1a1a;
   }
-  .pb-box > summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+  /* Фокус на фіолетовому тлі — світлий, брендовий фіолет тут невидимий */
+  .pb-box > summary:focus-visible { outline: 2px solid #FFF9B3; outline-offset: 2px; border-radius: 4px; }
 </style>
