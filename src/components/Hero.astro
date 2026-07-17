@@ -1,36 +1,276 @@
 ---
-// Хіро статті: заголовок, дек, три ключові числа з сигнатурним count-up.
-// Текст — з канону content.md; числа й підписи — за спекою §2.
-const stats = [
-  { value: 1565, label: "проєктів" },
-  { value: 781, label: "тисяч голосів" },
-  { value: 110, label: "тисяч виборців" },
+// Хедер за мотивами OG-картинки post_1200x630_ua: зліва айбров + Phenomena-заголовок +
+// жовта риска + рядок канонічних чисел із сигнатурним count-up; справа — SVG-композиція
+// з /data/city_heatmap.json: гекс-мозаїка міста (корінь-шкала, як у віджеті-мапі),
+// крапки-голоси, гекси-села, 4 жовті гекси з ink-обводкою (§7).
+// Анімації — два CSS-шари (§12): крапки по периметру + хвиля підсвітки сот.
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+type Hex = { hex_id: string; boundary: [number, number][]; people: number };
+// шлях від кореня проєкту: під час пререндеру import.meta.url вказує в dist/.prerender
+const heatmap = JSON.parse(
+  readFileSync(path.resolve(process.cwd(), "public/data/city_heatmap.json"), "utf8"),
+);
+const hexes = heatmap.hexes as Hex[];
+
+// Проєкція lon/lat → viewBox 720×640: еквідистантна з поправкою cos(lat),
+// масив міста вписано праворуч, ліворуч лишається поле для хмари крапок.
+const W = 720, H = 640;
+const allPts = hexes.flatMap((h) => h.boundary);
+const lat0 = allPts.reduce((s, p) => s + p[1], 0) / allPts.length;
+const kx = Math.cos((lat0 * Math.PI) / 180);
+const xs = allPts.map((p) => p[0] * kx);
+const ys = allPts.map((p) => -p[1]);
+const minX = Math.min(...xs), maxX = Math.max(...xs);
+const minY = Math.min(...ys), maxY = Math.max(...ys);
+const FIT = { x: 262, y: 56, w: 366, h: 520 };
+const s = Math.min(FIT.w / (maxX - minX), FIT.h / (maxY - minY));
+const ox = FIT.x + (FIT.w - (maxX - minX) * s) / 2;
+const oy = FIT.y + (FIT.h - (maxY - minY) * s) / 2;
+const px = (lon: number) => +((lon * kx - minX) * s + ox).toFixed(1);
+const py = (lat: number) => +((-lat - minY) * s + oy).toFixed(1);
+// фактичний bbox масиву міста — якір для сіл і хмари крапок
+const cb = { x: ox, y: oy, w: (maxX - minX) * s, h: (maxY - minY) * s };
+
+// Соти міста: корінь-шкала (розподіл скошений, див. meta.note_metric) → 6 бінів Primary-ряду
+const pMin = Math.min(...hexes.map((h) => h.people));
+const pMax = Math.max(...hexes.map((h) => h.people));
+const bin = (p: number) =>
+  Math.min(5, Math.floor(((Math.sqrt(p) - Math.sqrt(pMin)) / (Math.sqrt(pMax) - Math.sqrt(pMin))) * 6));
+const cells = hexes.map((h) => ({
+  pts: h.boundary.map(([lon, lat]) => `${px(lon)},${py(lat)}`).join(" "),
+  bin: bin(h.people),
+  cx: h.boundary.reduce((acc, p) => acc + px(p[0]), 0) / 6,
+  cy: h.boundary.reduce((acc, p) => acc + py(p[1]), 0) / 6,
+}));
+
+// 2 жовті соти в масиві міста (акцент «важливе», §7 — завжди з ink-обводкою)
+const nearest = (tx: number, ty: number) =>
+  cells.reduce(
+    (bi, c, i) =>
+      (c.cx - tx) ** 2 + (c.cy - ty) ** 2 < (cells[bi].cx - tx) ** 2 + (cells[bi].cy - ty) ** 2 ? i : bi,
+    0,
+  );
+const yellowCells = [
+  nearest(cb.x + cb.w * 0.62, cb.y + cb.h * 0.38),
+  nearest(cb.x + cb.w * 0.44, cb.y + cb.h * 0.74),
 ];
+
+// Хвиля підсвітки: ~16 сот рівним кроком по масиву (він відсортований за people,
+// тож крок дає клітини, розкидані по всьому місту); жовті не блимають
+const glow = cells
+  .map((_, i) => i)
+  .filter((i) => i % 17 === 5 && !yellowCells.includes(i))
+  .slice(0, 16);
+
+// Детермінований PRNG (mulberry32): композиція стабільна між збірками
+let seed = 20260717;
+const rand = () => {
+  seed |= 0;
+  seed = (seed + 0x6d2b79f5) | 0;
+  let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+const gauss = () => {
+  let u = 0, v = 0;
+  while (!u) u = rand();
+  while (!v) v = rand();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+};
+const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
+
+// Крапки-голоси: щільна хмара ліворуч від масиву + рідкий розсип по всьому полю
+const dotCls = () => (rand() < 0.4 ? "dA" : rand() < 0.7 ? "dB" : "dC");
+const dots = [
+  ...Array.from({ length: 200 }, () => ({
+    x: +clamp(cb.x - 62 + gauss() * 54, 26, cb.x + 42).toFixed(1),
+    y: +clamp(cb.y + cb.h * 0.52 + gauss() * 118, 30, H - 28).toFixed(1),
+    r: +(1 + rand() * 1.6).toFixed(1),
+    o: +(0.3 + rand() * 0.5).toFixed(2),
+    c: dotCls(),
+  })),
+  ...Array.from({ length: 110 }, () => ({
+    x: +(30 + rand() * (W - 64)).toFixed(1),
+    y: +(28 + rand() * (H - 60)).toFixed(1),
+    r: +(0.8 + rand() * 1.2).toFixed(1),
+    o: +(0.14 + rand() * 0.28).toFixed(2),
+    c: dotCls(),
+  })),
+];
+
+// Гекси-села: плоскодахі шестикутники по периферії масиву (частки bbox міста);
+// два верхньо-праві — жовті села-переможці, як в OG
+const hexPts = (cx: number, cy: number, r: number) =>
+  Array.from({ length: 6 }, (_, k) => {
+    const a = (Math.PI / 3) * k;
+    return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
+  }).join(" ");
+const villages = [
+  { fx: 1.04, fy: -0.03, r: 14, cls: "vY" },
+  { fx: 0.93, fy: 0.07, r: 12, cls: "vY" },
+  { fx: 1.13, fy: 0.16, r: 11, cls: "v0" },
+  { fx: 1.11, fy: 0.36, r: 13, cls: "v1" },
+  { fx: 1.15, fy: 0.55, r: 10, cls: "v0" },
+  { fx: 1.03, fy: 0.74, r: 12, cls: "v2" },
+  { fx: 0.87, fy: 0.96, r: 14, cls: "v1" },
+  { fx: 0.58, fy: 1.05, r: 12, cls: "v0" },
+  { fx: 0.3, fy: 0.99, r: 13, cls: "v1" },
+  { fx: 0.06, fy: 0.82, r: 11, cls: "v0" },
+].map((v) => ({
+  cls: v.cls,
+  pts: hexPts(clamp(cb.x + v.fx * cb.w, 22, W - 22), clamp(cb.y + v.fy * cb.h, 22, H - 22), v.r),
+}));
+
+// Крапки по периметру хедера: повільні (70–130 с/коло), різні фази й розміри
+const orbit = Array.from({ length: 7 }, (_, i) => ({
+  d: 70 + i * 10,
+  ph: -(i * 17),
+  s: 4 + (i % 3),
+  o: 0.18 + (i % 4) * 0.08,
+}));
 ---
 <section class="hero">
-  <h1 class="display hero__title">Десять весен івано-франківського бюджету участі</h1>
-  <p class="hero__dek">
-    Франківці голосують на старті кампанії, громаду творять жінки, а малі села активніші
-    за місто: що дані десяти років кажуть про головний експеримент місцевої демократії.
-  </p>
-  <div class="hero__stats">
-    {stats.map((s, i) => (
-      <div class="hero__stat">
-        <span class="stat-number" data-countup={s.value} data-stagger={i * 100}>0</span>
-        <span class="hero__stat-label">{s.label}</span>
-      </div>
-    ))}
+  <div class="hero__orbit" aria-hidden="true">
+    {orbit.map((o) => <span style={`--d:${o.d}s; --ph:${o.ph}s; --s:${o.s}px; --o:${o.o}`}></span>)}
+  </div>
+  <div class="hero__copy">
+    <p class="hero__eyebrow">Бюджет участі&nbsp;· Івано-Франківськ</p>
+    <h1 class="display hero__title">Десять весен бюджету участі</h1>
+    <div class="hero__bar" aria-hidden="true"></div>
+    <p class="hero__stats">
+      <span class="unit"><span class="n" data-countup="1565">0</span>&nbsp;проєктів</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="unit"><span class="n" data-countup="781" data-stagger="120">0</span>&nbsp;тис. голосів</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="n">2016–2026</span>
+    </p>
+  </div>
+  <div class="hero__art">
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      role="img"
+      aria-label="Гекс-мозаїка Івано-Франківська: де живуть виборці бюджету участі. Фіолетові соти — місто, окремі гекси — села, жовті — акценти."
+    >
+      <g>{dots.map((d) => <circle class={d.c} cx={d.x} cy={d.y} r={d.r} fill-opacity={d.o} />)}</g>
+      <g>{villages.map((v) => <polygon class={v.cls} points={v.pts} />)}</g>
+      <g>{cells.map((c, i) => !yellowCells.includes(i) && <polygon class={`hx b${c.bin}`} points={c.pts} />)}</g>
+      <g>{yellowCells.map((i) => <polygon class="hxY" points={cells[i].pts} />)}</g>
+      <g>{glow.map((i, k) => <polygon class="glow" points={cells[i].pts} style={`--i:${k}`} />)}</g>
+    </svg>
   </div>
 </section>
 
 <style>
-  .hero { max-width: 900px; margin-inline: auto; padding: 12dvh 24px 8dvh; text-align: center; }
-  .hero__title { font-weight: 900; font-size: clamp(40px, 8vw, 96px); line-height: 1.0; margin: 0; }
-  .hero__dek { max-width: 640px; margin: 1.4em auto 0; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; color: var(--muted); }
-  .hero__stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 48px; margin-top: 8dvh; }
-  .hero__stat { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .hero__stat .stat-number { font-size: clamp(48px, 9vw, 72px); color: var(--brand); }
-  .hero__stat-label { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .hero {
+    position: relative;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: clamp(72px, 12dvh, 128px) 24px 40px;
+    display: grid;
+    grid-template-columns: minmax(320px, 5fr) 6fr;
+    gap: 24px 40px;
+    align-items: center;
+  }
+  .hero__copy { min-width: 0; position: relative; z-index: 1; }
+  .hero__eyebrow {
+    margin: 0 0 20px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--brand);
+  }
+  .hero__title { margin: 0; font-weight: 900; font-size: clamp(48px, 6.4vw, 88px); line-height: 0.98; }
+  /* жовта риска — жовте завжди з ink-обводкою (design.md §7) */
+  .hero__bar { width: 128px; height: 10px; margin-top: 30px; background: #FFEC08; border: 1px solid #1A1A1A; }
+  .hero__stats { margin: 26px 0 0; font-size: 17px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+  .hero__stats .n, .hero__stats .unit { white-space: nowrap; }
+  .hero__stats .n { font-weight: 700; }
+  .hero__stats .sep { color: var(--muted); margin-inline: 8px; }
+  .hero__art { min-width: 0; }
+  .hero__art svg { display: block; width: 100%; height: auto; }
+
+  /* Мозаїка міста: корінь-шкала Primary-ряду (хороплет — один колір, §7) */
+  .hx { stroke: var(--canvas); stroke-width: 0.5; }
+  .b0 { fill: #EEEAF7; }
+  .b1 { fill: #C6BADF; }
+  .b2 { fill: #9C8BCC; }
+  .b3 { fill: #7B66B8; }
+  .b4 { fill: #654EA3; }
+  .b5 { fill: #4E3C84; }
+  /* Жовті гекси (соти міста і села-переможці) — ink-обводка 1.25px обовʼязкова */
+  .hxY, .vY { fill: #FFEC08; stroke: #1A1A1A; stroke-width: 1.25; stroke-linejoin: round; }
+  .v0 { fill: #9C8BCC; }
+  .v1 { fill: #7B66B8; }
+  .v2 { fill: #654EA3; }
+  .dA { fill: #654EA3; }
+  .dB { fill: #7B66B8; }
+  .dC { fill: #9C8BCC; }
+
+  /* Темна тема: обернений фіолетовий ряд, жовте лишається з тим самим ink */
+  :global(:root[data-theme="dark"]) .b0 { fill: #2B2545; }
+  :global(:root[data-theme="dark"]) .b1 { fill: #3B3163; }
+  :global(:root[data-theme="dark"]) .b2 { fill: #4E3C84; }
+  :global(:root[data-theme="dark"]) .b3 { fill: #654EA3; }
+  :global(:root[data-theme="dark"]) .b4 { fill: #8F7CC3; }
+  :global(:root[data-theme="dark"]) .b5 { fill: #B7A8DF; }
+  :global(:root[data-theme="dark"]) .dA { fill: #B7A8DF; }
+  :global(:root[data-theme="dark"]) .dB { fill: #9C8BCC; }
+  :global(:root[data-theme="dark"]) .dC { fill: #7B66B8; }
+  :global(:root[data-theme="dark"]) .v0 { fill: #7B66B8; }
+  :global(:root[data-theme="dark"]) .v1 { fill: #9C8BCC; }
+  :global(:root[data-theme="dark"]) .v2 { fill: #B7A8DF; }
+
+  /* Шар 1: хвиля підсвітки сот — цикл 6,4 с, мʼяке ease, без стробу */
+  .glow {
+    fill: #9C8BCC;
+    opacity: 0;
+    pointer-events: none;
+    animation: hex-glow 6.4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.4s);
+  }
+  :global(:root[data-theme="dark"]) .glow { fill: #C9BCE8; }
+  @keyframes hex-glow {
+    0% { opacity: 0; }
+    9% { opacity: 0.55; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Шар 2: фіолетові крапки повільно обходять периметр хедера */
+  .hero__orbit { position: absolute; inset: 0; pointer-events: none; }
+  .hero__orbit span { display: none; }
+  @supports (offset-path: inset(0px)) {
+    .hero__orbit span {
+      display: block;
+      position: absolute; top: 0; left: 0;
+      width: var(--s); height: var(--s);
+      border-radius: 50%;
+      background: var(--brand);
+      opacity: var(--o);
+      offset-path: inset(12px round 32px);
+      offset-rotate: 0deg;
+      animation: hero-orbit var(--d) linear infinite;
+      animation-delay: var(--ph);
+    }
+  }
+  @keyframes hero-orbit {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+  }
+
+  /* reduced-motion → статичний кадр: без хвилі, без крапок по периметру */
+  @media (prefers-reduced-motion: reduce) {
+    .glow { animation: none; }
+    .hero__orbit { display: none; }
+  }
+
+  @media (max-width: 899px) {
+    .hero { grid-template-columns: 1fr; padding-top: 84px; gap: 16px; }
+    .hero__title { font-size: clamp(44px, 13vw, 64px); }
+    .hero__stats { font-size: 15px; }
+    .hero__stats .sep { margin-inline: 5px; }
+  }
 </style>
 
 <script>
