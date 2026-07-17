@@ -175,6 +175,13 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     map.once("idle", () => {
       const deckEl = map.getContainer().querySelector('div[tabindex="0"]:not([aria-label])');
       if (deckEl) deckEl.setAttribute("aria-label", "Теплова мапа сот міста");
+      // атрибуція OSM згорнута до кнопки ⓘ (maplibre відкриває compact-режим
+      // розгорнутим; повторно не розгортається, бо compact-клас не змінюється)
+      const attrib = map.getContainer().querySelector(".maplibregl-ctrl-attrib");
+      if (attrib) {
+        attrib.classList.remove("maplibregl-compact-show");
+        attrib.removeAttribute("open");
+      }
     });
     ro = new ResizeObserver(() => {
       if (!map) return;

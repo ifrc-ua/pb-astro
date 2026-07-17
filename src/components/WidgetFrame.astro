@@ -20,15 +20,17 @@
 // Ширина обгортки — per-widget через --w-max: віджети з двоколонковим гридом (7fr/5fr
 // при ≥1024px) отримують повну ширину; прості чарти, що самі себе обмежують, лишаються
 // вужчими, щоб не плавати в порожнечі. На мобільному (<1024px) — вертикальна колонка.
-interface Props { name: string; title: string; fullscreen?: boolean; height?: string; bleed?: boolean; source?: string }
+interface Props { name: string; title: string; fullscreen?: boolean; height?: string; bleed?: boolean; source?: string; ocha?: boolean }
 const {
   name,
   title,
   fullscreen = false,
   height,
   bleed = false,
-  // Атрибуція даних під віджетом (зліва); формулювання можна перекрити per-widget
-  source = "Дані: Бюджет участі Івано-Франківської міськради, 2016–2026",
+  // Атрибуція даних під віджетом (зліва); формулювання можна перекрити per-widget.
+  // ocha — для мапних віджетів: додає ", OCHA" з посиланням на межі громад (COD-AB)
+  source = "Джерело: дані Івано-Франківської міської ради",
+  ocha = false,
 } = Astro.props;
 const src = `/widgets/${name}/index.html`;
 
@@ -66,7 +68,9 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
     style={height ? `height:${height}` : undefined}
   ></iframe>
   <figcaption>
-    <span class="pb-widget__src">{source}</span>
+    <span class="pb-widget__src">
+      {source}{ocha && <>{", "}<a href="https://data.humdata.org/dataset/cod-ab-ukr" target="_blank" rel="noopener">OCHA</a></>}
+    </span>
     <a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a>
   </figcaption>
 </figure>
@@ -176,6 +180,55 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
         };
         f.addEventListener("load", shim);
         shim();
+      }
+    }
+
+    // «Плаский» ембед: у віджетів-карток (внутрішня p50-картка вужча за iframe,
+    // напр. at-a-glance з .widget{max-width:760px}) біле тло iframe визирає
+    // кільцем-обводкою навколо картки. Шим робить фон картки прозорим — ембед
+    // стає одним рівним світлим прямокутником. Standalone-сторінка без змін.
+    const FLAT = ["at-a-glance"];
+    // Мапні віджети: атрибуція OSM згорнута до кнопки ⓘ (мапа всередині iframe
+    // ініціалізується асинхронно, тож чекаємо на елемент атрибуції інтервалом)
+    const MAPS = ["spotlight"];
+    for (const f of document.querySelectorAll<HTMLIFrameElement>("figure.pb-widget iframe")) {
+      const name = f.dataset.widget ?? "";
+      if (FLAT.includes(name)) {
+        const flat = () => {
+          try {
+            const d = f.contentDocument;
+            if (d && d.head && !d.getElementById("pb-flat-shim")) {
+              const s = d.createElement("style");
+              s.id = "pb-flat-shim";
+              s.textContent = ".widget{background:transparent}";
+              d.head.appendChild(s);
+            }
+          } catch { /* cross-origin (не наш випадок) */ }
+        };
+        f.addEventListener("load", flat);
+        flat();
+      }
+      if (MAPS.includes(name)) {
+        const collapse = () => {
+          let tries = 0;
+          const t = setInterval(() => {
+            tries++;
+            try {
+              const el = f.contentDocument?.querySelector(".maplibregl-ctrl-attrib");
+              if (el) {
+                el.classList.remove("maplibregl-compact-show");
+                el.removeAttribute("open");
+                clearInterval(t);
+              } else if (tries > 60) {
+                clearInterval(t);
+              }
+            } catch {
+              clearInterval(t);
+            }
+          }, 500);
+        };
+        f.addEventListener("load", collapse);
+        collapse();
       }
     }
 

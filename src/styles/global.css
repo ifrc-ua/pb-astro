@@ -19,7 +19,17 @@ h1, h2, h3, .display { font-family: "Phenomena", "Inter Variable", sans-serif; l
 .prose li { margin-block: 0.4em; }
 .prose strong { font-weight: 700; }
 .stat-number { font-family: "Phenomena"; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
-a { color: var(--link); }
+/* Гіперпосилання: фірмове крапчасте підкреслення; колір — контекстний --link
+   (канвас → бузковий, фіолетові блоки → білий, жовта поверхня → темний фіолет),
+   тож правило одне на всі фони. На ховері крапки стають суцільною лінією. */
+a {
+  color: var(--link);
+  text-decoration: underline dotted;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+a:hover { text-decoration-style: solid; }
 /* Інлайн-лінки в прозі: line-height ≥1.55 + вертикальний паддінг на тап (design.md §8) */
 .prose p a, .pb-box__body a { padding-block: 4px; }
 /* Розділювач-віха між смисловими блоками (канонічне «* * *») */

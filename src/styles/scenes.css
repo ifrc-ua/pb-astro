@@ -380,6 +380,13 @@
   align-items: flex-start;
   padding-top: 42dvh;
 }
+/* остання «картка» — лише жовта кнопка, без рамки-картки навколо неї */
+.scene:has(.cm-viz) .scene-step:last-child .scene-card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
 /* вільний режим: степ-картки поступаються місцем контролам годинника */
 .scene.cm-free .scene-card {
   opacity: 0;
