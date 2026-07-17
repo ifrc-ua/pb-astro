@@ -57,12 +57,13 @@ const yellowCells = [
   nearest(cb.x + cb.w * 0.44, cb.y + cb.h * 0.74),
 ];
 
-// Хвиля підсвітки: ~16 сот рівним кроком по масиву (він відсортований за people,
-// тож крок дає клітини, розкидані по всьому місту); жовті не блимають
+// Хвиля підсвітки: 24 соти рівним кроком по масиву (він відсортований за people,
+// тож крок дає клітини, розкидані по всьому місту); жовті не блимають.
+// 24 × 0.2 с кроку = рівно один цикл 4,8 с
 const glow = cells
   .map((_, i) => i)
-  .filter((i) => i % 17 === 5 && !yellowCells.includes(i))
-  .slice(0, 16);
+  .filter((i) => i % 11 === 5 && !yellowCells.includes(i))
+  .slice(0, 24);
 
 // Детермінований PRNG (mulberry32): композиція стабільна між збірками
 let seed = 20260717;
@@ -123,17 +124,26 @@ const villages = [
   pts: hexPts(clamp(cb.x + v.fx * cb.w, 22, W - 22), clamp(cb.y + v.fy * cb.h, 22, H - 22), v.r),
 }));
 
-// Крапки по периметру хедера: повільні (70–130 с/коло), різні фази й розміри
-const orbit = Array.from({ length: 7 }, (_, i) => ({
-  d: 70 + i * 10,
-  ph: -(i * 17),
-  s: 4 + (i % 3),
-  o: 0.18 + (i % 4) * 0.08,
+// Крапки, що повільно дрейфують по всій площі хедера (включно з текстовою зоною) —
+// композиція суцільна; позиції та маршрути детерміновані тим самим PRNG
+const wp = () => Math.round(clamp(gauss() * 30, -44, 44));
+const drift = Array.from({ length: 14 }, () => ({
+  l: +(3 + rand() * 92).toFixed(1),
+  t: +(4 + rand() * 88).toFixed(1),
+  s: 3 + Math.round(rand() * 4),
+  o: +(0.14 + rand() * 0.22).toFixed(2),
+  d: Math.round(46 + rand() * 44),
+  ph: -Math.round(rand() * 60),
+  x1: wp(), y1: wp(), x2: wp(), y2: wp(), x3: wp(), y3: wp(),
 }));
 ---
 <section class="hero">
-  <div class="hero__orbit" aria-hidden="true">
-    {orbit.map((o) => <span style={`--d:${o.d}s; --ph:${o.ph}s; --s:${o.s}px; --o:${o.o}`}></span>)}
+  <div class="hero__drift" aria-hidden="true">
+    {drift.map((p) => (
+      <span
+        style={`--l:${p.l}%; --t:${p.t}%; --s:${p.s}px; --o:${p.o}; --d:${p.d}s; --ph:${p.ph}s; --x1:${p.x1}px; --y1:${p.y1}px; --x2:${p.x2}px; --y2:${p.y2}px; --x3:${p.x3}px; --y3:${p.y3}px`}
+      ></span>
+    ))}
   </div>
   <div class="hero__copy">
     <p class="hero__eyebrow">Бюджет участі&nbsp;· Івано-Франківськ</p>
@@ -172,6 +182,7 @@ const orbit = Array.from({ length: 7 }, (_, i) => ({
     grid-template-columns: minmax(320px, 5fr) 6fr;
     gap: 24px 40px;
     align-items: center;
+    overflow: clip; /* дрейф-крапки не виходять за межі хедера */
   }
   .hero__copy { min-width: 0; position: relative; z-index: 1; }
   .hero__eyebrow {
@@ -181,8 +192,9 @@ const orbit = Array.from({ length: 7 }, (_, i) => ({
     color: var(--brand);
   }
   .hero__title { margin: 0; font-weight: 900; font-size: clamp(48px, 6.4vw, 88px); line-height: 0.98; }
-  /* жовта риска — жовте завжди з ink-обводкою (design.md §7) */
-  .hero__bar { width: 128px; height: 10px; margin-top: 30px; background: #FFEC08; border: 1px solid #1A1A1A; }
+  /* жовта риска — свідомий виняток із §7: без ink-обводки й заокруглена,
+     бо обводка тут перетягувала увагу (рішення власниці, 2026-07) */
+  .hero__bar { width: 128px; height: 10px; margin-top: 30px; background: #FFEC08; border-radius: 999px; }
   .hero__stats { margin: 26px 0 0; font-size: 17px; line-height: 1.6; font-variant-numeric: tabular-nums; }
   .hero__stats .n, .hero__stats .unit { white-space: nowrap; }
   .hero__stats .n { font-weight: 700; }
@@ -221,48 +233,44 @@ const orbit = Array.from({ length: 7 }, (_, i) => ({
   :global(:root[data-theme="dark"]) .v1 { fill: #9C8BCC; }
   :global(:root[data-theme="dark"]) .v2 { fill: #B7A8DF; }
 
-  /* Шар 1: хвиля підсвітки сот — цикл 6,4 с, мʼяке ease, без стробу */
+  /* Шар 1: хвиля підсвітки сот — цикл 4,8 с, помітний пік, мʼяке ease */
   .glow {
-    fill: #9C8BCC;
+    fill: #B7A8DF;
     opacity: 0;
     pointer-events: none;
-    animation: hex-glow 6.4s ease-in-out infinite;
-    animation-delay: calc(var(--i) * 0.4s);
+    animation: hex-glow 4.8s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
   }
-  :global(:root[data-theme="dark"]) .glow { fill: #C9BCE8; }
+  :global(:root[data-theme="dark"]) .glow { fill: #D9CEF2; }
   @keyframes hex-glow {
     0% { opacity: 0; }
-    9% { opacity: 0.55; }
-    20% { opacity: 0; }
+    12% { opacity: 0.9; }
+    26% { opacity: 0; }
     100% { opacity: 0; }
   }
 
-  /* Шар 2: фіолетові крапки повільно обходять периметр хедера */
-  .hero__orbit { position: absolute; inset: 0; pointer-events: none; }
-  .hero__orbit span { display: none; }
-  @supports (offset-path: inset(0px)) {
-    .hero__orbit span {
-      display: block;
-      position: absolute; top: 0; left: 0;
-      width: var(--s); height: var(--s);
-      border-radius: 50%;
-      background: var(--brand);
-      opacity: var(--o);
-      offset-path: inset(12px round 32px);
-      offset-rotate: 0deg;
-      animation: hero-orbit var(--d) linear infinite;
-      animation-delay: var(--ph);
-    }
+  /* Шар 2: фіолетові крапки повільно дрейфують по всій площі хедера */
+  .hero__drift { position: absolute; inset: 0; pointer-events: none; }
+  .hero__drift span {
+    position: absolute;
+    left: var(--l); top: var(--t);
+    width: var(--s); height: var(--s);
+    border-radius: 50%;
+    background: var(--brand);
+    opacity: var(--o);
+    animation: hero-drift var(--d) ease-in-out infinite;
+    animation-delay: var(--ph);
   }
-  @keyframes hero-orbit {
-    from { offset-distance: 0%; }
-    to { offset-distance: 100%; }
+  @keyframes hero-drift {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(var(--x1), var(--y1)); }
+    50% { transform: translate(var(--x2), var(--y2)); }
+    75% { transform: translate(var(--x3), var(--y3)); }
   }
 
-  /* reduced-motion → статичний кадр: без хвилі, без крапок по периметру */
+  /* reduced-motion → статичний кадр: крапки стоять, хвиля вимкнена */
   @media (prefers-reduced-motion: reduce) {
-    .glow { animation: none; }
-    .hero__orbit { display: none; }
+    .glow, .hero__drift span { animation: none; }
   }
 
   @media (max-width: 899px) {
