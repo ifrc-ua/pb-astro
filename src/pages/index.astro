@@ -4,7 +4,8 @@ import Hero from "../components/Hero.astro";
 import Surface from "../components/Surface.astro";
 
 // 13 смислових блоків статті (порт канону pb-kurs/content.md).
-// Порядок — за іменем файла (01…13). Між блоками — розділювач-віха.
+// Порядок — за іменем файла (01…13). Розділи ділять великі заголовки h2,
+// тож розділювачів-віх між блоками нема (єдина «* * *» — у фіналі, в MDX).
 const modules = import.meta.glob("../content/article/*.mdx", { eager: true });
 const blocks = Object.keys(modules)
   .sort()
@@ -34,11 +35,6 @@ const tones: Record<number, "panel" | "panel-2" | "accent"> = {
         <Content />
       </section>
     );
-    return (
-      <>
-        {tone ? <Surface tone={tone}>{body}</Surface> : body}
-        {i < blocks.length - 1 && <hr class="beat" />}
-      </>
-    );
+    return tone ? <Surface tone={tone}>{body}</Surface> : body;
   })}
 </Article>
