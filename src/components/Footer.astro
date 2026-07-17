@@ -23,6 +23,9 @@ const socials = [
 ---
 <footer class="site-footer">
   <div class="foot-inner">
+    <p class="foot-author">
+      Авторка — <a href="https://www.linkedin.com/in/nataliia-kobylchak" target="_blank" rel="noopener">Наталія Кобильчак</a>
+    </p>
     <span class="foot-mail">
       <!-- зафарбований конвертик — та сама вага, що в суцільних соціконок праворуч -->
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
@@ -57,6 +60,19 @@ const socials = [
     align-items: center;
     justify-content: space-between;
     gap: 4px 24px;
+  }
+  /* Авторка — окремим рядком над контактами; лінк на LinkedIn з тап-паддінгом
+     ≥44px (design.md §8), як у підписів віджетів */
+  .foot-author {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .foot-author a {
+    display: inline-block;
+    padding: 13px 4px;
+    margin-block: -9px;
   }
   .foot-mail {
     display: inline-flex;
