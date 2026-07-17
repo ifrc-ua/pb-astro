@@ -12,6 +12,8 @@ const { title, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <script is:inline>
     if (localStorage.getItem("pb-theme") === "dark") document.documentElement.dataset.theme = "dark";
   </script>
