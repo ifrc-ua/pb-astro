@@ -3,8 +3,9 @@
 // модель і шкала 1:1 (корінь-шкала на 5 стопах choropleth, design-data §8),
 // maplibre dark (OpenFreeMap) + вуаль + deck.gl H3HexagonLayer; SVG-фолбек
 // віджета перенесено разом — без WebGL кроки перемикають стани SVG.
-// Кроки: (1) громада, місто як пляма → (2) зум у місто, соти проявляються →
-// (3) контраст: найгустіша сота як «обрана» (жовтий лише з ink-обводкою).
+// Камера статична: один кадр міста (fitBounds на ініціалізації та resize);
+// кроки не літають камерою, а перемикають лише підсвітку — на кроці (3)
+// найгустіша сота стає «обраною» (жовтий лише з ink-обводкою) з тултипом.
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -104,8 +105,6 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
   let disposed = false;
   let ro: ResizeObserver | null = null;
   let refitTimer: ReturnType<typeof setTimeout> | undefined;
-  let topTipTimer: ReturnType<typeof setTimeout> | undefined;
-  let camTimer: ReturnType<typeof setTimeout> | undefined;
 
   // найгустіша сота — «обрана» на кроці контрастів
   const topHex = M.hexes.reduce((a: any, b: any) => (a.people > b.people ? a : b));
@@ -162,7 +161,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       },
     });
     map.touchZoomRotate.disableRotation();
-    // Скрол сторінки над мапою ніколи не зумить мапу: камерою керують кроки,
+    // Скрол сторінки над мапою ніколи не зумить мапу: камера статична,
     // а wheel (зокрема тачпад-pinch як Ctrl+wheel) гортає статтю далі
     map.scrollZoom.disable();
     overlay = new MapboxOverlay({
@@ -181,7 +180,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
       if (!map) return;
       map.resize();
       clearTimeout(refitTimer);
-      refitTimer = setTimeout(() => applyCamera(state.step, true), 200);
+      refitTimer = setTimeout(fitCamera, 200);
     });
     ro.observe(els.glMap);
     return new Promise<void>((resolve, reject) => {
@@ -426,12 +425,7 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     }
   }
 
-  // --- Хореографія кроків (лише GL; SVG-фолбек перемикає стани підсвітки) ---
-  const [[minX, minY], [maxX, maxY]] = M.bounds;
-  const wideBounds: [[number, number], [number, number]] = [
-    [minX - 0.14, minY - 0.1],
-    [maxX + 0.14, maxY + 0.1],
-  ];
+  // --- Кроки (лише підсвітка; камера статична) ---
 
   function showTopTooltip() {
     if (state.mode !== "gl" || !map) return;
@@ -440,34 +434,17 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     positionTooltip(pt.x, pt.y, topHex.hex_id);
   }
 
-  function applyCamera(i: number, instant?: boolean) {
+  // Один кадр міста: fitBounds уже виставлено конструктором (bounds +
+  // fitBoundsOptions), сюди повертаємось лише після resize контейнера.
+  function fitCamera() {
     if (state.mode !== "gl" || !map) return;
-    const dur = instant || reduced ? 0 : 1400;
-    if (i === 0) {
-      map.fitBounds(wideBounds, { padding: scenePadding(), duration: dur });
-    } else if (i === 1) {
-      map.fitBounds(M.bounds, { padding: scenePadding(), duration: dur });
-    } else {
-      const cam = map.cameraForBounds(M.bounds, { padding: scenePadding() });
-      const zoom = Math.min((cam?.zoom ?? map.getZoom()) + 0.9, 15.5);
-      map.flyTo({ center: hexCenter(topHex), zoom, duration: dur, essential: true });
-    }
-  }
-
-  // Дебаунс камери: при швидкому скролі кроки миготять частіше, ніж триває
-  // політ (1400 мс), і перервані flyTo смикають мапу туди-сюди. Летимо лише
-  // до кроку, на якому читач реально зупинився.
-  function scheduleCamera(i: number) {
-    clearTimeout(camTimer);
-    camTimer = setTimeout(() => {
-      if (!disposed && state.step === i) applyCamera(i);
-    }, 220);
+    map.fitBounds(M.bounds, { padding: scenePadding(), duration: 0 });
   }
 
   function applyStep(i: number) {
     state.step = i;
     if (state.mode === "svg") {
-      // фолбек: камера статична, крок контрастів підсвічує найгустішу соту
+      // фолбек: крок контрастів підсвічує найгустішу соту
       if (i === 2) focusHex(topHex.hex_id); else clearActive();
       return;
     }
@@ -476,17 +453,9 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     if (i === 2) {
       state.active = topHex.hex_id;
       overlay.setProps({ layers: buildHexLayers() });
-      scheduleCamera(2);
-      // тултип — після прибуття камери; таймер надійніший за once("moveend"),
-      // який губиться, коли maplibre скорочує анімацію
-      clearTimeout(topTipTimer);
-      topTipTimer = setTimeout(() => {
-        if (!disposed && state.step === 2) showTopTooltip();
-      }, 1850);
+      showTopTooltip();
     } else {
-      clearTimeout(topTipTimer);
       clearActive();
-      scheduleCamera(i);
     }
   }
 
@@ -495,8 +464,6 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     dispose: () => {
       disposed = true;
       clearTimeout(refitTimer);
-      clearTimeout(topTipTimer);
-      clearTimeout(camTimer);
       teardownGL();
     },
   };
@@ -523,11 +490,11 @@ function buildHeatmap(host: HTMLElement, DB: any, reduced: boolean, getStep: () 
     renderLegend();
     renderSceneCap();
     if (state.mode === "gl" && reduced) {
-      // reduced-motion: одразу фінальний стан — місто із сотами і контрастом
+      // reduced-motion: одразу фінальний стан — контраст із «обраною» сотою
+      // (камера і так статична: кадр міста виставлено конструктором)
       state.active = topHex.hex_id;
       overlay.setProps({ layers: buildHexLayers() });
-      map.fitBounds(M.bounds, { padding: scenePadding(), duration: 0 });
-      topTipTimer = setTimeout(() => { if (!disposed) showTopTooltip(); }, 500);
+      showTopTooltip();
     } else {
       applyStep(getStep());
     }

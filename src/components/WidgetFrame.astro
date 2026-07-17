@@ -10,6 +10,9 @@
 //   • height="…"     — явна висота для «повноекранних» віджетів (мапи: overflow:hidden,
 //                      #map absolute — власної висоти контенту не мають, тож авторозмір
 //                      їм нічого корисного не дасть).
+//   • bleed          — на всю ширину екрана, як мапні сцени (.scene): край-у-край на
+//                      всіх ширинах, без рамки/радіуса; висота — пропом height
+//                      (~92dvh). Інтерактивний одразу, без скрол-хореографії. spotlight.
 //
 // Ширина (Task F1): на десктопі (≥1024px) віджет виводиться широко, поза колонкою
 // тексту (той самий full-bleed, що в .scene), щоб ширина iframe перевалила за 1024px і
@@ -17,20 +20,22 @@
 // Ширина обгортки — per-widget через --w-max: віджети з двоколонковим гридом (7fr/5fr
 // при ≥1024px) отримують повну ширину; прості чарти, що самі себе обмежують, лишаються
 // вужчими, щоб не плавати в порожнечі. На мобільному (<1024px) — вертикальна колонка.
-interface Props { name: string; title: string; fullscreen?: boolean; height?: string; source?: string }
+interface Props { name: string; title: string; fullscreen?: boolean; height?: string; bleed?: boolean; source?: string }
 const {
   name,
   title,
   fullscreen = false,
   height,
+  bleed = false,
   // Атрибуція даних під віджетом (зліва); формулювання можна перекрити per-widget
   source = "Дані: Бюджет участі Івано-Франківської міськради, 2016–2026",
 } = Astro.props;
 const src = `/widgets/${name}/index.html`;
 
-// Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета):
+// Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета);
+// bleed-віджети (spotlight) стелі не мають — край-у-край:
 //   WIDE   — грід 7fr/5fr при min-width:1024px, внутрішня стеля 1280px
-//   MEDIUM — самообмежені (flows ~980px) і постер spotlight (фікс. висота 560px)
+//   MEDIUM — самообмежені (flows ~980px)
 //   NARROW — прості чарти зі стелею 760px (тайли, скатер, смуги, тизер rules-timeline)
 const WIDE = 1280;
 const MEDIUM = 1040;
@@ -41,7 +46,6 @@ const MAX_WIDTH: Record<string, number> = {
   "communities-projects": WIDE,
   "vote-breadth": WIDE,
   "flows": MEDIUM,
-  "spotlight": MEDIUM,
   "at-a-glance": NARROW,
   "votes-vs-money": NARROW,
   "budget-bars": NARROW,
@@ -50,7 +54,7 @@ const MAX_WIDTH: Record<string, number> = {
 const wMax = MAX_WIDTH[name] ?? WIDE;
 ---
 <figure
-  class:list={["pb-widget", { "pb-widget--fixed": !!height, "pb-widget--fs": fullscreen }]}
+  class:list={["pb-widget", { "pb-widget--fixed": !!height, "pb-widget--fs": fullscreen, "pb-widget--bleed": bleed }]}
   style={`--w-max:${wMax}px`}
 >
   <iframe
@@ -111,6 +115,29 @@ const wMax = MAX_WIDTH[name] ?? WIDE;
       max-width: var(--w-max, 1280px);
       margin-inline: auto;
     }
+  }
+
+  /* Full-bleed (spotlight): на всю ширину екрана, як мапні сцени (.scene) —
+     край-у-край на всіх ширинах, без радіуса; висота задається пропом height
+     (~92dvh), внутрішній макет віджета розкривається сам. Правила стоять після
+     десктопного блока, щоб перемогти його однакову специфічність у каскаді. */
+  figure.pb-widget--bleed {
+    width: 100vw;
+    max-width: none;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: 0;
+  }
+  figure.pb-widget--bleed > iframe {
+    max-width: none;
+    border-radius: 0;
+  }
+  :root[data-theme="dark"] figure.pb-widget--bleed > iframe {
+    border-inline: 0;
+  }
+  /* Підпис лишається в потоці з власними полями — краї figure тепер без відступів */
+  figure.pb-widget--bleed > figcaption {
+    max-width: none;
+    padding-inline: clamp(16px, 2vw, 40px);
   }
 </style>
 
