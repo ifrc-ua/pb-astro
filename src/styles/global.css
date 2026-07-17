@@ -23,6 +23,6 @@ a { color: var(--link); }
 /* Інлайн-лінки в прозі: line-height ≥1.55 + вертикальний паддінг на тап (design.md §8) */
 .prose p a, .pb-box__body a { padding-block: 4px; }
 /* Розділювач-віха між смисловими блоками (канонічне «* * *») */
-hr.beat { border: 0; max-width: 680px; margin: 3.2rem auto; text-align: center; }
-hr.beat::before { content: "* * *"; color: var(--muted); letter-spacing: 0.5em; font-size: 18px; }
+hr.beat { border: 0; height: auto; max-width: 680px; margin: 3.2rem auto; text-align: center; }
+hr.beat::before { content: "* * *"; display: block; color: var(--muted); letter-spacing: 0.5em; font-size: 18px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
