@@ -18,6 +18,9 @@ h1, h2, h3, .display { font-family: "Phenomena", "Inter Variable", sans-serif; l
 .prose ul { margin-block: 1.1em; padding-left: 1.4em; }
 .prose li { margin-block: 0.4em; }
 .prose strong { font-weight: 700; }
+/* Підпис-атрибуція наприкінці: дрібніше, курсивом, приглушено — щоб відрізнявся від тексту статті */
+.prose .byline { margin-top: 2.4rem; font-size: 15px; font-style: italic; color: var(--muted); }
+.prose .byline p { margin: 0; }
 .stat-number { font-family: "Phenomena"; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
 /* Гіперпосилання: фірмове крапчасте підкреслення; колір — контекстний --link
    (канвас → бузковий, фіолетові блоки → білий, жовта поверхня → темний фіолет),
