@@ -1,0 +1,36 @@
+# build output
+dist/
+# generated types
+.astro/
+# smoke screenshots
+_smoke/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# Службове робоче оточення — не для публічного репозиторію.
+# Файли лишаються на диску й далі працюють локально, просто не відстежуються.
+# Повна історія 50 комітів збережена поза репо:
+# d:/Projects/PB/pb-astro-history-50-commits-2026-07-31.bundle
+AGENTS.md
+CLAUDE.md
+.impeccable/
+.vscode/
+scripts/sync-from-kurs.mjs

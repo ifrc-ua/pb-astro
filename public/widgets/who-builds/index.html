@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+
+<title>Хто творить місто</title>
+<meta name="description" id="metaDesc" content="">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+
+<script src="copy.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only" data-copy="srWidget"></p>
+
+  <header class="head">
+    <div class="head-title">
+      <span class="overline" data-copy="overline"></span>
+      <h1 class="title" data-copy="title"></h1>
+      <p class="subtitle" id="subtitle"></p>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span class="legend-item"><i class="sw sw-f"></i><span data-copy="legendF"></span></span>
+      <span class="legend-item"><i class="sw sw-m"></i><span data-copy="legendM"></span></span>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <section class="scene" data-aria="ariaScene">
+      <div class="band-head">
+        <span class="band-name" data-copy="topBandName"></span>
+        <span class="band-cap" data-copy="topBandCap"></span>
+      </div>
+      <svg id="topBand" aria-hidden="true"></svg>
+
+      <div class="year-axis" id="yearAxis" role="group" data-aria="ariaYearAxis"></div>
+
+      <svg id="bottomBand" aria-hidden="true"></svg>
+      <div class="band-head band-head-bottom">
+        <div>
+          <span class="band-name" data-copy="bottomBandName"></span>
+          <span class="band-cap" data-copy="bottomBandCap"></span>
+        </div>
+        <div class="mode" role="radiogroup" data-aria="ariaMode">
+          <button type="button" class="mode-btn" id="modeVotes" role="radio" aria-checked="true" data-copy="modeVotes"></button>
+          <button type="button" class="mode-btn" id="modePeople" role="radio" aria-checked="false" data-copy="modePeople"></button>
+        </div>
+      </div>
+      <p class="scene-cap" id="sceneCap"></p>
+
+      <div class="loyalty">
+        <h2 class="loyalty-title" data-copy="loyaltyTitle"></h2>
+        <p class="loyalty-cap" id="loyaltyCap"></p>
+        <div class="loyalty-strip" id="loyaltyStrip" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" data-aria="ariaPanel"></aside>
+  </div>
+
+  <footer class="notes">
+    <ul class="note-list" id="noteList"></ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span id="loadingText">Завантаження…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

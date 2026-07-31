@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Бюджет участі Івано-Франківська за один погляд — 2016–2026</title>
+<meta name="description" content="10 років Бюджету участі Івано-Франківська одним поглядом: 1 565 поданих проєктів, 475 переможців, 365 реалізованих, ≈781 тис. голосів, 71% голосів від жінок, 81% голосувань онлайн. 2016–2026, крім 2022.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget">
+  <header class="head">
+    <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+    <h1 class="title">10 років за один погляд</h1>
+    <p class="subtitle">2016–2026 (крім 2022)</p>
+  </header>
+
+  <p class="sr-only">Ключові підсумки Бюджету участі Івано-Франківська за 2016–2026
+  (у 2022 кампанії не було). Подано проєктів: 1 565 (по роках 80, 52, 139, 130, 303,
+  272, далі 129, 112, 149, 199). Проєктів-переможців: 475 (12, 33, 37, 37, 43, 58,
+  38, 39, 80, 98). Реалізовано: 365 (за 2016–2025: 11, 32, 36, 38, 45, 58, 38, 37,
+  70; кампанія 2026 ще триває; джерело — зведена таблиця організаторів). Голосів
+  подано: приблизно 781 тисяча за 2016–2026 (за 2020 рік відомі лише голоси
+  переможців). Частка голосів від жінок: 71% (зростала по кампаніях з 66% до 75%).
+  Частка людей, що голосували лише онлайн: у середньому 81% за 2017–2026 (по роках
+  54, 44, 74, 77, 79, 87, 86, 89, 91%).</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <noscript><p class="caption">Для міні-графіків потрібен JavaScript. Усі числа —
+  в описі вище.</p></noscript>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+---
+// Кольорова поверхня-секція (ритм за design.md §5).
+// tone: canvas (типово) | panel (primary-50) | panel-2 (primary-100) | accent (secondary-100).
+// Full-bleed на мобільному (без полів/заокруглень), rounded-контейнер на десктопі.
+interface Props { tone?: "canvas" | "panel" | "panel-2" | "accent" }
+const { tone = "canvas" } = Astro.props;
+---
+<div class:list={["surface", `surface--${tone}`]}>
+  <slot />
+</div>
+
+<style>
+  .surface { width: 100%; }
+  .surface--canvas { background: var(--canvas); }
+  .surface--panel { background: var(--panel); }
+  .surface--panel-2 { background: var(--panel-2); }
+  /* Жовтий блок лишається світлою плашкою в обох темах (як картки віджетів),
+     тож текстові токени фіксуємо ТЕМНИМИ локально: інакше нічна тема кладе
+     світлий --ink на світло-жовте тло — нечитабельно. Перевизначення змінних
+     каскадом покриває і вкладені компоненти (pb-box, лінки, hr.beat). */
+  .surface--accent {
+    background: #FFF9B3;
+    --ink: #1A1A1A;
+    --muted: #3F4049;
+    --link: #4E3C84;
+    --brand: #654EA3;
+    --brand-strong: #4E3C84;
+    --line: color-mix(in srgb, #1A1A1A 22%, #FFF9B3);
+    --canvas: #FFFDF0;
+    --panel: #FFFCE0;
+    --panel-2: #FFF6D0;
+    color: var(--ink);
+  }
+
+  /* Кольорові блоки дихають зверху й знизу; canvas — без зайвого паддінгу. */
+  .surface--panel, .surface--panel-2, .surface--accent {
+    padding-block: 48px;
+    margin-block: 8px;
+  }
+  @media (min-width: 1024px) {
+    .surface--panel, .surface--panel-2, .surface--accent {
+      max-width: 1080px;
+      margin-inline: auto;
+      padding-block: 72px;
+      border-radius: 24px;
+    }
+  }
+</style>

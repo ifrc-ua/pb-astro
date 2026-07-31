@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+
+<title>Ширина голосу</title>
+<meta name="description" id="metaDesc" content="">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+
+<script src="copy.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only" data-copy="srWidget"></p>
+
+  <header class="head">
+    <div class="head-title">
+      <span class="overline" data-copy="overline"></span>
+      <h1 class="title" data-copy="title"></h1>
+      <p class="subtitle" data-copy="subtitle"></p>
+    </div>
+    <div class="legend" id="legend" aria-hidden="true"></div>
+  </header>
+
+  <div class="main">
+
+    <section class="scene" data-aria="ariaScene">
+      <div class="scene-head">
+        <div class="scene-head-txt">
+          <span class="band-name" id="sceneName"></span>
+          <span class="band-cap" id="sceneSub"></span>
+        </div>
+        <div class="mode" role="radiogroup" data-aria="ariaMode">
+          <button type="button" class="mode-btn" data-mode="all" role="radio" aria-checked="true" data-copy="modeAll"></button>
+          <button type="button" class="mode-btn" data-mode="channel" role="radio" aria-checked="false" data-copy="modeChannel"></button>
+          <button type="button" class="mode-btn" data-mode="sex" role="radio" aria-checked="false" data-copy="modeSex"></button>
+          <button type="button" class="mode-btn" data-mode="dist" role="radio" aria-checked="false" data-copy="modeDist"></button>
+        </div>
+      </div>
+
+      <svg id="scene" aria-hidden="true"></svg>
+
+      <div class="year-axis" id="yearAxis" role="group" data-aria="ariaYearAxis"></div>
+
+      <p class="scene-cap" id="sceneCap"></p>
+      <div class="dist-tip" id="distTip" role="status" hidden></div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" data-aria="ariaPanel"></aside>
+  </div>
+
+  <footer class="notes">
+    <ul class="note-list" id="noteList"></ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span id="loadingText">Завантаження…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

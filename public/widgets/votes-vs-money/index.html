@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Голоси проти грошей — Бюджет участі Івано-Франківська, 2025–2026</title>
+<meta name="description" content="Куди йде увага виборців і куди — гроші бюджету участі Івано-Франківська у 2025–2026. Освіта збирає 58% голосів, але 20% коштів; допомога ЗСУ — навпаки, 9% голосів і 40% грошей.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+  <header class="head">
+    <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+    <h1 class="title">Голосують за школи, а гроші йдуть на армію та вулиці</h1>
+    <p class="subtitle">Освіта збирає майже <b>58%</b> голосів, але лише п'яту частину
+    коштів. А допомога ЗСУ навпаки: <b>9%</b> голосів і <b>40%</b> грошей — найбільший
+    бюджет року.</p>
+  </header>
+
+  <p class="sr-only">Діаграма порівнює дві колонки за категоріями проєктів бюджету
+  участі 2025–2026. Ліва колонка «Голоси» — частка всіх голосів, віддана за кожну
+  категорію: Освіта 58%, Двори й благоустрій 10%, Вулиці 10%, Допомога ЗСУ 9%,
+  Спадщина із зеленню й доступністю 7%, Інше 6%. Права колонка «Гроші» — частка
+  кошторису проєктів-переможців: Допомога ЗСУ 40%, Вулиці 26%, Освіта 20%, Двори й
+  благоустрій 8%, Спадщина із зеленню й доступністю 6%, Інше 2%. Освіта збирає
+  найбільше голосів, але непропорційно мало грошей; армія й вулиці — навпаки.</p>
+
+  <figure class="chart-wrap">
+    <svg id="chart" role="img"
+         aria-label="Порівняння частки голосів і частки грошей за категоріями проєктів бюджету участі, 2025–2026"></svg>
+  </figure>
+
+  <ul class="chart-notes">
+    <li>Дані за <b>2025–2026</b> — єдині два роки, коли в бюджеті участі існували всі
+    категорії одразу, тож порівняння категорій між собою чесне. <b>Голоси</b> — усі
+    голоси за проєкти цих років (354 089). <b>Гроші</b> — кошторис проєктів-переможців
+    (≈106 млн грн, номінал).</li>
+    <li>Категорії згруповано: «Освіта» — школи, садки, позашкільні. «Вулиці» — благоустрій
+    малих вулиць. «Двори» — двори й загальний благоустрій. «Спадщина+» — спадщина, зелень,
+    доступність. «Інше» — проєкти без єдиної категорії.</li>
+    <li>Високу частку грошей «Допомоги ЗСУ» (≈40%) дає переважно 2025 рік, коли ці проєкти
+    профінансували рішенням міської влади <b>поза загальним голосуванням</b>; військові
+    проєкти, подані до появи категорії, згруповано за описом.</li>
+  </ul>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

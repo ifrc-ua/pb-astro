@@ -1,0 +1,1582 @@
+{
+ "meta": {
+  "generated": "2026-06-12",
+  "source": "data/public/projects.json — 1 565 проєктів 2016–2026, агрегати без PII",
+  "years": [
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "categories": [
+   {
+    "key": "education-general",
+    "label_uk": "Освіта"
+   },
+   {
+    "key": "education-school",
+    "label_uk": "Шкільні"
+   },
+   {
+    "key": "education-preschool",
+    "label_uk": "Дошкільні"
+   },
+   {
+    "key": "education-extracurricular",
+    "label_uk": "Позашкільні, профтехосвіта"
+   },
+   {
+    "key": "improvement-general",
+    "label_uk": "Благоустрій"
+   },
+   {
+    "key": "improvement-streets",
+    "label_uk": "Благоустрій малих вулиць"
+   },
+   {
+    "key": "heritage",
+    "label_uk": "Архітектурна спадщина"
+   },
+   {
+    "key": "greenery",
+    "label_uk": "Зелені проєкти"
+   },
+   {
+    "key": "afu-support",
+    "label_uk": "Допомога ЗСУ"
+   },
+   {
+    "key": "accessibility",
+    "label_uk": "Доступність"
+   },
+   {
+    "key": "other",
+    "label_uk": "Інші проєкти"
+   },
+   {
+    "key": "uncategorized",
+    "label_uk": "Без категоризації"
+   }
+  ],
+  "notes": {
+   "2016_2018": "Тематичні категорії запроваджено з 2019 року; у 2016–2018 проєкти ділилися лише за розміром (малий/великий) — METHODOLOGY §3.2.",
+   "2020_votes": "У 2020 голоси відомі лише для переможців: 263 проєкти без записаних голосів (METHODOLOGY §3.5) — режим «голоси» для 2020 неповний.",
+   "2022": "У 2022 році Бюджет участі не проводився (повномасштабне вторгнення).",
+   "afu_2025": "«Допомога ЗСУ» 2025 фінансувалась поза конкурсним голосуванням — усі 47 проєктів мають 0 голосів (METHODOLOGY §9). У 2026 категорія повернулась у конкурс.",
+   "greenery_2025": "«Зелені проєкти» 2025: категорія була в бюлетені, але подань не було — явний 0 (конвенція: 0 = існувала без проєктів; відсутність пари рік×категорія = не існувала).",
+   "uncategorized_2020": "8 проєктів 2020 не мають теми в сирому файлі — показуються як «без категоризації», тему не приписуємо."
+  }
+ },
+ "by_year_category": [
+  {
+   "year": 2016,
+   "category": "uncategorized",
+   "projects": 80,
+   "votes": 2090,
+   "votes_unknown": 0,
+   "budget_uah": 3295536,
+   "winners": 12
+  },
+  {
+   "year": 2017,
+   "category": "uncategorized",
+   "projects": 52,
+   "votes": 8024,
+   "votes_unknown": 0,
+   "budget_uah": 2319125,
+   "winners": 33
+  },
+  {
+   "year": 2018,
+   "category": "uncategorized",
+   "projects": 139,
+   "votes": 25477,
+   "votes_unknown": 0,
+   "budget_uah": 11946519,
+   "winners": 37
+  },
+  {
+   "year": 2019,
+   "category": "education-general",
+   "projects": 46,
+   "votes": 28550,
+   "votes_unknown": 0,
+   "budget_uah": 7296591,
+   "winners": 14
+  },
+  {
+   "year": 2019,
+   "category": "other",
+   "projects": 84,
+   "votes": 15070,
+   "votes_unknown": 0,
+   "budget_uah": 12587962,
+   "winners": 23
+  },
+  {
+   "year": 2020,
+   "category": "education-general",
+   "projects": 57,
+   "votes": 10882,
+   "votes_unknown": 41,
+   "budget_uah": 8103811,
+   "winners": 18
+  },
+  {
+   "year": 2020,
+   "category": "improvement-streets",
+   "projects": 42,
+   "votes": 5158,
+   "votes_unknown": 35,
+   "budget_uah": 50057256,
+   "winners": 7
+  },
+  {
+   "year": 2020,
+   "category": "other",
+   "projects": 196,
+   "votes": 5707,
+   "votes_unknown": 179,
+   "budget_uah": 28441731,
+   "winners": 18
+  },
+  {
+   "year": 2020,
+   "category": "uncategorized",
+   "projects": 8,
+   "votes": 0,
+   "votes_unknown": 8,
+   "budget_uah": 1336651,
+   "winners": 0
+  },
+  {
+   "year": 2021,
+   "category": "education-general",
+   "projects": 78,
+   "votes": 53244,
+   "votes_unknown": 0,
+   "budget_uah": 12670774,
+   "winners": 21
+  },
+  {
+   "year": 2021,
+   "category": "improvement-streets",
+   "projects": 44,
+   "votes": 25130,
+   "votes_unknown": 0,
+   "budget_uah": 54611238,
+   "winners": 8
+  },
+  {
+   "year": 2021,
+   "category": "heritage",
+   "projects": 19,
+   "votes": 16643,
+   "votes_unknown": 0,
+   "budget_uah": 13744960,
+   "winners": 1
+  },
+  {
+   "year": 2021,
+   "category": "other",
+   "projects": 131,
+   "votes": 29331,
+   "votes_unknown": 0,
+   "budget_uah": 23283958,
+   "winners": 28
+  },
+  {
+   "year": 2023,
+   "category": "education-general",
+   "projects": 46,
+   "votes": 35999,
+   "votes_unknown": 0,
+   "budget_uah": 18033310,
+   "winners": 19
+  },
+  {
+   "year": 2023,
+   "category": "improvement-general",
+   "projects": 55,
+   "votes": 17199,
+   "votes_unknown": 0,
+   "budget_uah": 27701840,
+   "winners": 9
+  },
+  {
+   "year": 2023,
+   "category": "improvement-streets",
+   "projects": 17,
+   "votes": 11778,
+   "votes_unknown": 0,
+   "budget_uah": 40567764,
+   "winners": 5
+  },
+  {
+   "year": 2023,
+   "category": "greenery",
+   "projects": 11,
+   "votes": 6079,
+   "votes_unknown": 0,
+   "budget_uah": 2525087,
+   "winners": 5
+  },
+  {
+   "year": 2024,
+   "category": "education-school",
+   "projects": 38,
+   "votes": 45412,
+   "votes_unknown": 0,
+   "budget_uah": 17220182,
+   "winners": 10
+  },
+  {
+   "year": 2024,
+   "category": "education-preschool",
+   "projects": 25,
+   "votes": 23646,
+   "votes_unknown": 0,
+   "budget_uah": 9030335,
+   "winners": 4
+  },
+  {
+   "year": 2024,
+   "category": "education-extracurricular",
+   "projects": 8,
+   "votes": 12268,
+   "votes_unknown": 0,
+   "budget_uah": 3205188,
+   "winners": 4
+  },
+  {
+   "year": 2024,
+   "category": "improvement-general",
+   "projects": 13,
+   "votes": 10664,
+   "votes_unknown": 0,
+   "budget_uah": 5970264,
+   "winners": 8
+  },
+  {
+   "year": 2024,
+   "category": "improvement-streets",
+   "projects": 15,
+   "votes": 17180,
+   "votes_unknown": 0,
+   "budget_uah": 39278879,
+   "winners": 5
+  },
+  {
+   "year": 2024,
+   "category": "other",
+   "projects": 13,
+   "votes": 21332,
+   "votes_unknown": 0,
+   "budget_uah": 6162658,
+   "winners": 8
+  },
+  {
+   "year": 2025,
+   "category": "education-school",
+   "projects": 22,
+   "votes": 34165,
+   "votes_unknown": 0,
+   "budget_uah": 10103493,
+   "winners": 10
+  },
+  {
+   "year": 2025,
+   "category": "education-preschool",
+   "projects": 13,
+   "votes": 24114,
+   "votes_unknown": 0,
+   "budget_uah": 5151653,
+   "winners": 5
+  },
+  {
+   "year": 2025,
+   "category": "education-extracurricular",
+   "projects": 6,
+   "votes": 10757,
+   "votes_unknown": 0,
+   "budget_uah": 2650667,
+   "winners": 4
+  },
+  {
+   "year": 2025,
+   "category": "improvement-general",
+   "projects": 26,
+   "votes": 17887,
+   "votes_unknown": 0,
+   "budget_uah": 11947348,
+   "winners": 9
+  },
+  {
+   "year": 2025,
+   "category": "improvement-streets",
+   "projects": 20,
+   "votes": 18658,
+   "votes_unknown": 0,
+   "budget_uah": 46192152,
+   "winners": 5
+  },
+  {
+   "year": 2025,
+   "category": "greenery",
+   "projects": 0,
+   "votes": 0,
+   "votes_unknown": 0,
+   "budget_uah": 0,
+   "winners": 0
+  },
+  {
+   "year": 2025,
+   "category": "afu-support",
+   "projects": 47,
+   "votes": 0,
+   "votes_unknown": 0,
+   "budget_uah": 22446498,
+   "winners": 40
+  },
+  {
+   "year": 2025,
+   "category": "accessibility",
+   "projects": 4,
+   "votes": 6766,
+   "votes_unknown": 0,
+   "budget_uah": 1991500,
+   "winners": 3
+  },
+  {
+   "year": 2025,
+   "category": "other",
+   "projects": 11,
+   "votes": 15115,
+   "votes_unknown": 0,
+   "budget_uah": 4720074,
+   "winners": 4
+  },
+  {
+   "year": 2026,
+   "category": "education-school",
+   "projects": 33,
+   "votes": 84007,
+   "votes_unknown": 0,
+   "budget_uah": 15315334,
+   "winners": 14
+  },
+  {
+   "year": 2026,
+   "category": "education-preschool",
+   "projects": 16,
+   "votes": 40306,
+   "votes_unknown": 0,
+   "budget_uah": 7359295,
+   "winners": 6
+  },
+  {
+   "year": 2026,
+   "category": "education-extracurricular",
+   "projects": 8,
+   "votes": 11344,
+   "votes_unknown": 0,
+   "budget_uah": 2992206,
+   "winners": 4
+  },
+  {
+   "year": 2026,
+   "category": "improvement-general",
+   "projects": 28,
+   "votes": 17880,
+   "votes_unknown": 0,
+   "budget_uah": 12356148,
+   "winners": 10
+  },
+  {
+   "year": 2026,
+   "category": "improvement-streets",
+   "projects": 15,
+   "votes": 17009,
+   "votes_unknown": 0,
+   "budget_uah": 32832380,
+   "winners": 5
+  },
+  {
+   "year": 2026,
+   "category": "heritage",
+   "projects": 8,
+   "votes": 7888,
+   "votes_unknown": 0,
+   "budget_uah": 3443354,
+   "winners": 5
+  },
+  {
+   "year": 2026,
+   "category": "greenery",
+   "projects": 7,
+   "votes": 7468,
+   "votes_unknown": 0,
+   "budget_uah": 1900500,
+   "winners": 3
+  },
+  {
+   "year": 2026,
+   "category": "afu-support",
+   "projects": 68,
+   "votes": 17145,
+   "votes_unknown": 0,
+   "budget_uah": 32197106,
+   "winners": 44
+  },
+  {
+   "year": 2026,
+   "category": "accessibility",
+   "projects": 4,
+   "votes": 3040,
+   "votes_unknown": 0,
+   "budget_uah": 1576433,
+   "winners": 3
+  },
+  {
+   "year": 2026,
+   "category": "other",
+   "projects": 12,
+   "votes": 20540,
+   "votes_unknown": 0,
+   "budget_uah": 4842711,
+   "winners": 4
+  }
+ ],
+ "by_year_size": [
+  {
+   "year": 2016,
+   "size": "small",
+   "size_uk": "Малий",
+   "projects": 80,
+   "votes": 2090,
+   "budget_uah": 3295536,
+   "winners": 12
+  },
+  {
+   "year": 2017,
+   "size": "small",
+   "size_uk": "Малий",
+   "projects": 52,
+   "votes": 8024,
+   "budget_uah": 2319125,
+   "winners": 33
+  },
+  {
+   "year": 2018,
+   "size": "great",
+   "size_uk": "Великий",
+   "projects": 38,
+   "votes": 11486,
+   "budget_uah": 7226670,
+   "winners": 5
+  },
+  {
+   "year": 2018,
+   "size": "small",
+   "size_uk": "Малий",
+   "projects": 101,
+   "votes": 13991,
+   "budget_uah": 4719849,
+   "winners": 32
+  }
+ ],
+ "top_projects": {
+  "2016": {
+   "uncategorized": [
+    {
+     "project_id": "PR–38/16",
+     "title": "Облаштування зони відпочинку",
+     "votes": 167,
+     "budget_uah": 50000,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–26/16",
+     "title": "Комфорт і затишок для мешканців",
+     "votes": 150,
+     "budget_uah": 50000,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–15/16",
+     "title": "Облаштування прибудинкової території",
+     "votes": 132,
+     "budget_uah": 50000,
+     "is_winner": true,
+     "status": null
+    }
+   ]
+  },
+  "2017": {
+   "uncategorized": [
+    {
+     "project_id": "PR–41/17",
+     "title": "Облаштування зони відпочинку для дітей молодшого віку",
+     "votes": 480,
+     "budget_uah": 49440,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–19/17",
+     "title": "Музичний простір мікрорайону Опришівці",
+     "votes": 461,
+     "budget_uah": 45000,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–08/17",
+     "title": "Благоустрій дитячого майданчика бул. Північний 7А, 7, 9",
+     "votes": 439,
+     "budget_uah": 49850,
+     "is_winner": true,
+     "status": null
+    }
+   ]
+  },
+  "2018": {
+   "uncategorized": [
+    {
+     "project_id": "PR–127/18",
+     "title": "Благоустрій шкільної їдальні",
+     "votes": 1249,
+     "budget_uah": 200000,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–34/18",
+     "title": "Сучасний простір шкільної їдальні",
+     "votes": 1224,
+     "budget_uah": 196483,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–93/18",
+     "title": "Ремонт огорожі будинку, встановлення воріт, модернізація внутрішньобудинкового освітлення",
+     "votes": 1167,
+     "budget_uah": 199997,
+     "is_winner": true,
+     "status": null
+    }
+   ]
+  },
+  "2019": {
+   "education-general": [
+    {
+     "project_id": "PR–79/19",
+     "title": "ЗШ № 26 - сучасний спортивний майданчик",
+     "votes": 2847,
+     "budget_uah": 296500,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–08/19",
+     "title": "Ремонт санвузлів школи №10",
+     "votes": 2670,
+     "budget_uah": 299860,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–52/19",
+     "title": "Модернізація майстерні трудового навчання",
+     "votes": 2604,
+     "budget_uah": 299683,
+     "is_winner": true,
+     "status": null
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–128/19",
+     "title": "З метою енергозбереження заміна фасадних бічних вікон в під’їздах будинку на вул. Г. Хоткевича 54",
+     "votes": 774,
+     "budget_uah": 214800,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–27/19",
+     "title": "Встановлення системи опалення в приміщенні храму Пресв. Серця Христа-Чоловіколюбця і Блаж. Свмч. Григорія Хомишина, Симеона Лукача та Івана Слезюка, вул. Ленкавського, 17-В м. Івано-Франківськ",
+     "votes": 768,
+     "budget_uah": 213424,
+     "is_winner": true,
+     "status": null
+    },
+    {
+     "project_id": "PR–130/19",
+     "title": "Відпочинкова зона на Міському озері, поруч тенісних кортів",
+     "votes": 765,
+     "budget_uah": 300000,
+     "is_winner": true,
+     "status": null
+    }
+   ]
+  },
+  "2020": {
+   "education-general": [
+    {
+     "project_id": "PR–33/20",
+     "title": "Благоустрій їдальні ЗШ №21 – збереження здоров'я дітей",
+     "votes": 2022,
+     "budget_uah": 299459,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–122/20",
+     "title": "ЗШ №15 - місце прогресивного навчаняя",
+     "votes": 1919,
+     "budget_uah": 300000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–226/20",
+     "title": "Сучасне шкільне подвір’я – щасливі діти",
+     "votes": 742,
+     "budget_uah": 99950,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–05/20",
+     "title": "Капітальний ремонт вулиці Горішня в с. Колодіївка",
+     "votes": 830,
+     "budget_uah": 1499499,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–151/20",
+     "title": "Уляни Кравченко \"SOS ремонт дороги\"",
+     "votes": 817,
+     "budget_uah": 1320000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–85/20",
+     "title": "Ремонт вулиці Стефаника в м. Івано-Франківську",
+     "votes": 782,
+     "budget_uah": 1440000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–186/20",
+     "title": "Сучасна дитяча поліклініка, комфортна для всіх",
+     "votes": 658,
+     "budget_uah": 298465,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–96/20",
+     "title": "Модернізація під'їзних електричних шаф в будинку №54 на вул Г. Хоткевича",
+     "votes": 534,
+     "budget_uah": 299320,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–235/20",
+     "title": "Придбання комфортних вольєрів для безпритульних тварин в притулку \"Дім Сірка\"",
+     "votes": 501,
+     "budget_uah": 234000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "uncategorized": [
+    {
+     "project_id": "PR–206/20",
+     "title": "Створення сучасного освітнього середовища - комбінованої майстерні трудового навчання",
+     "votes": null,
+     "budget_uah": 300000,
+     "is_winner": false,
+     "status": "participated"
+    },
+    {
+     "project_id": "PR–123/20",
+     "title": "Облаштування дитячого майданчика «ВІЛЬШИНА-СКВЕР» в с.Угорники",
+     "votes": null,
+     "budget_uah": 299700,
+     "is_winner": false,
+     "status": "participated"
+    },
+    {
+     "project_id": "PR–212/20",
+     "title": "Встановлення в Івано-Франківському природничо-математичному ліцеї пожежної сигналізації",
+     "votes": null,
+     "budget_uah": 248718,
+     "is_winner": false,
+     "status": "participated"
+    }
+   ]
+  },
+  "2021": {
+   "education-general": [
+    {
+     "project_id": "PR–196/21",
+     "title": "Світ інновацій у Ліцеї №16",
+     "votes": 2969,
+     "budget_uah": 299500,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–64/21",
+     "title": "Ліцей №21. Ремонт санвузлів.",
+     "votes": 2653,
+     "budget_uah": 294131,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–191/21",
+     "title": "Ремонт їдальні Крихівецького ліцею",
+     "votes": 2621,
+     "budget_uah": 299003,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "heritage": [
+    {
+     "project_id": "PR–82/21",
+     "title": "Збережи Спадщину Прабатьків",
+     "votes": 5779,
+     "budget_uah": 1500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–242/21",
+     "title": "Реставрація дерев'яної церкви святого Дмитрія у Пасічній",
+     "votes": 5479,
+     "budget_uah": 1350000,
+     "is_winner": false,
+     "status": "participated"
+    },
+    {
+     "project_id": "PR–38/21",
+     "title": "Ремонтно-реставраційні роботи даху та  карнизів по вул.Л.Гузара, 15",
+     "votes": 1659,
+     "budget_uah": 400000,
+     "is_winner": false,
+     "status": "participated"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–49/21",
+     "title": "Кобринської ремонт",
+     "votes": 1848,
+     "budget_uah": 1500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–184/21",
+     "title": "Капітальний ремонт вул. Котляревського",
+     "votes": 1568,
+     "budget_uah": 1500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–116/21",
+     "title": "Капітальний ремонт дорожнього покриття частини вулиці Василя Стуса до ліцею № 10",
+     "votes": 1526,
+     "budget_uah": 1449388,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–11/21",
+     "title": "Сучасні інформаційні технології для бібліотек НУШ",
+     "votes": 1823,
+     "budget_uah": 299950,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–145/21",
+     "title": "Облаштування інклюзивної сонячної пекарні «Радість без меж»",
+     "votes": 1518,
+     "budget_uah": 300000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–158/21",
+     "title": "Облаштування пляжної зони на Майзлях",
+     "votes": 1321,
+     "budget_uah": 300000,
+     "is_winner": false,
+     "status": "impossible"
+    }
+   ]
+  },
+  "2023": {
+   "education-general": [
+    {
+     "project_id": "PR–110/23",
+     "title": "Спортивний комплекс просто неба на території ліцею №23 імені Романа Гурика",
+     "votes": 2703,
+     "budget_uah": 498270,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–88/23",
+     "title": "Ліцей №21 імені Євгена Коновальця. Облаштування укриття №2.",
+     "votes": 2599,
+     "budget_uah": 499345,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–27/23",
+     "title": "Облаштування приміщення укриття (коридорів) Ліцею №10",
+     "votes": 2441,
+     "budget_uah": 299763,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "greenery": [
+    {
+     "project_id": "PR–54/23",
+     "title": "\"Компостуй - Франківськ рятуй\". Івано-Франківська міська дитяча екологічна станція. Компостна яма",
+     "votes": 1527,
+     "budget_uah": 421861,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–107/23",
+     "title": "Зелений простір, що об'єднує два села",
+     "votes": 1088,
+     "budget_uah": 320000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–73/23",
+     "title": "Озеленення  території по вул.Заклинських, 13",
+     "votes": 881,
+     "budget_uah": 199935,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-general": [
+    {
+     "project_id": "PR–28/23",
+     "title": "Безпека освітнього процесу в Івано-Франківській дитячій музичній школі №3 (ремонт укриття).",
+     "votes": 1461,
+     "budget_uah": 499152,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–06/23",
+     "title": "Пішохідна (велосипедна) доріжка \"Велес\" - Коледж електронних приладів",
+     "votes": 1242,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–53/23",
+     "title": "Облаштування дитячого майданчика на вул. Галицька 64В",
+     "votes": 1237,
+     "budget_uah": 457390,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–116/23",
+     "title": "Благоустрій та відновлення дорожнього покриття проїзд від вулиці  К. Данила до Південного бульвару",
+     "votes": 1732,
+     "budget_uah": 2200000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–32/23",
+     "title": "Відновлення дороги до садівницьких товариств “Прогрес ІФ”, “Магістраль”, “Геолог”, “Патріот”",
+     "votes": 1617,
+     "budget_uah": 2800000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–02/23",
+     "title": "Ремонт вул. Гуцуляка (дорога до річки на Каскаді)",
+     "votes": 1370,
+     "budget_uah": 1310000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ]
+  },
+  "2024": {
+   "education-extracurricular": [
+    {
+     "project_id": "PR–84/24",
+     "title": "STEAM-МАЙСТЕРНЯ ЕКОДРОНІВ Центру освітніх інновацій",
+     "votes": 3031,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–28/24",
+     "title": "Гарденотерапія - емоційне відновлення через природу.",
+     "votes": 1835,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–90/24",
+     "title": "Утеплення даху, вентиляція та ремонт основного приміщення в Пласті",
+     "votes": 1749,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "education-preschool": [
+    {
+     "project_id": "PR–16/24",
+     "title": "Майданчик для спортивних занять ЗДО № 29 \"Кобзарик\"",
+     "votes": 2565,
+     "budget_uah": 383640,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–38/24",
+     "title": "Капітальний ремонт прогулянкової території ЗДО №37 «Джерельце»",
+     "votes": 2453,
+     "budget_uah": 496800,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–109/24",
+     "title": "Сучасні туалетні кімнати в ЗДО №33 «Кристалик».",
+     "votes": 2401,
+     "budget_uah": 499022,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "education-school": [
+    {
+     "project_id": "PR–95/24",
+     "title": "Ремонт санвузлів  в ліцеї імені Шухевича",
+     "votes": 2385,
+     "budget_uah": 499976,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–22/24",
+     "title": "Цифровий освітній простір Ліцею 16",
+     "votes": 2332,
+     "budget_uah": 499950,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–17/24",
+     "title": "Заміна старих вікон на пластикові в Ліцеї № 23 імені Романа Гурика",
+     "votes": 2291,
+     "budget_uah": 491600,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-general": [
+    {
+     "project_id": "PR–112/24",
+     "title": "Благоустрій міжбудинкового проходу на Федьковича в Івано-Франківську",
+     "votes": 1304,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–110/24",
+     "title": "Облаштування паркового громадського простору у палаці Потоцьких",
+     "votes": 1297,
+     "budget_uah": 497000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–39/24",
+     "title": "Облаштування тротуару та прибудинкових площадок  по вул. Української Дивізізії 1,3",
+     "votes": 1169,
+     "budget_uah": 495000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–98/24",
+     "title": "Ремонт вулиці Січових Стрільців у селі Підпечери",
+     "votes": 2042,
+     "budget_uah": 3000000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–29/24",
+     "title": "Облаштування дорожнього покриття вулиці Горохолинської",
+     "votes": 1993,
+     "budget_uah": 2994498,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–06/24",
+     "title": "Благоустрій вулиці Січових Стрільців села Радча",
+     "votes": 1965,
+     "budget_uah": 2980800,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–02/24",
+     "title": "Закупівля безпілотних літальних апаратів для ЗСУ",
+     "votes": 3178,
+     "budget_uah": 499500,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–89/24",
+     "title": "Розширення можливостей соціальної пекарні парафії Святого Пророка Іллі",
+     "votes": 2579,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–11/24",
+     "title": "FPV ДРОНИ для ЗСУ",
+     "votes": 2344,
+     "budget_uah": 498800,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ]
+  },
+  "2025": {
+   "accessibility": [
+    {
+     "project_id": "PR–12/25",
+     "title": "Сходові електропідйомники для крісел колісних",
+     "votes": 2544,
+     "budget_uah": 499500,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–61/25",
+     "title": "Бібліотека доступна для всіх!",
+     "votes": 1830,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–87/25",
+     "title": "Облаштування пандуса до приміщення ФАПу у с. Підпечери",
+     "votes": 1328,
+     "budget_uah": 492000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "afu-support": [
+    {
+     "project_id": "PR–01/25",
+     "title": "Дрони перемоги",
+     "votes": 0,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–02/25",
+     "title": "Дрони - крила ЗСУ",
+     "votes": 0,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–08/25",
+     "title": "Дрони для ЕДЕЛЬВЕЙСІВ",
+     "votes": 0,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "education-extracurricular": [
+    {
+     "project_id": "PR–151/25",
+     "title": "Ремонт даху в пластовій домівці",
+     "votes": 2397,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–140/25",
+     "title": "Облаштування вестибюлю та санвузла Міського центру дитячої та юнацької творчості",
+     "votes": 2264,
+     "budget_uah": 468793,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–67/25",
+     "title": "Фізична активність - здорова нація  у ДПТНЗ \"ВПУ сервісного обслуговування техніки\"",
+     "votes": 2115,
+     "budget_uah": 499874,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "education-preschool": [
+    {
+     "project_id": "PR–57/25",
+     "title": "Облаштування ігрових майданчиків у ЗДО №27 \"Карпатська казка\"",
+     "votes": 3298,
+     "budget_uah": 499012,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–130/25",
+     "title": "Дитячі меблі для ЗДО №3 \"Бджілка\"",
+     "votes": 3292,
+     "budget_uah": 301872,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–90/25",
+     "title": "Безпечні та комфортні доріжки ЗДО №11 \"Пізнайко\"",
+     "votes": 3281,
+     "budget_uah": 499536,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "education-school": [
+    {
+     "project_id": "PR–56/25",
+     "title": "Освіта в HD: телевізори для Ліцею № 10",
+     "votes": 3029,
+     "budget_uah": 499842,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–48/25",
+     "title": "Простір змін у Ліцеї 16",
+     "votes": 2361,
+     "budget_uah": 499634,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–95/25",
+     "title": "Сучасна їдальня в Ліцеї ім. В. Чорновола",
+     "votes": 2274,
+     "budget_uah": 499992,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-general": [
+    {
+     "project_id": "PR–40/25",
+     "title": "Сучасний спортивний майданчик «СпортХаб «МБНП»",
+     "votes": 1684,
+     "budget_uah": 498960,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–73/25",
+     "title": "Благоустрій дамби річки Бистриця Надвірнянська: встановлення вуличних меблів та урн для сміття",
+     "votes": 1677,
+     "budget_uah": 137500,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–26/25",
+     "title": "Вуличне освітлення території СТ \"Ветеран\" та під'їздної дороги",
+     "votes": 1410,
+     "budget_uah": 496000,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–88/25",
+     "title": "Ремонт вулиці Січових Стрільців у селі Підпечери",
+     "votes": 2454,
+     "budget_uah": 3000000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–65/25",
+     "title": "КОМФОРТНА ДОСТУПНА ВУЛИЦЯ ДО «ОКЛ ІФ ОР»",
+     "votes": 2223,
+     "budget_uah": 1352416,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–15/25",
+     "title": "Ремонт дороги, урочище Дем'янів Лаз, СТ \"Лісова Пісня\"",
+     "votes": 2205,
+     "budget_uah": 2999360,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–41/25",
+     "title": "Поточний ремонт палат для належного лікування військовослужбовців (захисників України)  КНП МКЛ №1",
+     "votes": 3597,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "realized"
+    },
+    {
+     "project_id": "PR–126/25",
+     "title": "Розширення можливостей центру підтримки потребуючих при парафії Святого Пророка Іллі",
+     "votes": 3431,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–119/25",
+     "title": "Заміна механіки музичних інструментів - роялів",
+     "votes": 3384,
+     "budget_uah": 385660,
+     "is_winner": true,
+     "status": "realized"
+    }
+   ]
+  },
+  "2026": {
+   "accessibility": [
+    {
+     "project_id": "PR–202/26",
+     "title": "Покращення доступності приміщень Ветеранського простору БРАСС",
+     "votes": 1418,
+     "budget_uah": 119200,
+     "is_winner": false,
+     "status": "participated"
+    },
+    {
+     "project_id": "PR–112/26",
+     "title": "Інклюзивний адаптивний вуличний майданчик для ДРУЦКРОІ \"Донбас-Прикарпаття\"",
+     "votes": 658,
+     "budget_uah": 458283,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–191/26",
+     "title": "ДОСТУПНІСТЬ ГРУШЕВСЬКОГО",
+     "votes": 526,
+     "budget_uah": 498950,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "afu-support": [
+    {
+     "project_id": "PR–87/26",
+     "title": "РЕАБІЛІТАЦІЙНЕ ОБЛАДНАННЯ ДЛЯ ВІЙСЬКОВОГО ГОСПІТАЛЮ М. ІВАНОФРАНКІВСЬК",
+     "votes": 1848,
+     "budget_uah": 499900,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–29/26",
+     "title": "Дрони - \"очі\" ЗСУ для в/ч А7091",
+     "votes": 1725,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–77/26",
+     "title": "Очі Фронту",
+     "votes": 1093,
+     "budget_uah": 460000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "education-extracurricular": [
+    {
+     "project_id": "PR–162/26",
+     "title": "Модернізація аварійної огорожі екологічної станції для безпеки дітей.",
+     "votes": 3593,
+     "budget_uah": 499035,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–190/26",
+     "title": "Укриття без бар'єрів: безпечний вхід",
+     "votes": 3094,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–176/26",
+     "title": "Облаштування входу ДЮСШ 3",
+     "votes": 1763,
+     "budget_uah": 499171,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "education-preschool": [
+    {
+     "project_id": "PR–153/26",
+     "title": "Модернізація технологічного обладнання харчоблоку ЗДО №11 «Пізнайко»",
+     "votes": 4568,
+     "budget_uah": 498604,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–23/26",
+     "title": "Безпечне та чисте подвір’я для дітей,  в ЗДО №37 «Джерельце».",
+     "votes": 4493,
+     "budget_uah": 499510,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–110/26",
+     "title": "200 метрів безпеки у ЗДО12 \"Струмочок\"",
+     "votes": 4324,
+     "budget_uah": 463996,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "education-school": [
+    {
+     "project_id": "PR–140/26",
+     "title": "Ліцей №16: простір для всіх",
+     "votes": 6000,
+     "budget_uah": 499300,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–168/26",
+     "title": "СМАКзмін: ТРАНСФОРМАЦІЯ ЇДАЛЬНІ Ліцею №19",
+     "votes": 5862,
+     "budget_uah": 499947,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–85/26",
+     "title": "ЛІЦЕЙНЕ ПОДВІР’Я: КОМФОРТ+",
+     "votes": 5644,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "greenery": [
+    {
+     "project_id": "PR–38/26",
+     "title": "Озеленення ротонди Христа Спасителя та створення скверу поруч з ГРП в мікрорайоні Опришівці",
+     "votes": 2022,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–156/26",
+     "title": "Комфортна зона відпочинку на дамбі річки",
+     "votes": 1877,
+     "budget_uah": 69000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–106/26",
+     "title": "Зелений периметр стадіону села Радча",
+     "votes": 1580,
+     "budget_uah": 429000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "heritage": [
+    {
+     "project_id": "PR–196/26",
+     "title": "Реставрація вхідних дверей пам'ятки архітектури місцевого значення, Короля Данила 3",
+     "votes": 2018,
+     "budget_uah": 240000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–198/26",
+     "title": "Ремонт арки - входу в будинок за адресою вул. Курбаса 6",
+     "votes": 1934,
+     "budget_uah": 462860,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–183/26",
+     "title": "Реставрація фасаду будинку по вул. Грушевського 38",
+     "votes": 1452,
+     "budget_uah": 265524,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "improvement-general": [
+    {
+     "project_id": "PR–127/26",
+     "title": "Майданчик дітям",
+     "votes": 2451,
+     "budget_uah": 498740,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–105/26",
+     "title": "Світлий прибережний простір дамби Бистриці Надвірнянської",
+     "votes": 1957,
+     "budget_uah": 495000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–165/26",
+     "title": "Зелена Вулиця",
+     "votes": 1329,
+     "budget_uah": 500000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "improvement-streets": [
+    {
+     "project_id": "PR–89/26",
+     "title": "Безпечний маршрут СТ «Бистриця Надвірнянська»",
+     "votes": 2584,
+     "budget_uah": 2993250,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–56/26",
+     "title": "Ремонт вулиці Нова у Підпечери",
+     "votes": 2483,
+     "budget_uah": 3000000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–143/26",
+     "title": "Влаштування дорожнього покриття на території садового товариства \"Ветеран\"",
+     "votes": 2182,
+     "budget_uah": 3000000,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ],
+   "other": [
+    {
+     "project_id": "PR–07/26",
+     "title": "«Маскування ЗСУ»",
+     "votes": 4804,
+     "budget_uah": 400000,
+     "is_winner": true,
+     "status": "in-progress"
+    },
+    {
+     "project_id": "PR–62/26",
+     "title": "Створення простору центру турботи та допомоги Карітасу Святого Пророка Іллі",
+     "votes": 3990,
+     "budget_uah": 500000,
+     "is_winner": false,
+     "status": "participated"
+    },
+    {
+     "project_id": "PR–79/26",
+     "title": "«Чисте небо». Дрони перехоплювачі ШАХЕДІВ для НЦ «ВІТРУГАН».",
+     "votes": 2689,
+     "budget_uah": 499980,
+     "is_winner": true,
+     "status": "in-progress"
+    }
+   ]
+  }
+ }
+}

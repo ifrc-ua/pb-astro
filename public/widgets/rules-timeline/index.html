@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Правила по роках — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Як змінювалися правила й фінансування Бюджету участі Івано-Франківська за 10 років (2016–2026): від 1 голосу і 0,5 млн грн до 13 голосів і 55 млн грн.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="content.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Як змінювалися правила Бюджету участі Івано-Франківська
+  за десять років. Кожен рік: кількість голосів на виборця, виділена сума і
+  головні зміни правил. Натисніть «На весь екран» і гортайте роки; праворуч
+  можна перестрибнути до будь-якого року.</p>
+
+  <div class="hero" id="hero">
+    <div class="hero-row">
+      <span class="yr" id="yr">2026</span>
+      <button type="button" class="fs-btn" id="fsBtn" aria-label="Відкрити на весь екран">
+        <span class="fs-txt">На весь екран</span>
+      </button>
+    </div>
+    <div class="sub" id="sub">Нова пʼятирічна програма</div>
+    <div id="metrics">
+      <div class="metric"><span class="big num" id="vn">13</span><span class="mlbl" id="vl">голосів на виборця</span></div>
+      <div class="metric"><span class="big num" id="bn">55 млн грн</span><span class="mlbl">виділено</span></div>
+    </div>
+    <div class="pausebox" id="pausebox" hidden>Кампанії цього року не було.</div>
+    <div class="lanes" id="lanes" aria-hidden="true"></div>
+    <div class="lane-note" id="laneNote" hidden></div>
+  </div>
+
+  <p class="sr-only" id="live" aria-live="polite"></p>
+
+  <p class="teaser-hint" id="teaserHint"><b>10 років правил Бюджету участі</b> — від
+  одного голосу до 13-ти. Розгорніть на весь екран і гортайте.</p>
+
+  <div class="stage" id="stage" hidden>
+    <div class="scroller" id="scroller" tabindex="0"
+         aria-label="Роки правил. Гортайте вертикально або стрілками вгору/вниз"></div>
+    <nav class="rail" id="rail" aria-label="Перехід до року"></nav>
+    <div class="hint" id="scrollHint" aria-hidden="true">гортайте</div>
+  </div>
+
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

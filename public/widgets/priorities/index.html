@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Еволюція пріоритетів — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Інтерактивний streamgraph: як змінювалися категорії проєктів Бюджету участі Івано-Франківська за 10 років (2016–2026) — від поділу «малі/великі» до 11 тематичних категорій, ковід, війна, поява «Допомоги ЗСУ».">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Інтерактивна діаграма-потік Бюджету участі Івано-Франківська:
+  товщина кольорових стрічок показує, скільки проєктів (або голосів) мала кожна
+  тематична категорія у 2016–2026 роках. У 2016–2018 тематичних категорій ще не
+  було — ці роки показані сірою смугою. У 2022 році Бюджет участі не проводився.
+  Оберіть рік на осі (клавішами зі стрілками та Enter або дотиком) — поруч
+  з'являться деталі: категорії року, віхи та топ-проєкти кожної категорії.</p>
+
+  <header class="head">
+    <div class="head-title">
+      <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+      <h1 class="title">Еволюція пріоритетів</h1>
+      <p class="subtitle">У 2016 році проєкти ділилися лише на «малі» й «великі».
+      У 2026-му — на 11 тематичних категорій, і найбільша за поданнями — це
+      «Допомога ЗСУ». Клікніть на стрічку, рік, назву категорії, щоб побачити різні деталі.</p>
+    </div>
+    <div class="mode" role="radiogroup" aria-label="Що показує товщина стрічок">
+      <button type="button" class="mode-btn" id="modeProjects" role="radio" aria-checked="true">проєкти</button>
+      <button type="button" class="mode-btn" id="modeVotes" role="radio" aria-checked="false">голоси</button>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <section class="scene" aria-label="Діаграма-потік категорій за роками">
+      <div class="scroll" id="scroll" tabindex="-1">
+        <div class="chart-inner" id="chartInner">
+          <svg id="stream" aria-hidden="true"></svg>
+          <div class="year-axis" id="yearAxis" role="group"
+               aria-label="Роки. Стрілками — між роками, Enter — деталі року"></div>
+        </div>
+      </div>
+      <p class="scroll-hint" aria-hidden="true">гортайте графік убік →</p>
+      <p class="scene-cap" id="sceneCap">Товщина стрічки — кількість
+      <span id="capMode">поданих проєктів</span> категорії того року.
+      Сіра смуга 2016–2018 — роки до запровадження тематичних категорій.</p>
+
+      <div class="legend" id="legend" role="group" aria-label="Категорії. Клік — деталі категорії в обраному році"></div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" aria-label="Деталі обраного року чи категорії"></aside>
+  </div>
+
+  <footer class="notes">
+    <ul class="note-list">
+      <li>Тематичні категорії запроваджено з 2019 року; у 2016–2018 проєкти
+      ділилися лише за розміром — малий/великий (тому сіра смуга «без
+      категоризації»).</li>
+      <li>У 2020 голоси відомі лише для переможців (263 проєкти без записаних
+      голосів) — у режимі «голоси» смуга 2020 неповна.</li>
+      <li>«Допомога ЗСУ» у 2025 фінансувалась поза конкурсним голосуванням
+      (0 голосів у даних); у 2026 категорія повернулась у конкурс.</li>
+      <li>«Зелені проєкти» у 2025 були в бюлетені, але не отримали жодного
+      подання.</li>
+    </ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Завантаження даних…</span>
+  </div>
+
+  <div class="tooltip" id="tooltip" aria-hidden="true"></div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

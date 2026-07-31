@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Прожектор проєкту — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Інтерактивна мапа: звідки приходили голоси за топ-проєкти Бюджету участі Івано-Франківської громади, 2021–2026. Оберіть рік і проєкт — мапа покаже території підтримки.">
+<link rel="icon" href="data:,">
+<link href="lib/maplibre-gl.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Інтерактивна мапа підтримки проєктів Бюджету участі
+  Івано-Франківська: оберіть рік кампанії та проєкт-переможець зі списку —
+  мапа покаже знеособлені території, звідки прийшли голоси за нього, та
+  загальний лічильник голосів.</p>
+
+  <header class="bar">
+    <div class="bar-title">
+      <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+      <h1 class="title">Прожектор проєкту</h1>
+    </div>
+    <nav class="years" id="years" aria-label="Рік кампанії"></nav>
+  </header>
+
+  <div class="stage">
+
+    <aside class="rail" aria-label="Топ-10 проєктів року за голосами">
+      <div class="rail-head">
+        <span class="rail-cap" id="railCap">Топ-10 за голосами</span>
+      </div>
+      <ol class="plist" id="plist"></ol>
+    </aside>
+
+    <div class="map-wrap">
+      <div id="map" aria-hidden="true"></div>
+
+      <div class="panel-tr" id="panelTR">
+        <div class="card counter" id="counter" aria-live="polite" hidden>
+          <div class="counter-title" id="counterTitle"></div>
+          <div class="counter-num" id="counterNum">0</div>
+          <div class="counter-cap" id="counterCap">голосів</div>
+          <div class="counter-sub" id="counterSub"></div>
+        </div>
+
+        <div class="card channel" id="channel" aria-live="polite" hidden>
+          <div class="ch-block">
+            <div class="ch-cap">Як голосували</div>
+            <div class="ch-bar" id="chBar" role="img" aria-label=""></div>
+            <div class="ch-labels" id="chLabels"></div>
+          </div>
+          <div class="ch-block">
+            <div class="ch-cap">Хто голосував</div>
+            <div class="ch-bar" id="sexBar" role="img" aria-label=""></div>
+            <div class="ch-labels" id="sexLabels"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay card legend" aria-label="Легенда">
+        <span class="legend-item"><i class="sw sw-project"></i>обраний проєкт</span>
+        <span class="legend-item"><i class="sw sw-ramp"></i>місто: звідки голосували, соти ~350 метрів у поперечнику</span>
+        <span class="legend-item"><i class="sw sw-village"></i>село, де голосували: число голосів — при наведенні</span>
+      </div>
+
+      <div class="loading" id="loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <span id="loadingText">Завантаження даних…</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="note">
+    Мапа показує, <em>звідки голосували</em> (за місцем проживання виборця), а не чому.
+    Лічильник містить усі голоси, віддані за кожен проєкт-переможець у відповідному році.
+    Перелік проєктів складено за спаданням кількості голосів. На мапі відображено лише
+    знеособлені агрегати ≥ 5 голосів: у місті — соти ~350 м у поперечнику (<a
+    href="https://h3geo.org" target="_blank" rel="noopener noreferrer"
+    title="Про систему гексагональної сітки H3 (h3geo.org)">H3</a>, рівень 9;
+    детальніше див. методологію «Як ми рахували»), у селах — з міркувань приватності
+    без поділу на соти: село з голосами за проєкт позначене рівним тоном, одне число
+    на все село. Числа відображаються при наведенні на соту або населений пункт.
+    Села, звідки не було голосів за обраний проєкт (або менше п’яти), лишаються
+    обведені лише сірою межею, без заливки.
+  </footer>
+</div>
+
+<script src="lib/maplibre-gl.js"></script>
+
+<script src="lib/h3-js.umd.js"></script>
+<script src="lib/deck.gl.min.js"></script>
+<script src="app.js"></script>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+---
+// Вбудований віджет (same-origin iframe) з авторозміром висоти через postMessage.
+// Три режими:
+//   • auto (типово)  — висота приходить від віджета ({type:'pb-embed-height', height}).
+//   • fullscreen     — віджет має власний повноекранний режим: у сторінці показує
+//                      компактний тизер (авторозмір), а кнопка «На весь екран» відкриває
+//                      справжній фулскрін браузера (Fullscreen API). Тож iframe дістає
+//                      allow="fullscreen"; висота — по тизеру (НЕ 100dvh, інакше під
+//                      тизером зяяв би пустий екран). rules-timeline.
+//   • height="…"     — явна висота для «повноекранних» віджетів (мапи: overflow:hidden,
+//                      #map absolute — власної висоти контенту не мають, тож авторозмір
+//                      їм нічого корисного не дасть).
+//   • bleed          — на всю ширину екрана, як мапні сцени (.scene): край-у-край на
+//                      всіх ширинах, без рамки/радіуса; висота — пропом height
+//                      (~92dvh). Інтерактивний одразу, без скрол-хореографії. spotlight.
+//
+// Ширина (Task F1): на десктопі (≥1024px) віджет виводиться широко, поза колонкою
+// тексту (той самий full-bleed, що в .scene), щоб ширина iframe перевалила за 1024px і
+// всередині віджета сам увімкнувся двоколонковий макет «чарт + панель» (як на PB10).
+// Ширина обгортки — per-widget через --w-max: віджети з двоколонковим гридом (7fr/5fr
+// при ≥1024px) отримують повну ширину; прості чарти, що самі себе обмежують, лишаються
+// вужчими, щоб не плавати в порожнечі. На мобільному (<1024px) — вертикальна колонка.
+interface Props { name: string; title: string; fullscreen?: boolean; height?: string; bleed?: boolean; source?: string; ocha?: boolean }
+const {
+  name,
+  title,
+  fullscreen = false,
+  height,
+  bleed = false,
+  // Атрибуція даних під віджетом (зліва); формулювання можна перекрити per-widget.
+  // ocha — для мапних віджетів: додає ", OCHA" з посиланням на межі громад (COD-AB)
+  source = "Джерело: дані Івано-Франківської міської ради",
+  ocha = false,
+} = Astro.props;
+const src = `/widgets/${name}/index.html`;
+
+// Максимальна ширина обгортки на десктопі, px (за внутрішнім макетом кожного віджета);
+// bleed-віджети (spotlight) стелі не мають — край-у-край:
+//   WIDE   — грід 7fr/5fr при min-width:1024px, внутрішня стеля 1280px
+//   MEDIUM — самообмежені (flows ~980px)
+//   NARROW — прості чарти зі стелею 760px (тайли, скатер, смуги, тизер rules-timeline)
+const WIDE = 1280;
+const MEDIUM = 1040;
+const NARROW = 860;
+const MAX_WIDTH: Record<string, number> = {
+  "who-builds": WIDE,
+  "digital-divide": WIDE,
+  "communities-projects": WIDE,
+  "vote-breadth": WIDE,
+  "flows": MEDIUM,
+  "at-a-glance": NARROW,
+  "votes-vs-money": NARROW,
+  "budget-bars": NARROW,
+  "rules-timeline": NARROW,
+};
+const wMax = MAX_WIDTH[name] ?? WIDE;
+---
+<figure
+  class:list={["pb-widget", { "pb-widget--fixed": !!height, "pb-widget--fs": fullscreen, "pb-widget--bleed": bleed }]}
+  style={`--w-max:${wMax}px`}
+>
+  <iframe
+    src={src}
+    title={title}
+    loading="lazy"
+    data-widget={name}
+    allow={fullscreen ? "fullscreen" : undefined}
+    style={height ? `height:${height}` : undefined}
+  ></iframe>
+  <figcaption>
+    <span class="pb-widget__src">
+      {source}{ocha && <>{", "}<a href="https://data.humdata.org/dataset/cod-ab-ukr" target="_blank" rel="noopener">OCHA</a></>}
+    </span>
+    <a href={src} target="_blank" rel="noopener">Відкрити віджет окремо ↗</a>
+  </figcaption>
+</figure>
+
+<style>
+  /* Мобільний / базовий (<1024px): вертикальна колонка в потоці тексту. */
+  .pb-widget { margin: 2.5rem 0; max-width: 860px; margin-inline: auto; padding-inline: 24px; }
+  .pb-widget iframe { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--card); }
+  /* Мапні/повноекранні віджети без авторозміру: висота задається пропом height */
+  .pb-widget--fixed iframe { min-height: 420px; }
+  :root[data-theme="dark"] .pb-widget iframe { border: 1px solid var(--line); }
+  /* Підпис: атрибуція даних зліва, «відкрити окремо» справа */
+  figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0 16px;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .pb-widget__src { color: var(--muted); padding-block: 14px; }
+  /* Тач-ціль лінка ≥44px на мобільному (design.md §8) без роздування тексту */
+  figcaption a { display: inline-block; padding: 14px 4px; margin-left: auto; }
+  .pb-widget--nofs figcaption { padding-inline: 16px; }
+
+  /* Пристрої без Fullscreen API (iPhone Safari): віджет із власним фулскріном не може
+     відкритися на весь екран, тож його «На весь екран» грає ВСЕРЕДИНІ iframe. Даємо
+     повний екран край-у-край (100vw × 100dvh), щоб таймлайну було де розгорнутись.
+     Клас додається з JS (детект нижче); на десктопі/Android його немає. */
+  .pb-widget--nofs { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); padding-inline: 0; }
+  .pb-widget--nofs iframe { height: 100dvh; border-radius: 0; max-width: none; }
+
+  /* Десктоп (≥1024px): вивід поза колонкою тексту (full-bleed, як .scene) — вмикає
+     вбудований двоколонковий макет віджета. Ширина iframe/підпису — per-widget через
+     --w-max, по центру вьюпорта. html{overflow-x:clip} у global.css гасить зазор 100vw. */
+  @media (min-width: 1024px) {
+    .pb-widget {
+      width: 100vw;
+      max-width: none;
+      margin-inline: calc(50% - 50vw);
+      padding-inline: clamp(16px, 2vw, 40px);
+    }
+    .pb-widget > iframe,
+    .pb-widget > figcaption {
+      max-width: var(--w-max, 1280px);
+      margin-inline: auto;
+    }
+  }
+
+  /* Full-bleed (spotlight): на всю ширину екрана, як мапні сцени (.scene) —
+     край-у-край на всіх ширинах, без радіуса; висота задається пропом height
+     (~92dvh), внутрішній макет віджета розкривається сам. Правила стоять після
+     десктопного блока, щоб перемогти його однакову специфічність у каскаді. */
+  figure.pb-widget--bleed {
+    width: 100vw;
+    max-width: none;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: 0;
+  }
+  figure.pb-widget--bleed > iframe {
+    max-width: none;
+    border-radius: 0;
+  }
+  :root[data-theme="dark"] figure.pb-widget--bleed > iframe {
+    border-inline: 0;
+  }
+  /* Підпис лишається в потоці з власними полями — краї figure тепер без відступів */
+  figure.pb-widget--bleed > figcaption {
+    max-width: none;
+    padding-inline: clamp(16px, 2vw, 40px);
+  }
+</style>
+
+<script>
+  // Один слухач на сторінку матчить event.source з iframe і виставляє висоту.
+  // Fixed-height iframe (мапи) і no-fullscreen (iPhone) виключені — їхня висота фіксована.
+  interface PbEmbedMsg { type: string; height: number }
+  const w = window as unknown as { __pbEmbed?: boolean };
+  if (!w.__pbEmbed) {
+    w.__pbEmbed = true;
+
+    // Пристрої без Fullscreen API (iPhone Safari): fullscreen-віджет (rules-timeline)
+    // не може відкритися на весь екран через кнопку, тож грає всередині iframe. Даємо
+    // йому повний екран (клас .pb-widget--nofs → 100vw×100dvh) і підкидаємо в iframe
+    // layout-шим html,body{height:100%} — без нього is-fs-розкладка віджета розсипається
+    // (у віджета html/body без height). Файли віджета НЕ змінюються; шим лише про висоту.
+    const fsOk = !!(
+      (document as Document & { webkitFullscreenEnabled?: boolean }).fullscreenEnabled ||
+      (document as Document & { webkitFullscreenEnabled?: boolean }).webkitFullscreenEnabled
+    );
+    if (!fsOk) {
+      for (const fig of document.querySelectorAll<HTMLElement>("figure.pb-widget--fs")) {
+        fig.classList.add("pb-widget--nofs");
+        const f = fig.querySelector("iframe");
+        if (!f) continue;
+        const shim = () => {
+          try {
+            const d = f.contentDocument;
+            if (d && d.head && !d.getElementById("pb-fs-shim")) {
+              const s = d.createElement("style");
+              s.id = "pb-fs-shim";
+              s.textContent = "html,body{height:100%}";
+              d.head.appendChild(s);
+            }
+          } catch { /* cross-origin (не наш випадок) */ }
+        };
+        f.addEventListener("load", shim);
+        shim();
+      }
+    }
+
+    // «Плаский» ембед: у віджетів-карток (внутрішня p50-картка вужча за iframe,
+    // напр. at-a-glance з .widget{max-width:760px}) біле тло iframe визирає
+    // кільцем-обводкою навколо картки. Шим робить фон картки прозорим — ембед
+    // стає одним рівним світлим прямокутником. Standalone-сторінка без змін.
+    const FLAT = ["at-a-glance"];
+    // Мапні віджети: атрибуція OSM згорнута до кнопки ⓘ (мапа всередині iframe
+    // ініціалізується асинхронно, тож чекаємо на елемент атрибуції інтервалом)
+    const MAPS = ["spotlight"];
+    for (const f of document.querySelectorAll<HTMLIFrameElement>("figure.pb-widget iframe")) {
+      const name = f.dataset.widget ?? "";
+      if (FLAT.includes(name)) {
+        const flat = () => {
+          try {
+            const d = f.contentDocument;
+            if (d && d.head && !d.getElementById("pb-flat-shim")) {
+              const s = d.createElement("style");
+              s.id = "pb-flat-shim";
+              s.textContent = ".widget{background:transparent}";
+              d.head.appendChild(s);
+            }
+          } catch { /* cross-origin (не наш випадок) */ }
+        };
+        f.addEventListener("load", flat);
+        flat();
+      }
+      if (MAPS.includes(name)) {
+        const collapse = () => {
+          let tries = 0;
+          const t = setInterval(() => {
+            tries++;
+            try {
+              const el = f.contentDocument?.querySelector(".maplibregl-ctrl-attrib");
+              if (el) {
+                el.classList.remove("maplibregl-compact-show");
+                el.removeAttribute("open");
+                clearInterval(t);
+              } else if (tries > 60) {
+                clearInterval(t);
+              }
+            } catch {
+              clearInterval(t);
+            }
+          }, 500);
+        };
+        f.addEventListener("load", collapse);
+        collapse();
+      }
+    }
+
+    window.addEventListener("message", (e: MessageEvent) => {
+      const data = e.data as PbEmbedMsg | null;
+      if (!data || data.type !== "pb-embed-height") return;
+      const frames = document.querySelectorAll<HTMLIFrameElement>(
+        "figure.pb-widget:not(.pb-widget--fixed):not(.pb-widget--nofs) iframe"
+      );
+      for (const f of frames) {
+        // +1px: віджет шле Math.ceil(scrollHeight) (ціле), а реальна висота буває
+        // дробовою (напр. 341.281px) — рівно ціле лишає суб-піксельний виліт і
+        // внутрішній скролбар. Зайвий піксель тла невидимий.
+        if (f.contentWindow === e.source) f.style.height = `${data.height + 1}px`;
+      }
+    });
+  }
+</script>

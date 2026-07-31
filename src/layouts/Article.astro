@@ -1,0 +1,56 @@
+---
+import ThemeToggle from "../components/ThemeToggle.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+
+// Повні (абсолютні) адреси для тегів соцмереж. Facebook/LinkedIn/Telegram
+// читають картинку зі свого сервера, тож шлях мусить бути з доменом.
+// Astro.site береться з astro.config.mjs (https://pb.ifrc.org.ua).
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL("/og-cover.png", Astro.site).href;
+---
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Наталія Кобильчак" />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph — картка-прев'ю у Facebook, LinkedIn, Telegram, Viber, Slack -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Бюджет участі Івано-Франківська" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta property="og:image:alt" content={title} />
+
+  <!-- Twitter/X — велика картинка -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Іконки в оптичній шкалі: у вкладці (16–48 px) одна жовта сота на фіолетовому
+       полі, на «додати на головний екран» (180 px) — повна квітка з семи сот -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script is:inline>
+    if (localStorage.getItem("pb-theme") === "dark") document.documentElement.dataset.theme = "dark";
+  </script>
+</head>
+<body>
+  <header class="site-header"><ThemeToggle /></header>
+  <main><slot /></main>
+  <Footer />
+</body>
+</html>

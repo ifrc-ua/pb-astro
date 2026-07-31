@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Цифровий розрив — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Інтерактивна мапа 19 громад: частка голосів через ЦНАП у Бюджеті участі Івано-Франківська за кампаніями 2021–2026. Клік на громаду — її історія переходу в онлайн.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Інтерактивна мапа-хороплет 19 громад Івано-Франківської
+  міської територіальної громади. Заливка показує частку голосів Бюджету
+  участі, поданих через ЦНАП (фізичний сервісний канал), в обраній кампанії
+  2021–2026; підрежим «люди» натомість показує частку виборців, що хоч раз
+  голосували через ЦНАП, а перемикач шарів — частку жінок серед виборців.
+  Оберіть населений пункт на мапі (Tab і Enter) або зі списку (там же —
+  рядок «Вся громада» з підсумком по всіх) — праворуч з'явиться його історія:
+  крива частки ЦНАП за роками, людські профілі каналу, канал за статтю,
+  міграція між каналами та розподіл за статтю (жінки й чоловіки).</p>
+
+  <header class="head">
+    <div class="head-title">
+      <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+      <h1 class="title">Цифровий розрив</h1>
+      <p class="subtitle" id="contextLine">Місто голосує онлайн, села — через
+      ЦНАП, але рік за роком «вмикаються» в онлайн. Оберіть громаду, щоб
+      побачити її шлях.</p>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="layer-wrap">
+      <div class="layer" role="radiogroup" aria-label="Шар мапи">
+        <button type="button" class="layer-btn" id="layerChannel" role="radio" aria-checked="true">Канал: % через ЦНАП</button>
+        <button type="button" class="layer-btn" id="layerSex" role="radio" aria-checked="false">Стать: % жінок</button>
+      </div>
+      <div class="basis" id="channelBasis" role="radiogroup" aria-label="Рахувати канал по">
+        <button type="button" class="basis-btn" id="basisVotes" role="radio" aria-checked="true">голоси</button>
+        <button type="button" class="basis-btn" id="basisPeople" role="radio" aria-checked="false">люди</button>
+      </div>
+    </div>
+    <div class="years" id="yearsBox" role="group" aria-label="Кампанія. Стрілками — між роками">
+      <button type="button" class="play-btn" id="playBtn" aria-pressed="false" aria-label="Програти роки підряд">▶</button>
+      <div class="year-axis" id="yearAxis"></div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <section class="scene" aria-label="Мапа 19 громад">
+      <div class="map-wrap" id="mapWrap">
+        <svg id="map" role="group" aria-label="Хороплет громад"></svg>
+        <div class="map-year" id="mapYear" aria-hidden="true"></div>
+        <div class="tooltip" id="tooltip" role="presentation" hidden></div>
+      </div>
+      <div class="legend-block">
+        <div class="legend-head">
+          <span class="legend-title" id="legendTitle">Голоси через ЦНАП</span>
+          <span class="legend-cap" id="legendCap"></span>
+        </div>
+        <svg class="legend-bar" id="legendBar" aria-hidden="true"></svg>
+      </div>
+      <p class="scene-cap" id="sceneCap">Один виборець міг голосувати за різну
+      кількість проєктів (більше одного), тому голосів буде більше, ніж людей.</p>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" aria-label="Деталі обраної громади">
+      <label class="d-select-label" for="districtSelect">Населений пункт</label>
+      <select class="d-select" id="districtSelect"></select>
+      <div id="panelBody"></div>
+    </aside>
+  </div>
+
+  <footer class="notes">
+    <ul class="note-list">
+      <li>«Паперовий» канал означає, що голос вносив адміністратор ЦНАП за
+      вказівкою виборця. Паперових бюлетенів не було. Онлайн — це голосування
+      через BankID.</li>
+      <li>На мапі враховано голоси за населеним пунктом виборця.</li>
+      <li>У секціях «Люди та їхній канал» і «Міграція між каналами» кожна людина
+      порахована один раз за всі кампанії разом (унікальний виборець). Якщо людина
+      за ці роки змінювала місце проживання, вона врахована в тому населеному
+      пункті, з якого голосувала востаннє.</li>
+      <li>Шар «стать» — це частка жінок серед усіх виборців за всі кампанії
+      разом. Стать виведена з по-батькові та імені (ISO 5218), детальніше див.
+      методологію «Як ми рахували».</li>
+      <li>Групи, менші за 5 осіб, приховано (k-анонімність ≥ 5).</li>
+    </ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Завантаження даних…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

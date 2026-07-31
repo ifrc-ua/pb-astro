@@ -1,0 +1,3917 @@
+{
+ "meta": {
+  "generated": "2026-06-22",
+  "k_threshold": 5,
+  "years": [
+   2020,
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "voting_years": [
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "categories": [
+   {
+    "key": "education-school",
+    "label": "Шкільні",
+    "color": "#4A2D87"
+   },
+   {
+    "key": "education-preschool",
+    "label": "Дошкільні",
+    "color": "#7B66B8"
+   },
+   {
+    "key": "education-extracurricular",
+    "label": "Позашкільні, профтехосвіта",
+    "color": "#9E5FAB"
+   },
+   {
+    "key": "education-general",
+    "label": "Освіта",
+    "color": "#654EA3"
+   },
+   {
+    "key": "improvement-general",
+    "label": "Благоустрій",
+    "color": "#2D6BAB"
+   },
+   {
+    "key": "improvement-streets",
+    "label": "Благоустрій малих вулиць",
+    "color": "#1A4F82"
+   },
+   {
+    "key": "heritage",
+    "label": "Архітектурна спадщина",
+    "color": "#A0571F"
+   },
+   {
+    "key": "greenery",
+    "label": "Зелені проєкти",
+    "color": "#3D7C3F"
+   },
+   {
+    "key": "afu-support",
+    "label": "Допомога ЗСУ",
+    "color": "#3F4049"
+   },
+   {
+    "key": "accessibility",
+    "label": "Доступність",
+    "color": "#0E7C8C"
+   },
+   {
+    "key": "other",
+    "label": "Інші проєкти",
+    "color": "#71737E"
+   }
+  ],
+  "districts": [
+   "Івано-Франківськ",
+   "Березівка",
+   "Братківці",
+   "Вовчинець",
+   "Добровляни",
+   "Драгомирчани",
+   "Камінне",
+   "Колодіївка",
+   "Крихівці",
+   "Микитинці",
+   "Підлужжя",
+   "Підпечери",
+   "Радча",
+   "Тисменичани",
+   "Угорники",
+   "Узин",
+   "Хриплин",
+   "Черніїв",
+   "Чукалівка"
+  ],
+  "aggregates": [
+   "Вся громада",
+   "Усі села"
+  ],
+  "city": "Івано-Франківськ",
+  "note_no_location": "120 проєктів — без прив'язки до громади: переважно проєкти для ЗСУ (не належать конкретному населеному пункту) та невелика частина без встановленої адреси. На мапу й у бублики не входять.",
+  "note_denominators": "Дві різні міри. «Подано / Виграно» і «За проєкти громади проголосувало» — за МІСЦЕМ ПРОЄКТУ. «Мешканців громади голосувало» — за МІСЦЕМ ПРОЖИВАННЯ виборця (різні знаменники, напряму не порівнювати).",
+  "reconciliation": {
+   "projects_total": 1565,
+   "window_total": 1164,
+   "projects_with_district": 1044,
+   "projects_no_district": 120,
+   "winners_total": 356,
+   "votes_for_known_district_projects": 649459,
+   "city_project_support_total": 528268
+  },
+  "note_suppressed": "Голосувальні розбивки 1–4 приховано (k-анонімність ≥ 5) → null."
+ },
+ "data": {
+  "Івано-Франківськ": {
+   "is_city": true,
+   "scope": "city",
+   "2020": {
+    "submitted_by_cat": {
+     "education-general": 55,
+     "improvement-streets": 39,
+     "other": 194
+    },
+    "won_by_cat": {
+     "education-general": 17,
+     "improvement-streets": 6,
+     "other": 16
+    },
+    "submitted_total": 294,
+    "won_total": 39,
+    "submitted_precat": 6,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 56,
+     "improvement-streets": 28,
+     "heritage": 18,
+     "other": 113
+    },
+    "won_by_cat": {
+     "education-general": 17,
+     "improvement-streets": 6,
+     "other": 22
+    },
+    "submitted_total": 215,
+    "won_total": 45,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 43348,
+     "F": 28028,
+     "M": 15320,
+     "online": 38066,
+     "offline": 5282,
+     "votes": 92568,
+     "suppressed": false
+    },
+    "support": {
+     "total": 89414,
+     "residents": 80420,
+     "outsiders": 8994,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 32,
+     "improvement-general": 46,
+     "improvement-streets": 9,
+     "greenery": 8
+    },
+    "won_by_cat": {
+     "education-general": 16,
+     "improvement-general": 6,
+     "improvement-streets": 3,
+     "greenery": 3
+    },
+    "submitted_total": 95,
+    "won_total": 28,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 32936,
+     "F": 21989,
+     "M": 10947,
+     "online": 30866,
+     "offline": 2065,
+     "votes": 52100,
+     "suppressed": false
+    },
+    "support": {
+     "total": 53033,
+     "residents": 47097,
+     "outsiders": 5936,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 26,
+     "education-preschool": 22,
+     "education-extracurricular": 8,
+     "improvement-general": 9,
+     "improvement-streets": 9,
+     "other": 6
+    },
+    "won_by_cat": {
+     "education-school": 10,
+     "education-preschool": 4,
+     "education-extracurricular": 4,
+     "improvement-general": 6,
+     "improvement-streets": 3,
+     "other": 2
+    },
+    "submitted_total": 80,
+    "won_total": 29,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 43108,
+     "F": 29080,
+     "M": 14027,
+     "online": 38984,
+     "offline": 4124,
+     "votes": 99407,
+     "suppressed": false
+    },
+    "support": {
+     "total": 97868,
+     "residents": 83277,
+     "outsiders": 14591,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-school": 20,
+     "education-preschool": 10,
+     "education-extracurricular": 5,
+     "improvement-general": 20,
+     "improvement-streets": 10,
+     "accessibility": 3,
+     "other": 8
+    },
+    "won_by_cat": {
+     "education-school": 10,
+     "education-preschool": 5,
+     "education-extracurricular": 4,
+     "improvement-general": 8,
+     "improvement-streets": 4,
+     "accessibility": 2,
+     "other": 4
+    },
+    "submitted_total": 76,
+    "won_total": 37,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 39761,
+     "F": 27135,
+     "M": 12626,
+     "online": 36103,
+     "offline": 3658,
+     "votes": 104949,
+     "suppressed": false
+    },
+    "support": {
+     "total": 110629,
+     "residents": 94998,
+     "outsiders": 15631,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 23,
+     "education-preschool": 11,
+     "education-extracurricular": 8,
+     "improvement-general": 20,
+     "improvement-streets": 7,
+     "heritage": 8,
+     "greenery": 5,
+     "afu-support": 3,
+     "accessibility": 3,
+     "other": 8
+    },
+    "won_by_cat": {
+     "education-school": 13,
+     "education-preschool": 5,
+     "education-extracurricular": 4,
+     "improvement-general": 9,
+     "improvement-streets": 3,
+     "heritage": 5,
+     "greenery": 2,
+     "afu-support": 3,
+     "accessibility": 2,
+     "other": 3
+    },
+    "submitted_total": 96,
+    "won_total": 49,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 47179,
+     "F": 32205,
+     "M": 14974,
+     "online": 44201,
+     "offline": 2978,
+     "votes": 173986,
+     "suppressed": false
+    },
+    "support": {
+     "total": 177324,
+     "residents": 146511,
+     "outsiders": 30813,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 69,
+     "education-preschool": 43,
+     "education-extracurricular": 21,
+     "education-general": 143,
+     "improvement-general": 95,
+     "improvement-streets": 102,
+     "heritage": 26,
+     "greenery": 13,
+     "afu-support": 3,
+     "accessibility": 6,
+     "other": 329
+    },
+    "won_by_cat": {
+     "education-school": 33,
+     "education-preschool": 14,
+     "education-extracurricular": 12,
+     "education-general": 50,
+     "improvement-general": 29,
+     "improvement-streets": 25,
+     "heritage": 5,
+     "greenery": 5,
+     "afu-support": 3,
+     "accessibility": 4,
+     "other": 47
+    },
+    "submitted_total": 856,
+    "won_total": 227,
+    "submitted_precat": 6,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 86123,
+     "F": 54198,
+     "M": 31924,
+     "online": 76646,
+     "offline": 9472,
+     "votes": 523010,
+     "suppressed": false,
+     "people_sum": 206332
+    },
+    "support": {
+     "total": 528268,
+     "residents": 452303,
+     "outsiders": 75965,
+     "suppressed": false
+    }
+   }
+  },
+  "Березівка": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "heritage": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "heritage": 1
+    },
+    "submitted_total": 4,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 613,
+     "F": 388,
+     "M": 225,
+     "online": 142,
+     "offline": 471,
+     "votes": 2200,
+     "suppressed": false
+    },
+    "support": {
+     "total": 6802,
+     "residents": 1418,
+     "outsiders": 5384,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "improvement-general": 2,
+     "improvement-streets": 1,
+     "greenery": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1,
+     "greenery": 1
+    },
+    "submitted_total": 4,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 414,
+     "F": 266,
+     "M": 148,
+     "online": 83,
+     "offline": 331,
+     "votes": 1310,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1988,
+     "residents": 708,
+     "outsiders": 1280,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 543,
+     "F": 333,
+     "M": 210,
+     "online": 78,
+     "offline": 465,
+     "votes": 2213,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1866,
+     "residents": 1196,
+     "outsiders": 670,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 103,
+     "F": 77,
+     "M": 26,
+     "online": 83,
+     "offline": 20,
+     "votes": 262,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 275,
+     "F": 190,
+     "M": 85,
+     "online": 110,
+     "offline": 165,
+     "votes": 922,
+     "suppressed": false
+    },
+    "support": {
+     "total": 863,
+     "residents": 375,
+     "outsiders": 488,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-general": 1,
+     "improvement-general": 4,
+     "improvement-streets": 3,
+     "heritage": 1,
+     "greenery": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 2,
+     "heritage": 1,
+     "greenery": 1
+    },
+    "submitted_total": 13,
+    "won_total": 4,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 882,
+     "F": 532,
+     "M": 350,
+     "online": 207,
+     "offline": 675,
+     "votes": 6907,
+     "suppressed": false,
+     "people_sum": 1948
+    },
+    "support": {
+     "total": 11519,
+     "residents": 3697,
+     "outsiders": 7822,
+     "suppressed": false
+    }
+   }
+  },
+  "Братківці": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 2
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 4,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 438,
+     "F": 267,
+     "M": 171,
+     "online": 107,
+     "offline": 331,
+     "votes": 1201,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1143,
+     "residents": 1039,
+     "outsiders": 104,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 387,
+     "F": 242,
+     "M": 145,
+     "online": 128,
+     "offline": 259,
+     "votes": 996,
+     "suppressed": false
+    },
+    "support": {
+     "total": 772,
+     "residents": 619,
+     "outsiders": 153,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 251,
+     "F": 167,
+     "M": 84,
+     "online": 144,
+     "offline": 107,
+     "votes": 481,
+     "suppressed": false
+    },
+    "support": {
+     "total": 169,
+     "residents": 152,
+     "outsiders": 17,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 153,
+     "F": 93,
+     "M": 60,
+     "online": 145,
+     "offline": 8,
+     "votes": 345,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 354,
+     "F": 240,
+     "M": 114,
+     "online": 197,
+     "offline": 157,
+     "votes": 945,
+     "suppressed": false
+    },
+    "support": {
+     "total": 360,
+     "residents": 271,
+     "outsiders": 89,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-general": 2,
+     "improvement-streets": 2,
+     "other": 2
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 8,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 828,
+     "F": 506,
+     "M": 322,
+     "online": 344,
+     "offline": 484,
+     "votes": 3968,
+     "suppressed": false,
+     "people_sum": 1583
+    },
+    "support": {
+     "total": 2444,
+     "residents": 2081,
+     "outsiders": 363,
+     "suppressed": false
+    }
+   }
+  },
+  "Вовчинець": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 466,
+     "F": 329,
+     "M": 137,
+     "online": 392,
+     "offline": 74,
+     "votes": 1020,
+     "suppressed": false
+    },
+    "support": {
+     "total": 107,
+     "residents": 52,
+     "outsiders": 55,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 410,
+     "F": 303,
+     "M": 107,
+     "online": 383,
+     "offline": 27,
+     "votes": 641,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 529,
+     "F": 388,
+     "M": 141,
+     "online": 485,
+     "offline": 44,
+     "votes": 1112,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-streets": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 523,
+     "F": 393,
+     "M": 130,
+     "online": 485,
+     "offline": 38,
+     "votes": 1175,
+     "suppressed": false
+    },
+    "support": {
+     "total": 703,
+     "residents": 42,
+     "outsiders": 661,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 681,
+     "F": 491,
+     "M": 190,
+     "online": 634,
+     "offline": 47,
+     "votes": 2376,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "improvement-streets": 3
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1086,
+     "F": 734,
+     "M": 352,
+     "online": 972,
+     "offline": 114,
+     "votes": 6324,
+     "suppressed": false,
+     "people_sum": 2609
+    },
+    "support": {
+     "total": 810,
+     "residents": 94,
+     "outsiders": 716,
+     "suppressed": false
+    }
+   }
+  },
+  "Добровляни": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 51,
+     "F": 26,
+     "M": 25,
+     "online": 25,
+     "offline": 26,
+     "votes": 85,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 25,
+     "F": 18,
+     "M": 7,
+     "online": 13,
+     "offline": 12,
+     "votes": 38,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 54,
+     "F": 36,
+     "M": 18,
+     "online": 25,
+     "offline": 29,
+     "votes": 158,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 73,
+     "F": 46,
+     "M": 27,
+     "online": 36,
+     "offline": 37,
+     "votes": 318,
+     "suppressed": false
+    },
+    "support": {
+     "total": 570,
+     "residents": 67,
+     "outsiders": 503,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 70,
+     "F": 40,
+     "M": 30,
+     "online": 40,
+     "offline": 30,
+     "votes": 442,
+     "suppressed": false
+    },
+    "support": {
+     "total": 665,
+     "residents": 56,
+     "outsiders": 609,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "improvement-streets": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 108,
+     "F": 65,
+     "M": 43,
+     "online": 58,
+     "offline": 50,
+     "votes": 1041,
+     "suppressed": false,
+     "people_sum": 273
+    },
+    "support": {
+     "total": 1235,
+     "residents": 123,
+     "outsiders": 1112,
+     "suppressed": false
+    }
+   }
+  },
+  "Драгомирчани": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "submitted_total": 3,
+    "won_total": 3,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 863,
+     "F": 496,
+     "M": 367,
+     "online": 203,
+     "offline": 660,
+     "votes": 2502,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3770,
+     "residents": 2235,
+     "outsiders": 1535,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 706,
+     "F": 430,
+     "M": 276,
+     "online": 264,
+     "offline": 441,
+     "votes": 1941,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2863,
+     "residents": 1797,
+     "outsiders": 1066,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 868,
+     "F": 516,
+     "M": 352,
+     "online": 295,
+     "offline": 573,
+     "votes": 4050,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3317,
+     "residents": 1979,
+     "outsiders": 1338,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 273,
+     "F": 188,
+     "M": 85,
+     "online": 184,
+     "offline": 89,
+     "votes": 658,
+     "suppressed": false
+    },
+    "support": {
+     "total": 375,
+     "residents": 117,
+     "outsiders": 258,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 1
+    },
+    "submitted_total": 2,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 474,
+     "F": 318,
+     "M": 156,
+     "online": 308,
+     "offline": 166,
+     "votes": 1958,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2342,
+     "residents": 545,
+     "outsiders": 1797,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-general": 2,
+     "improvement-general": 3,
+     "improvement-streets": 5,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-general": 2,
+     "improvement-streets": 2,
+     "other": 1
+    },
+    "submitted_total": 13,
+    "won_total": 6,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1357,
+     "F": 773,
+     "M": 584,
+     "online": 487,
+     "offline": 869,
+     "votes": 11109,
+     "suppressed": false,
+     "people_sum": 3184
+    },
+    "support": {
+     "total": 12667,
+     "residents": 6673,
+     "outsiders": 5994,
+     "suppressed": false
+    }
+   }
+  },
+  "Камінне": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "other": 2
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 2,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 305,
+     "F": 172,
+     "M": 133,
+     "online": 54,
+     "offline": 251,
+     "votes": 1081,
+     "suppressed": false
+    },
+    "support": {
+     "total": 572,
+     "residents": 537,
+     "outsiders": 35,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1
+    },
+    "won_by_cat": {
+     "education-general": 1
+    },
+    "submitted_total": 1,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 216,
+     "F": 143,
+     "M": 73,
+     "online": 60,
+     "offline": 156,
+     "votes": 342,
+     "suppressed": false
+    },
+    "support": {
+     "total": 202,
+     "residents": 181,
+     "outsiders": 21,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 121,
+     "F": 73,
+     "M": 48,
+     "online": 70,
+     "offline": 51,
+     "votes": 231,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 261,
+     "F": 177,
+     "M": 84,
+     "online": 141,
+     "offline": 120,
+     "votes": 431,
+     "suppressed": false
+    },
+    "support": {
+     "total": 619,
+     "residents": 234,
+     "outsiders": 385,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 142,
+     "F": 100,
+     "M": 42,
+     "online": 128,
+     "offline": 14,
+     "votes": 469,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "other": 3
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "other": 1
+    },
+    "submitted_total": 4,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 531,
+     "F": 315,
+     "M": 216,
+     "online": 210,
+     "offline": 321,
+     "votes": 2554,
+     "suppressed": false,
+     "people_sum": 1045
+    },
+    "support": {
+     "total": 1393,
+     "residents": 952,
+     "outsiders": 441,
+     "suppressed": false
+    }
+   }
+  },
+  "Колодіївка": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 99,
+     "F": 62,
+     "M": 37,
+     "online": 37,
+     "offline": 62,
+     "votes": 233,
+     "suppressed": false
+    },
+    "support": {
+     "total": 221,
+     "residents": 132,
+     "outsiders": 89,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 144,
+     "F": 86,
+     "M": 58,
+     "online": 42,
+     "offline": 102,
+     "votes": 223,
+     "suppressed": false
+    },
+    "support": {
+     "total": 256,
+     "residents": 130,
+     "outsiders": 126,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 71,
+     "F": 51,
+     "M": 20,
+     "online": 29,
+     "offline": 42,
+     "votes": 210,
+     "suppressed": false
+    },
+    "support": {
+     "total": 108,
+     "residents": 55,
+     "outsiders": 53,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 63,
+     "F": 40,
+     "M": 23,
+     "online": 34,
+     "offline": 29,
+     "votes": 280,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 66,
+     "F": 50,
+     "M": 16,
+     "online": 45,
+     "offline": 21,
+     "votes": 311,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-general": 1,
+     "improvement-general": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 5,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 197,
+     "F": 115,
+     "M": 82,
+     "online": 79,
+     "offline": 118,
+     "votes": 1257,
+     "suppressed": false,
+     "people_sum": 443
+    },
+    "support": {
+     "total": 585,
+     "residents": 317,
+     "outsiders": 268,
+     "suppressed": false
+    }
+   }
+  },
+  "Крихівці": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "submitted_total": 2,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "other": 1
+    },
+    "submitted_total": 4,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1759,
+     "F": 1238,
+     "M": 521,
+     "online": 1341,
+     "offline": 418,
+     "votes": 3864,
+     "suppressed": false
+    },
+    "support": {
+     "total": 5092,
+     "residents": 1137,
+     "outsiders": 3955,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {
+     "education-general": 1
+    },
+    "submitted_total": 2,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1529,
+     "F": 1123,
+     "M": 406,
+     "online": 1384,
+     "offline": 145,
+     "votes": 2374,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1162,
+     "residents": 549,
+     "outsiders": 613,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1820,
+     "F": 1327,
+     "M": 493,
+     "online": 1600,
+     "offline": 220,
+     "votes": 4226,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1017,
+     "residents": 437,
+     "outsiders": 580,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-general": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1645,
+     "F": 1204,
+     "M": 441,
+     "online": 1492,
+     "offline": 153,
+     "votes": 4516,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2182,
+     "residents": 845,
+     "outsiders": 1337,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 2417,
+     "F": 1716,
+     "M": 701,
+     "online": 2164,
+     "offline": 253,
+     "votes": 9375,
+     "suppressed": false
+    },
+    "support": {
+     "total": 5506,
+     "residents": 1129,
+     "outsiders": 4377,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 3,
+     "education-general": 4,
+     "improvement-general": 3,
+     "improvement-streets": 2,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 3,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "submitted_total": 13,
+    "won_total": 5,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 3730,
+     "F": 2529,
+     "M": 1201,
+     "online": 3118,
+     "offline": 612,
+     "votes": 24355,
+     "suppressed": false,
+     "people_sum": 9170
+    },
+    "support": {
+     "total": 14959,
+     "residents": 4097,
+     "outsiders": 10862,
+     "suppressed": false
+    }
+   }
+  },
+  "Микитинці": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {
+     "other": 1
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 1,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 3,
+     "other": 1
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 4,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 681,
+     "F": 412,
+     "M": 269,
+     "online": 401,
+     "offline": 280,
+     "votes": 1713,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1662,
+     "residents": 644,
+     "outsiders": 1018,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 1
+    },
+    "submitted_total": 1,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 272,
+     "F": 187,
+     "M": 85,
+     "online": 253,
+     "offline": 19,
+     "votes": 407,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1617,
+     "residents": 38,
+     "outsiders": 1579,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 366,
+     "F": 247,
+     "M": 119,
+     "online": 313,
+     "offline": 53,
+     "votes": 801,
+     "suppressed": false
+    },
+    "support": {
+     "total": 583,
+     "residents": null,
+     "outsiders": 580,
+     "suppressed": true
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "education-extracurricular": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 4,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 385,
+     "F": 266,
+     "M": 119,
+     "online": 341,
+     "offline": 44,
+     "votes": 890,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2361,
+     "residents": 111,
+     "outsiders": 2250,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 466,
+     "F": 323,
+     "M": 143,
+     "online": 431,
+     "offline": 35,
+     "votes": 1503,
+     "suppressed": false
+    },
+    "support": {
+     "total": 533,
+     "residents": 98,
+     "outsiders": 435,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "education-extracurricular": 1,
+     "education-general": 3,
+     "improvement-streets": 3,
+     "other": 3
+    },
+    "won_by_cat": {
+     "improvement-streets": 1,
+     "other": 2
+    },
+    "submitted_total": 12,
+    "won_total": 3,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1047,
+     "F": 643,
+     "M": 404,
+     "online": 778,
+     "offline": 269,
+     "votes": 5314,
+     "suppressed": false,
+     "people_sum": 2170
+    },
+    "support": {
+     "total": 6756,
+     "residents": 894,
+     "outsiders": 5862,
+     "suppressed": false
+    }
+   }
+  },
+  "Підлужжя": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 257,
+     "F": 170,
+     "M": 87,
+     "online": 186,
+     "offline": 71,
+     "votes": 613,
+     "suppressed": false
+    },
+    "support": {
+     "total": 343,
+     "residents": 273,
+     "outsiders": 70,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "greenery": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 310,
+     "F": 203,
+     "M": 107,
+     "online": 173,
+     "offline": 137,
+     "votes": 555,
+     "suppressed": false
+    },
+    "support": {
+     "total": 459,
+     "residents": 342,
+     "outsiders": 117,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 335,
+     "F": 222,
+     "M": 113,
+     "online": 241,
+     "offline": 94,
+     "votes": 639,
+     "suppressed": false
+    },
+    "support": {
+     "total": 218,
+     "residents": 165,
+     "outsiders": 53,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 225,
+     "F": 153,
+     "M": 72,
+     "online": 210,
+     "offline": 15,
+     "votes": 535,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "greenery": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 379,
+     "F": 279,
+     "M": 100,
+     "online": 312,
+     "offline": 67,
+     "votes": 1376,
+     "suppressed": false
+    },
+    "support": {
+     "total": 994,
+     "residents": 396,
+     "outsiders": 598,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-general": 2,
+     "improvement-streets": 2,
+     "greenery": 2,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 9,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 689,
+     "F": 440,
+     "M": 249,
+     "online": 494,
+     "offline": 195,
+     "votes": 3718,
+     "suppressed": false,
+     "people_sum": 1506
+    },
+    "support": {
+     "total": 2014,
+     "residents": 1176,
+     "outsiders": 838,
+     "suppressed": false
+    }
+   }
+  },
+  "Підпечери": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 407,
+     "F": 253,
+     "M": 154,
+     "online": 262,
+     "offline": 145,
+     "votes": 1069,
+     "suppressed": false
+    },
+    "support": {
+     "total": 702,
+     "residents": 606,
+     "outsiders": 96,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 297,
+     "F": 198,
+     "M": 99,
+     "online": 219,
+     "offline": 77,
+     "votes": 369,
+     "suppressed": false
+    },
+    "support": {
+     "total": 193,
+     "residents": 160,
+     "outsiders": 33,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 1
+    },
+    "submitted_total": 2,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 458,
+     "F": 302,
+     "M": 156,
+     "online": 278,
+     "offline": 180,
+     "votes": 1225,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2307,
+     "residents": 483,
+     "outsiders": 1824,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-streets": 1,
+     "accessibility": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 1,
+     "accessibility": 1
+    },
+    "submitted_total": 2,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 381,
+     "F": 253,
+     "M": 128,
+     "online": 268,
+     "offline": 113,
+     "votes": 1370,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3782,
+     "residents": 410,
+     "outsiders": 3372,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 2,
+     "improvement-streets": 2
+    },
+    "won_by_cat": {
+     "improvement-streets": 1
+    },
+    "submitted_total": 6,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 567,
+     "F": 373,
+     "M": 194,
+     "online": 382,
+     "offline": 185,
+     "votes": 2816,
+     "suppressed": false
+    },
+    "support": {
+     "total": 4550,
+     "residents": 1192,
+     "outsiders": 3358,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-preschool": 1,
+     "education-general": 3,
+     "improvement-general": 3,
+     "improvement-streets": 5,
+     "accessibility": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 3,
+     "accessibility": 1
+    },
+    "submitted_total": 15,
+    "won_total": 4,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 945,
+     "F": 584,
+     "M": 361,
+     "online": 599,
+     "offline": 345,
+     "votes": 6849,
+     "suppressed": false,
+     "people_sum": 2110
+    },
+    "support": {
+     "total": 11534,
+     "residents": 2851,
+     "outsiders": 8683,
+     "suppressed": false
+    }
+   }
+  },
+  "Радча": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 2
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 4,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 877,
+     "F": 564,
+     "M": 313,
+     "online": 251,
+     "offline": 626,
+     "votes": 2669,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2668,
+     "residents": 2313,
+     "outsiders": 355,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 897,
+     "F": 601,
+     "M": 296,
+     "online": 400,
+     "offline": 497,
+     "votes": 1746,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1799,
+     "residents": 1571,
+     "outsiders": 228,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "improvement-streets": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1293,
+     "F": 856,
+     "M": 437,
+     "online": 412,
+     "offline": 881,
+     "votes": 5640,
+     "suppressed": false
+    },
+    "support": {
+     "total": 5838,
+     "residents": 3461,
+     "outsiders": 2377,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 633,
+     "F": 465,
+     "M": 168,
+     "online": 359,
+     "offline": 274,
+     "votes": 2199,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2206,
+     "residents": 1458,
+     "outsiders": 748,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-streets": 1,
+     "greenery": 1
+    },
+    "won_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "greenery": 1
+    },
+    "submitted_total": 4,
+    "won_total": 3,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1179,
+     "F": 804,
+     "M": 375,
+     "online": 691,
+     "offline": 488,
+     "votes": 8671,
+     "suppressed": false
+    },
+    "support": {
+     "total": 7584,
+     "residents": 3945,
+     "outsiders": 3639,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 3,
+     "education-general": 2,
+     "improvement-general": 1,
+     "improvement-streets": 5,
+     "greenery": 1,
+     "other": 4
+    },
+    "won_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1,
+     "greenery": 1,
+     "other": 1
+    },
+    "submitted_total": 17,
+    "won_total": 6,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1893,
+     "F": 1158,
+     "M": 735,
+     "online": 847,
+     "offline": 1046,
+     "votes": 20925,
+     "suppressed": false,
+     "people_sum": 4879
+    },
+    "support": {
+     "total": 20095,
+     "residents": 12748,
+     "outsiders": 7347,
+     "suppressed": false
+    }
+   }
+  },
+  "Тисменичани": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 4,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 1
+    },
+    "submitted_total": 6,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 974,
+     "F": 601,
+     "M": 373,
+     "online": 173,
+     "offline": 801,
+     "votes": 3067,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3805,
+     "residents": 2710,
+     "outsiders": 1095,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-general": 1,
+     "improvement-streets": 1,
+     "greenery": 1
+    },
+    "won_by_cat": {
+     "greenery": 1
+    },
+    "submitted_total": 5,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 705,
+     "F": 453,
+     "M": 252,
+     "online": 344,
+     "offline": 361,
+     "votes": 2588,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3523,
+     "residents": 2516,
+     "outsiders": 1007,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 4,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 744,
+     "F": 481,
+     "M": 263,
+     "online": 301,
+     "offline": 443,
+     "votes": 3193,
+     "suppressed": false
+    },
+    "support": {
+     "total": 3013,
+     "residents": 2602,
+     "outsiders": 411,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 458,
+     "F": 307,
+     "M": 151,
+     "online": 236,
+     "offline": 222,
+     "votes": 1294,
+     "suppressed": false
+    },
+    "support": {
+     "total": 846,
+     "residents": 714,
+     "outsiders": 132,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 670,
+     "F": 465,
+     "M": 205,
+     "online": 452,
+     "offline": 218,
+     "votes": 2328,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2352,
+     "residents": 1620,
+     "outsiders": 732,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 3,
+     "education-preschool": 3,
+     "education-general": 6,
+     "improvement-general": 3,
+     "improvement-streets": 3,
+     "greenery": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1,
+     "greenery": 1
+    },
+    "submitted_total": 20,
+    "won_total": 3,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1480,
+     "F": 890,
+     "M": 590,
+     "online": 627,
+     "offline": 853,
+     "votes": 12470,
+     "suppressed": false,
+     "people_sum": 3551
+    },
+    "support": {
+     "total": 13539,
+     "residents": 10162,
+     "outsiders": 3377,
+     "suppressed": false
+    }
+   }
+  },
+  "Угорники": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 2,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "other": 4
+    },
+    "won_by_cat": {},
+    "submitted_total": 5,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 813,
+     "F": 518,
+     "M": 295,
+     "online": 704,
+     "offline": 109,
+     "votes": 1656,
+     "suppressed": false
+    },
+    "support": {
+     "total": 908,
+     "residents": 360,
+     "outsiders": 548,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 559,
+     "F": 397,
+     "M": 162,
+     "online": 532,
+     "offline": 27,
+     "votes": 886,
+     "suppressed": false
+    },
+    "support": {
+     "total": 203,
+     "residents": 72,
+     "outsiders": 131,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 698,
+     "F": 494,
+     "M": 204,
+     "online": 667,
+     "offline": 31,
+     "votes": 1491,
+     "suppressed": false
+    },
+    "support": {
+     "total": 280,
+     "residents": 27,
+     "outsiders": 253,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 1
+    },
+    "submitted_total": 2,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 743,
+     "F": 516,
+     "M": 227,
+     "online": 654,
+     "offline": 89,
+     "votes": 1870,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2023,
+     "residents": 195,
+     "outsiders": 1828,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "improvement-general": 1,
+     "improvement-streets": 2,
+     "accessibility": 1
+    },
+    "won_by_cat": {
+     "accessibility": 1
+    },
+    "submitted_total": 5,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 942,
+     "F": 656,
+     "M": 286,
+     "online": 843,
+     "offline": 99,
+     "votes": 3674,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2455,
+     "residents": 702,
+     "outsiders": 1753,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "education-general": 3,
+     "improvement-general": 2,
+     "improvement-streets": 3,
+     "accessibility": 1,
+     "other": 4
+    },
+    "won_by_cat": {
+     "improvement-general": 1,
+     "accessibility": 1
+    },
+    "submitted_total": 17,
+    "won_total": 2,
+    "submitted_precat": 2,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1661,
+     "F": 1077,
+     "M": 584,
+     "online": 1456,
+     "offline": 205,
+     "votes": 9577,
+     "suppressed": false,
+     "people_sum": 3755
+    },
+    "support": {
+     "total": 5869,
+     "residents": 1356,
+     "outsiders": 4513,
+     "suppressed": false
+    }
+   }
+  },
+  "Узин": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 209,
+     "F": 126,
+     "M": 83,
+     "online": 52,
+     "offline": 157,
+     "votes": 441,
+     "suppressed": false
+    },
+    "support": {
+     "total": 427,
+     "residents": 364,
+     "outsiders": 63,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 53,
+     "F": 38,
+     "M": 15,
+     "online": 38,
+     "offline": 15,
+     "votes": 92,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 57,
+     "F": 41,
+     "M": 16,
+     "online": 32,
+     "offline": 25,
+     "votes": 111,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 79,
+     "F": 48,
+     "M": 31,
+     "online": 42,
+     "offline": 37,
+     "votes": 344,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 89,
+     "F": 63,
+     "M": 26,
+     "online": 56,
+     "offline": 33,
+     "votes": 454,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 278,
+     "F": 166,
+     "M": 112,
+     "online": 109,
+     "offline": 169,
+     "votes": 1442,
+     "suppressed": false,
+     "people_sum": 487
+    },
+    "support": {
+     "total": 427,
+     "residents": 364,
+     "outsiders": 63,
+     "suppressed": false
+    }
+   }
+  },
+  "Хриплин": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 418,
+     "F": 250,
+     "M": 168,
+     "online": 138,
+     "offline": 280,
+     "votes": 1352,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1892,
+     "residents": 1052,
+     "outsiders": 840,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 207,
+     "F": 127,
+     "M": 80,
+     "online": 111,
+     "offline": 96,
+     "votes": 426,
+     "suppressed": false
+    },
+    "support": {
+     "total": 628,
+     "residents": 326,
+     "outsiders": 302,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 134,
+     "F": 88,
+     "M": 46,
+     "online": 101,
+     "offline": 33,
+     "votes": 278,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 217,
+     "F": 140,
+     "M": 77,
+     "online": 176,
+     "offline": 41,
+     "votes": 475,
+     "suppressed": false
+    },
+    "support": {
+     "total": 669,
+     "residents": 161,
+     "outsiders": 508,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 262,
+     "F": 183,
+     "M": 79,
+     "online": 224,
+     "offline": 38,
+     "votes": 1160,
+     "suppressed": false
+    },
+    "support": {
+     "total": 1252,
+     "residents": 310,
+     "outsiders": 942,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-preschool": 1,
+     "education-general": 2,
+     "improvement-general": 3,
+     "improvement-streets": 2,
+     "other": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 9,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 617,
+     "F": 366,
+     "M": 251,
+     "online": 342,
+     "offline": 275,
+     "votes": 3691,
+     "suppressed": false,
+     "people_sum": 1238
+    },
+    "support": {
+     "total": 4441,
+     "residents": 1849,
+     "outsiders": 2592,
+     "suppressed": false
+    }
+   }
+  },
+  "Черніїв": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "other": 1
+    },
+    "submitted_total": 3,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 3
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "submitted_total": 5,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1657,
+     "F": 1030,
+     "M": 627,
+     "online": 540,
+     "offline": 1117,
+     "votes": 5367,
+     "suppressed": false
+    },
+    "support": {
+     "total": 4525,
+     "residents": 3597,
+     "outsiders": 928,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1
+    },
+    "submitted_total": 3,
+    "won_total": 2,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 1103,
+     "F": 732,
+     "M": 371,
+     "online": 552,
+     "offline": 551,
+     "votes": 2672,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2357,
+     "residents": 1493,
+     "outsiders": 864,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 3,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 709,
+     "F": 517,
+     "M": 192,
+     "online": 558,
+     "offline": 151,
+     "votes": 1864,
+     "suppressed": false
+    },
+    "support": {
+     "total": 920,
+     "residents": 533,
+     "outsiders": 387,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-general": 1,
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 681,
+     "F": 482,
+     "M": 199,
+     "online": 541,
+     "offline": 140,
+     "votes": 1620,
+     "suppressed": false
+    },
+    "support": {
+     "total": 447,
+     "residents": 370,
+     "outsiders": 77,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-general": 2,
+     "improvement-streets": 1,
+     "afu-support": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "afu-support": 1
+    },
+    "submitted_total": 6,
+    "won_total": 1,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 917,
+     "F": 651,
+     "M": 266,
+     "online": 666,
+     "offline": 251,
+     "votes": 3504,
+     "suppressed": false
+    },
+    "support": {
+     "total": 2111,
+     "residents": 1495,
+     "outsiders": 616,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-preschool": 1,
+     "education-general": 5,
+     "improvement-general": 4,
+     "improvement-streets": 7,
+     "afu-support": 1,
+     "other": 2
+    },
+    "won_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 2,
+     "afu-support": 1,
+     "other": 1
+    },
+    "submitted_total": 22,
+    "won_total": 6,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 2334,
+     "F": 1427,
+     "M": 907,
+     "online": 1184,
+     "offline": 1150,
+     "votes": 15027,
+     "suppressed": false,
+     "people_sum": 5067
+    },
+    "support": {
+     "total": 10360,
+     "residents": 7488,
+     "outsiders": 2872,
+     "suppressed": false
+    }
+   }
+  },
+  "Чукалівка": {
+   "is_city": false,
+   "scope": "village",
+   "2020": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "improvement-streets": 2
+    },
+    "won_by_cat": {},
+    "submitted_total": 2,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 393,
+     "F": 242,
+     "M": 151,
+     "online": 292,
+     "offline": 101,
+     "votes": 901,
+     "suppressed": false
+    },
+    "support": {
+     "total": 295,
+     "residents": 151,
+     "outsiders": 144,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 286,
+     "F": 184,
+     "M": 102,
+     "online": 241,
+     "offline": 44,
+     "votes": 407,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 388,
+     "F": 258,
+     "M": 130,
+     "online": 297,
+     "offline": 91,
+     "votes": 943,
+     "suppressed": false
+    },
+    "support": {
+     "total": 199,
+     "residents": 112,
+     "outsiders": 87,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "improvement-streets": 1
+    },
+    "won_by_cat": {},
+    "submitted_total": 1,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 353,
+     "F": 218,
+     "M": 135,
+     "online": 313,
+     "offline": 40,
+     "votes": 840,
+     "suppressed": false
+    },
+    "support": {
+     "total": 50,
+     "residents": 37,
+     "outsiders": 13,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {},
+    "won_by_cat": {},
+    "submitted_total": 0,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 420,
+     "F": 270,
+     "M": 150,
+     "online": 387,
+     "offline": 33,
+     "votes": 1596,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 1,
+     "improvement-streets": 3
+    },
+    "won_by_cat": {},
+    "submitted_total": 4,
+    "won_total": 0,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 762,
+     "F": 453,
+     "M": 309,
+     "online": 618,
+     "offline": 143,
+     "votes": 4687,
+     "suppressed": false,
+     "people_sum": 1840
+    },
+    "support": {
+     "total": 544,
+     "residents": 300,
+     "outsiders": 244,
+     "suppressed": false
+    }
+   }
+  },
+  "Вся громада": {
+   "is_city": false,
+   "scope": "hromada",
+   "is_aggregate": true,
+   "2020": {
+    "submitted_by_cat": {
+     "education-general": 57,
+     "improvement-streets": 42,
+     "other": 196
+    },
+    "won_by_cat": {
+     "education-general": 18,
+     "improvement-streets": 7,
+     "other": 18
+    },
+    "submitted_total": 303,
+    "won_total": 43,
+    "submitted_precat": 8,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 78,
+     "improvement-streets": 44,
+     "heritage": 19,
+     "other": 131
+    },
+    "won_by_cat": {
+     "education-general": 21,
+     "improvement-streets": 8,
+     "heritage": 1,
+     "other": 28
+    },
+    "submitted_total": 272,
+    "won_total": 58,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 54628,
+     "F": 35172,
+     "M": 19456,
+     "online": 43366,
+     "offline": 11262,
+     "votes": 123602,
+     "suppressed": false
+    },
+    "support": {
+     "total": 124348,
+     "residents": 99040,
+     "outsiders": 25308,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 46,
+     "improvement-general": 55,
+     "improvement-streets": 17,
+     "greenery": 11
+    },
+    "won_by_cat": {
+     "education-general": 19,
+     "improvement-general": 9,
+     "improvement-streets": 5,
+     "greenery": 5
+    },
+    "submitted_total": 129,
+    "won_total": 38,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 41456,
+     "F": 27720,
+     "M": 13736,
+     "online": 36086,
+     "offline": 5362,
+     "votes": 70113,
+     "suppressed": false
+    },
+    "support": {
+     "total": 71055,
+     "residents": 57599,
+     "outsiders": 13456,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 38,
+     "education-preschool": 25,
+     "education-extracurricular": 8,
+     "improvement-general": 13,
+     "improvement-streets": 15,
+     "other": 7
+    },
+    "won_by_cat": {
+     "education-school": 10,
+     "education-preschool": 4,
+     "education-extracurricular": 4,
+     "improvement-general": 8,
+     "improvement-streets": 5,
+     "other": 2
+    },
+    "submitted_total": 106,
+    "won_total": 33,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 52547,
+     "F": 35477,
+     "M": 17069,
+     "online": 44910,
+     "offline": 7637,
+     "votes": 128273,
+     "suppressed": false
+    },
+    "support": {
+     "total": 117703,
+     "residents": 94482,
+     "outsiders": 23221,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-school": 22,
+     "education-preschool": 13,
+     "education-extracurricular": 6,
+     "improvement-general": 26,
+     "improvement-streets": 20,
+     "accessibility": 4,
+     "other": 11
+    },
+    "won_by_cat": {
+     "education-school": 10,
+     "education-preschool": 5,
+     "education-extracurricular": 4,
+     "improvement-general": 9,
+     "improvement-streets": 5,
+     "accessibility": 3,
+     "other": 4
+    },
+    "submitted_total": 102,
+    "won_total": 40,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 47010,
+     "F": 32201,
+     "M": 14809,
+     "online": 41843,
+     "offline": 5167,
+     "votes": 124371,
+     "suppressed": false
+    },
+    "support": {
+     "total": 127462,
+     "residents": 99759,
+     "outsiders": 27703,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 33,
+     "education-preschool": 16,
+     "education-extracurricular": 8,
+     "improvement-general": 28,
+     "improvement-streets": 15,
+     "heritage": 8,
+     "greenery": 7,
+     "afu-support": 4,
+     "accessibility": 4,
+     "other": 9
+    },
+    "won_by_cat": {
+     "education-school": 14,
+     "education-preschool": 6,
+     "education-extracurricular": 4,
+     "improvement-general": 10,
+     "improvement-streets": 5,
+     "heritage": 5,
+     "greenery": 3,
+     "afu-support": 4,
+     "accessibility": 3,
+     "other": 3
+    },
+    "submitted_total": 132,
+    "won_total": 57,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 57549,
+     "F": 39417,
+     "M": 18132,
+     "online": 52271,
+     "offline": 5278,
+     "votes": 217866,
+     "suppressed": false
+    },
+    "support": {
+     "total": 208891,
+     "residents": 158645,
+     "outsiders": 50246,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 93,
+     "education-preschool": 54,
+     "education-extracurricular": 22,
+     "education-general": 181,
+     "improvement-general": 122,
+     "improvement-streets": 153,
+     "heritage": 27,
+     "greenery": 18,
+     "afu-support": 4,
+     "accessibility": 8,
+     "other": 354
+    },
+    "won_by_cat": {
+     "education-school": 34,
+     "education-preschool": 15,
+     "education-extracurricular": 12,
+     "education-general": 58,
+     "improvement-general": 36,
+     "improvement-streets": 35,
+     "heritage": 6,
+     "greenery": 8,
+     "afu-support": 4,
+     "accessibility": 6,
+     "other": 55
+    },
+    "submitted_total": 1044,
+    "won_total": 269,
+    "submitted_precat": 8,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 106548,
+     "F": 66971,
+     "M": 39576,
+     "online": 89175,
+     "offline": 17365,
+     "votes": 664225,
+     "suppressed": false,
+     "people_sum": 253190
+    },
+    "support": {
+     "total": 649459,
+     "residents": 509525,
+     "outsiders": 139934,
+     "suppressed": false
+    }
+   }
+  },
+  "Усі села": {
+   "is_city": false,
+   "scope": "villages",
+   "is_aggregate": true,
+   "2020": {
+    "submitted_by_cat": {
+     "education-general": 2,
+     "improvement-streets": 3,
+     "other": 2
+    },
+    "won_by_cat": {
+     "education-general": 1,
+     "improvement-streets": 1,
+     "other": 2
+    },
+    "submitted_total": 9,
+    "won_total": 4,
+    "submitted_precat": 2,
+    "won_precat": 0
+   },
+   "2021": {
+    "submitted_by_cat": {
+     "education-general": 22,
+     "improvement-streets": 16,
+     "heritage": 1,
+     "other": 18
+    },
+    "won_by_cat": {
+     "education-general": 4,
+     "improvement-streets": 2,
+     "heritage": 1,
+     "other": 6
+    },
+    "submitted_total": 57,
+    "won_total": 13,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 11280,
+     "F": 7144,
+     "M": 4136,
+     "online": 5300,
+     "offline": 5980,
+     "votes": 31034,
+     "suppressed": false
+    },
+    "support": {
+     "total": 34934,
+     "residents": 18620,
+     "outsiders": 16314,
+     "suppressed": false
+    }
+   },
+   "2023": {
+    "submitted_by_cat": {
+     "education-general": 14,
+     "improvement-general": 9,
+     "improvement-streets": 8,
+     "greenery": 3
+    },
+    "won_by_cat": {
+     "education-general": 3,
+     "improvement-general": 3,
+     "improvement-streets": 2,
+     "greenery": 2
+    },
+    "submitted_total": 34,
+    "won_total": 10,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 8520,
+     "F": 5731,
+     "M": 2789,
+     "online": 5220,
+     "offline": 3297,
+     "votes": 18013,
+     "suppressed": false
+    },
+    "support": {
+     "total": 18022,
+     "residents": 10502,
+     "outsiders": 7520,
+     "suppressed": false
+    }
+   },
+   "2024": {
+    "submitted_by_cat": {
+     "education-school": 12,
+     "education-preschool": 3,
+     "improvement-general": 4,
+     "improvement-streets": 6,
+     "other": 1
+    },
+    "won_by_cat": {
+     "improvement-general": 2,
+     "improvement-streets": 2
+    },
+    "submitted_total": 26,
+    "won_total": 4,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 9439,
+     "F": 6397,
+     "M": 3042,
+     "online": 5926,
+     "offline": 3513,
+     "votes": 28866,
+     "suppressed": false
+    },
+    "support": {
+     "total": 19835,
+     "residents": 11205,
+     "outsiders": 8630,
+     "suppressed": false
+    }
+   },
+   "2025": {
+    "submitted_by_cat": {
+     "education-school": 2,
+     "education-preschool": 3,
+     "education-extracurricular": 1,
+     "improvement-general": 6,
+     "improvement-streets": 10,
+     "accessibility": 1,
+     "other": 3
+    },
+    "won_by_cat": {
+     "improvement-general": 1,
+     "improvement-streets": 1,
+     "accessibility": 1
+    },
+    "submitted_total": 26,
+    "won_total": 3,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 7249,
+     "F": 5066,
+     "M": 2183,
+     "online": 5740,
+     "offline": 1509,
+     "votes": 19422,
+     "suppressed": false
+    },
+    "support": {
+     "total": 16833,
+     "residents": 4761,
+     "outsiders": 12072,
+     "suppressed": false
+    }
+   },
+   "2026": {
+    "submitted_by_cat": {
+     "education-school": 10,
+     "education-preschool": 5,
+     "improvement-general": 8,
+     "improvement-streets": 8,
+     "greenery": 2,
+     "afu-support": 1,
+     "accessibility": 1,
+     "other": 1
+    },
+    "won_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "improvement-general": 1,
+     "improvement-streets": 2,
+     "greenery": 1,
+     "afu-support": 1,
+     "accessibility": 1
+    },
+    "submitted_total": 36,
+    "won_total": 8,
+    "submitted_precat": 0,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 10370,
+     "F": 7212,
+     "M": 3158,
+     "online": 8070,
+     "offline": 2300,
+     "votes": 43880,
+     "suppressed": false
+    },
+    "support": {
+     "total": 31567,
+     "residents": 12134,
+     "outsiders": 19433,
+     "suppressed": false
+    }
+   },
+   "all": {
+    "submitted_by_cat": {
+     "education-school": 24,
+     "education-preschool": 11,
+     "education-extracurricular": 1,
+     "education-general": 38,
+     "improvement-general": 27,
+     "improvement-streets": 51,
+     "heritage": 1,
+     "greenery": 5,
+     "afu-support": 1,
+     "accessibility": 2,
+     "other": 25
+    },
+    "won_by_cat": {
+     "education-school": 1,
+     "education-preschool": 1,
+     "education-general": 8,
+     "improvement-general": 7,
+     "improvement-streets": 10,
+     "heritage": 1,
+     "greenery": 3,
+     "afu-support": 1,
+     "accessibility": 2,
+     "other": 8
+    },
+    "submitted_total": 188,
+    "won_total": 42,
+    "submitted_precat": 2,
+    "won_precat": 0,
+    "residents_voted": {
+     "people": 20425,
+     "F": 12773,
+     "M": 7652,
+     "online": 12529,
+     "offline": 7893,
+     "votes": 141215,
+     "suppressed": false,
+     "people_sum": 46858
+    },
+    "support": {
+     "total": 121191,
+     "residents": 57222,
+     "outsiders": 63969,
+     "suppressed": false
+    }
+   }
+  }
+ }
+}

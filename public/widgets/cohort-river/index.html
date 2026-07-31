@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Клуб постійних — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Інтерактивний графік лояльності виборців Бюджету участі Івано-Франківська (2021–2026): склад кожного року за когортами першої участі, виживання когорт і сходи лояльності з гендерним складом.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/d3.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only">Інтерактивний графік Бюджету участі Івано-Франківська.
+  Стовпчики — учасники голосування кожного року з 2021 до 2026 (у 2022 році
+  Бюджет участі не проводився). Кожен стовпчик поділено на шари-когорти за
+  роком першої участі людини. Оберіть шар (клавішею Tab і Enter або дотиком) —
+  поруч з'явиться доля когорти: скільки людей голосували в наступні роки та
+  склад за статтю. Нижче — «сходи лояльності»: скільки людей голосували в 1,
+  2, 3, 4 чи всіх 5 кампаніях і яка серед них частка жінок.</p>
+
+  <header class="head">
+    <div class="head-title">
+      <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+      <h1 class="title">Клуб постійних</h1>
+      <p class="subtitle">За п'ять кампаній голосування сформувалося ядро:
+      <strong>12 361 людина</strong> не пропустила жодної. Натисніть на шар-когорту
+      на графіку, щоб побачити її історію.</p>
+    </div>
+    <div class="legend" id="legend" aria-hidden="true"></div>
+  </header>
+
+  <div class="main">
+
+    <section class="scene" aria-label="Склад голосуючих кожного року за когортами">
+      <div class="band-head">
+        <span class="band-name">Хто складає кожен рік</span>
+        <span class="band-cap">людей за роком першої участі · 2021–2026</span>
+      </div>
+      <div class="chart-wrap">
+        <svg id="river" role="group" aria-label="Стовпчикова діаграма складу років за когортами"></svg>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <p class="scene-cap">Новачків дедалі менше: <strong>39%</strong> у
+      2023 → <strong>22%</strong> у 2026. Рекордний 2026
+      (59 757 людей) зроблений поверненнями: 46 767 прийшли знову,
+      новачків лише 12 990.</p>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite" aria-label="Доля обраної когорти"></aside>
+  </div>
+
+  <section class="ladder" aria-label="Сходи лояльності">
+    <h2 class="ladder-title">Сходи лояльності</h2>
+    <p class="ladder-cap">Що більше кампаній за плечима людини, то ймовірніше
+    це жінка: <strong>57,2%</strong> серед разових → <strong>78,7%</strong>
+    у ядрі.</p>
+    <div class="ladder-strip" id="ladderStrip" role="group"
+         aria-label="Кількість кампаній на людину. Оберіть щабель, щоб побачити склад за статтю"></div>
+    <p class="ladder-detail" id="ladderDetail" aria-live="polite"></p>
+  </section>
+
+  <footer class="notes">
+    <ul class="note-list">
+      <li>«Нові у 2021» — це всі учасники першої кампанії. Масивів голосувань
+      до 2021 року немає, тож динаміку новачків коректно читати з 2023 року.</li>
+      <li>Утримання — це частка когорти, що повернулася голосувати в наступній
+      кампанії. Крок 2021→2023 охоплює два роки замість одного (кампанії 2022
+      не було через повномасштабне вторгнення), тож нижче утримання на цьому
+      кроці очікуване і не означає спаду інтересу.</li>
+    </ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Завантаження даних…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

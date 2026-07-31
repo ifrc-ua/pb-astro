@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Фінансування Бюджету участі — Івано-Франківськ, 2016–2026</title>
+<meta name="description" content="Бюджет участі Івано-Франківська виріс із 0,5 млн грн (2016) до 55 млн грн (2026) — у 110 разів за декаду (номінал, без поправки на інфляцію). У 2022 кампанії не було.">
+<link rel="icon" href="data:,">
+<link href="styles.css" rel="stylesheet">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+  <header class="head">
+    <span class="overline">Бюджет участі · Івано-Франківська громада</span>
+    <h1 class="title">Фінансування зросло у 110 разів</h1>
+    <p class="subtitle">Від <b>0,5 млн грн</b> у 2016 році до <b>55 млн грн</b> у
+    2026 році.</p>
+  </header>
+
+  <p class="sr-only">Стовпчикова діаграма виділеного фінансування Бюджету участі
+  Івано-Франківська по роках: 2016 — 0,5 млн грн, 2017 — 1,5; 2018 — 2,5;
+  2019 — 5; 2020 — 15; 2021 — 18; 2022 — кампанії не було; 2023 — 25,5;
+  2024 — 30; 2025 — 50; 2026 — 55 млн грн. Суми номінальні, без поправки на інфляцію.</p>
+
+  <figure class="chart-wrap">
+    <svg id="chart" role="img"
+         aria-label="Виділене фінансування Бюджету участі по роках, 2016–2026, млн грн (номінал)"></svg>
+  </figure>
+
+  <p class="caption">Без врахування інфляції.</p>
+
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

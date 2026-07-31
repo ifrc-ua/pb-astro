@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Де живуть виборці — Бюджет участі Івано-Франківська</title>
+<meta name="description" content="Теплова H3-мапа Івано-Франківська: де живуть виборці Бюджету участі 2021–2026, на однакових сотах ~350 м. Темніше — більше різних виборців на цій території.">
+<link rel="icon" href="data:,">
+<link href="lib/maplibre-gl.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+<script src="lib/maplibre-gl.js" defer></script>
+
+<script src="lib/h3-js.umd.js" defer></script>
+<script src="lib/deck.gl.min.js" defer></script>
+<script src="lib/d3.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="widget" id="widget">
+
+  <p class="sr-only" id="srDesc">Теплова мапа міста Івано-Франківськ, складена з однакових
+  шестикутних сот близько 350 метрів. Колір соти показує, скільки різних виборців Бюджету
+  участі за кампанії 2021–2026 живе на цій території: темніше — більше виборців. Це мапа
+  того, де виборці живуть (слід електорату), а не як вони голосують і не явка всіх мешканців:
+  населення соти невідоме. Наведіть курсор або торкніться соти, щоб побачити кількість
+  виборців у ній. На мапі 267 сот, у них разом 82 758 виборців із 83 252 у місті;
+  діапазон — від 5 до 1 872 виборців на соту. Найщільніші соти утворюють суцільну смугу
+  в центральній і північній частинах міста, де багатоповерхова забудова; на південних
+  околицях щільність спадає до поодиноких світлих сот.</p>
+
+  <header class="head">
+    <span class="overline">Бюджет участі · Івано-Франківськ</span>
+    <h1 class="title">Де живуть виборці</h1>
+  </header>
+
+  <section class="scene" aria-label="H3-мапа виборців міста">
+    <div class="map-wrap" id="mapWrap">
+      <div id="glMap" aria-hidden="true"></div>
+      <svg id="map" role="img" aria-label="Теплова мапа сот міста за кількістю виборців"></svg>
+      <div class="tooltip" id="tooltip" role="presentation" hidden></div>
+    </div>
+
+    <div class="legend-block">
+      <div class="legend-head">
+        <span class="legend-title">Виборців на соту</span>
+        <span class="legend-cap">виборці у 2021–2026, які живуть у межах соти</span>
+      </div>
+      <svg class="legend-bar" id="legendBar" aria-hidden="true"></svg>
+    </div>
+
+    <p class="scene-cap" id="sceneCap"></p>
+  </section>
+
+  <footer class="notes">
+    <ul class="note-list">
+      <li>Мапа показує виборців за місцем проживання/реєстрації (слід електорату),
+      а не як вони голосують. Це не явка всіх мешканців: населення соти невідоме,
+      тож більше виборців найчастіше може означати просто щільнішу забудову.</li>
+      <li>На мапі відображено лише знеособлені агрегати ≥ 5 голосів: соти ~350 м
+      у поперечнику (<a href="https://h3geo.org" target="_blank" rel="noopener noreferrer"
+      title="Про систему гексагональної сітки H3 (h3geo.org)">H3</a>, рівень 9;
+      детальніше див. методологію «Як ми рахували»).
+      Числа відображаються при наведенні на соту.</li>
+      <li>Період — усі кампанії 2021–2026 разом. Кожен виборець порахований один раз —
+      у соті за адресою з його останньої кампанії, навіть якщо за п'ять років він
+      переїжджав. Виборці поза містом тут не показані.</li>
+    </ul>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Завантаження даних…</span>
+  </div>
+</div>
+<script>
+(function(){
+  if(window.parent===window.self)return;
+  var last=0,t=0;
+  function send(){
+    var h=Math.ceil(document.documentElement.scrollHeight);
+    if(Math.abs(h-last)>1){last=h;parent.postMessage({type:'pb-embed-height',height:h},'*');}
+  }
+  function schedule(){if(t)return;t=setTimeout(function(){t=0;send();},60);}
+  window.addEventListener('load',send);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',send);
+  if(window.ResizeObserver){try{var ro=new ResizeObserver(schedule);ro.observe(document.documentElement);if(document.body)ro.observe(document.body);}catch(e){}}
+  if(window.MutationObserver){try{new MutationObserver(schedule).observe(document.documentElement,{subtree:true,childList:true,characterData:true});}catch(e){}}
+  [200,600,1200,2500,4000].forEach(function(ms){setTimeout(send,ms);});
+})();
+</script>
+</body>
+</html>

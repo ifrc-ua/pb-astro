@@ -1,0 +1,790 @@
+/* Sticky-сцени скролітелінгу: візуалізація на весь екран + степ-картки поверх.
+   Сцени вставляються всередині колонки .prose, тож .scene робить full-bleed
+   виліт на всю ширину вьюпорта (100vw + компенсація центрованої колонки);
+   html { overflow-x: clip } у global.css гасить зазор під скролбар. */
+.scene {
+  position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+.scene-sticky {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
+.scene-steps {
+  position: relative;
+  z-index: 2;
+  margin-top: -100dvh;
+  pointer-events: none;
+}
+.scene-step {
+  min-height: 95dvh;
+  display: flex;
+  align-items: center;
+}
+.scene-card {
+  pointer-events: auto;
+  max-width: 420px;
+  margin-left: 6vw;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--canvas) 92%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.06);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.scene-step.is-active .scene-card {
+  border-color: var(--brand);
+}
+@media (max-width: 599px) {
+  .scene-step {
+    align-items: flex-end;
+    padding-bottom: 8dvh;
+  }
+  .scene-card {
+    margin-inline: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ---- Візуалізація всередині сцени (спільне для чартових сцен) ---- */
+.scene-viz {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 24px clamp(16px, 4vw, 48px);
+}
+/* Широкі екрани: колонка степ-карток ліворуч (6vw + 420px) — графіка
+   зсувається праворуч, щоб картки не накривали лівий край чарта */
+@media (min-width: 1024px) {
+  .scene-viz {
+    max-width: 1560px;
+    padding-left: calc(6vw + 452px);
+    padding-right: clamp(24px, 4vw, 64px);
+  }
+}
+.viz-cap {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 10px;
+  max-width: 70ch;
+}
+.viz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 12px;
+}
+.viz-legend .leg-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.viz-legend .leg-sw,
+.viz-tooltip .leg-sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+.scene-viz .layer {
+  cursor: pointer;
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.scene-viz .layer.is-dimmed {
+  opacity: 0.25;
+}
+.viz-tooltip {
+  position: fixed;
+  z-index: 30;
+  pointer-events: none;
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.1);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 8px 10px;
+  max-width: 240px;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+.viz-tooltip.show {
+  opacity: 1;
+}
+.viz-tooltip .tt-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.viz-tooltip .tt-val {
+  font-variant-numeric: tabular-nums;
+}
+.viz-tooltip .tt-note {
+  color: var(--muted);
+}
+@media (max-width: 599px) {
+  .scene-viz {
+    padding: 12px 12px 30dvh;
+  }
+  .viz-legend {
+    display: none;
+  }
+  .viz-cap {
+    font-size: 11px;
+  }
+}
+
+/* ---- Сцена «Що виграє» (priorities) ---- */
+.pr-chart svg {
+  display: block;
+  width: 100%;
+}
+.pr-axis {
+  display: flex;
+}
+.pr-axis span {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.pr-viz .flag-dot {
+  fill: var(--brand);
+}
+.pr-viz .flag-text {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+.pr-viz .flag-line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.viz-seam {
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.viz-seam.show {
+  opacity: 1;
+}
+.viz-seam .seam-line {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 4;
+}
+.viz-seam .seam-label {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--muted);
+}
+
+/* ---- Мапні сцени (спільне): мапа на весь sticky-екран ---- */
+.scene-map {
+  position: absolute;
+  inset: 0;
+}
+.cm-map {
+  position: absolute;
+  inset: 0;
+}
+/* top враховує фіксований перемикач теми сторінки (44px у кутку 12/12) */
+.mv-meta {
+  position: absolute;
+  top: 64px;
+  right: 12px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: min(300px, 60vw);
+}
+.mv-card {
+  background: color-mix(in srgb, var(--canvas) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.04);
+  backdrop-filter: blur(2px);
+}
+.mv-counter {
+  padding: 10px 14px 8px;
+  text-align: right;
+  min-width: 150px;
+}
+.mv-count-num {
+  font-family: "Phenomena", "Inter Variable", sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.mv-count-cap {
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.mv-caption {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mv-legend {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.mv-legend .leg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+.mv-legend .leg-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+}
+.mv-note {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  z-index: 4;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  max-width: 46ch;
+  text-align: right;
+}
+.mv-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.mv-fallback img {
+  max-width: min(1100px, 100%);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fdfdfd;
+}
+@media (max-width: 599px) {
+  .mv-meta {
+    top: 60px;
+    right: 8px;
+    gap: 6px;
+  }
+  .mv-counter {
+    padding: 6px 10px 5px;
+    min-width: 112px;
+  }
+  .mv-count-num {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+  .mv-legend {
+    font-size: 11px;
+    padding: 6px 10px;
+    gap: 3px;
+  }
+  .mv-note {
+    display: none;
+  }
+}
+
+/* ---- Сцена «Пульс голосування» (clock-map) ---- */
+.cm-daynight {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+}
+.cm-daynight .ic-moon {
+  display: none;
+}
+.cm-daynight.night .ic-sun {
+  display: none;
+}
+.cm-daynight.night .ic-moon {
+  display: block;
+}
+.cm-daynight.night {
+  color: var(--brand);
+}
+/* Картка-кнопка вільного режиму */
+.cm-explore {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a1a1a;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+}
+.cm-explore:hover {
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.12);
+  transform: translateY(-1px);
+}
+.cm-explore:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+/* без WebGL вільний режим недоступний — кнопку ховаємо, картки живуть далі */
+.scene.cm-nogl .cm-explore {
+  display: none;
+}
+/* остання картка (кнопка) тримає sticky довше: вільному режиму — повний екран */
+.scene:has(.cm-viz) .scene-step:last-child {
+  min-height: 150dvh;
+  align-items: flex-start;
+  padding-top: 42dvh;
+}
+/* остання «картка» — лише жовта кнопка, без рамки-картки навколо неї */
+.scene:has(.cm-viz) .scene-step:last-child .scene-card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+/* вільний режим: степ-картки поступаються місцем контролам годинника */
+.scene.cm-free .scene-card {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cm-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  z-index: 6;
+  width: min(720px, calc(100% - 24px));
+  padding: 10px 14px;
+}
+.cm-controls[hidden] {
+  display: none;
+}
+.cm-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.cm-year,
+.cm-speed {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  min-height: 32px;
+  cursor: pointer;
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+.cm-year:hover,
+.cm-speed:hover {
+  background: var(--panel-2);
+}
+.cm-year.active {
+  background: var(--accent);
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+.cm-speed.active {
+  background: var(--panel-2);
+  border-color: var(--brand);
+  color: var(--brand-strong, var(--brand));
+}
+.cm-year:focus-visible,
+.cm-speed:focus-visible,
+.cm-play:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.cm-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cm-play {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brand);
+  color: var(--canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+.cm-play:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cm-play .ic-pause,
+.cm-play .ic-replay {
+  display: none;
+}
+.cm-play.playing .ic-play {
+  display: none;
+}
+.cm-play.playing .ic-pause {
+  display: block;
+}
+.cm-play.ended .ic-play {
+  display: none;
+}
+.cm-play.ended .ic-replay {
+  display: block;
+}
+.cm-play .ic-play {
+  margin-left: 2px;
+}
+.cm-timeline {
+  position: relative;
+  flex: 1;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.cm-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.cm-tick {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--line);
+}
+.cm-timeline input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.cm-timeline input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--brand) 0%,
+    var(--brand) var(--progress, 0%),
+    var(--panel-2) var(--progress, 0%),
+    var(--panel-2) 100%
+  );
+}
+.cm-timeline input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--panel-2);
+}
+.cm-timeline input[type="range"]::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+.cm-timeline input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: var(--canvas);
+  border: 2px solid var(--brand);
+}
+.cm-timeline input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--canvas);
+  border: 2px solid var(--brand);
+}
+.cm-speeds {
+  display: flex;
+  gap: 4px;
+  flex: none;
+}
+.cm-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.cm-loading[hidden] {
+  display: none;
+}
+@media (max-width: 599px) {
+  .cm-controls {
+    bottom: 10px;
+    padding: 8px 10px;
+  }
+  .cm-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cm-play {
+    width: 44px;
+    height: 44px;
+  }
+  .cm-timeline {
+    order: 3;
+    flex-basis: 100%;
+    height: 44px;
+  }
+  .cm-timeline input[type="range"] {
+    height: 44px;
+  }
+  .cm-timeline input[type="range"]::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    margin-top: -9px;
+  }
+  .cm-year,
+  .cm-speed {
+    min-height: 40px;
+  }
+}
+
+/* ---- Сцена «Місто зблизька» (city-heatmap) ---- */
+.mh-glmap {
+  display: none;
+}
+.mh-viz.gl .mh-glmap {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.mh-viz.gl .mh-svgwrap {
+  display: none;
+}
+/* SVG-фолбек: той самий рендер, що у віджеті, по центру sticky-екрана;
+   фон — темний на весь екран, як у GL-сцени (не «картинка в рамці») */
+.mh-svgwrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px clamp(16px, 4vw, 48px) 40px;
+  background: #16161d;
+}
+@media (min-width: 1024px) {
+  .mh-svgwrap {
+    padding-left: calc(6vw + 452px);
+  }
+}
+.mh-svg {
+  display: block;
+  width: min(760px, 100%);
+  max-height: 100%;
+  padding: 8px;
+}
+.mh-hex {
+  stroke: #2e2f38;
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+  transition: fill 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mh-hex:hover {
+  stroke: #ffffff;
+  stroke-width: 1.6px;
+}
+.mh-hex:focus-visible {
+  outline: none;
+  stroke: var(--brand);
+  stroke-width: 2.4px;
+}
+/* «обрана» сота: жовтий лише з ink-тінню (канон дизайн-системи) */
+.mh-hex.is-active {
+  stroke: #ffec08;
+  stroke-width: 2.6px;
+  filter: drop-shadow(0 0 1.4px rgba(26, 26, 26, 0.75));
+}
+.mh-legend {
+  padding: 10px 14px;
+  width: min(320px, 100%);
+}
+.mh-legend-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.mh-legendbar {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin-top: 4px;
+}
+.mh-legendbar text {
+  font-size: 11px;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.mh-scenecap {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.mh-scenecap strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mh-tooltip {
+  position: absolute;
+  z-index: 8;
+  pointer-events: none;
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.12);
+  padding: 9px 12px;
+  font-size: 13px;
+}
+.mh-tooltip[hidden] {
+  display: none;
+}
+.mh-tooltip .tt-val {
+  font-family: "Phenomena", "Inter Variable", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-strong, var(--brand));
+}
+.mh-tooltip .tt-lab {
+  display: block;
+  color: var(--muted);
+  margin-top: 1px;
+}
+/* атрибуція OpenFreeMap на темній мапі */
+.mh-viz .maplibregl-ctrl-attrib {
+  font-size: 10px;
+  background: rgba(253, 253, 253, 0.75);
+}
+/* нотатка не накладається на атрибуцію OpenFreeMap унизу праворуч;
+   більша і контрастніша за базову — на темній мапі 11px губився */
+.mh-viz .mv-note {
+  bottom: 34px;
+  font-size: 13px;
+  color: #e2e2e6;
+  max-width: 52ch;
+}
+@media (max-width: 599px) {
+  .mh-legend {
+    width: min(240px, 60vw);
+    padding: 8px 10px;
+  }
+  .mh-scenecap {
+    display: none;
+  }
+  .mh-svgwrap {
+    padding: 64px 12px 34dvh;
+  }
+  /* кнопка-перемикач атрибуції — повноцінна тач-ціль */
+  .mh-viz .maplibregl-ctrl-attrib-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ---- Сцена «Клуб постійних» (cohort-river) ---- */
+.cr-chart svg {
+  display: block;
+  width: 100%;
+}
+.cr-viz rect.seg {
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cr-viz .cr-base {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.cr-viz .cr-year {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  fill: var(--muted);
+}
+.cr-viz .cr-total {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  fill: var(--ink);
+}
+.cr-viz .cr-new {
+  fill: var(--muted);
+}
+.viz-tooltip .t-head {
+  font-weight: 600;
+}
+.viz-tooltip .t-num {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

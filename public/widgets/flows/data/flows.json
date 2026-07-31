@@ -1,0 +1,5698 @@
+{
+ "meta": {
+  "generated": "2026-06-21",
+  "k_threshold": 5,
+  "years": [
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "note_coverage": "лише голоси з відомими ОБОМА громадами: 634468/679994 (93,3%); решта — проєкти без громади (без адреси/загальноміські); «(поза громадою)» виборці виключені",
+  "note_denominators": "виборець — за місцем проживання, проєкт — за місцем проєкту",
+  "dropped_cells": {
+   "2021": {
+    "cells": 61,
+    "votes": 130
+   },
+   "2023": {
+    "cells": 81,
+    "votes": 160
+   },
+   "2024": {
+    "cells": 72,
+    "votes": 150
+   },
+   "2025": {
+    "cells": 78,
+    "votes": 167
+   },
+   "2026": {
+    "cells": 84,
+    "votes": 192
+   },
+   "all": {
+    "cells": 65,
+    "votes": 144
+   }
+  }
+ },
+ "groups": {
+  "2021": {
+   "cc": 80420,
+   "cv": 12148,
+   "vc": 8363,
+   "vv": 22671
+  },
+  "2023": {
+   "cc": 47097,
+   "cv": 5003,
+   "vc": 5079,
+   "vv": 12934
+  },
+  "2024": {
+   "cc": 83277,
+   "cv": 6714,
+   "vc": 12779,
+   "vv": 12938
+  },
+  "2025": {
+   "cc": 94998,
+   "cv": 9951,
+   "vc": 12858,
+   "vv": 6564
+  },
+  "2026": {
+   "cc": 146511,
+   "cv": 15432,
+   "vc": 23611,
+   "vv": 15120
+  },
+  "all": {
+   "cc": 452303,
+   "cv": 49248,
+   "vc": 62690,
+   "vv": 70227
+  }
+ },
+ "groups_people": {
+  "2021": {
+   "cc": 41057,
+   "cv": 9194,
+   "vc": 5011,
+   "vv": 8909
+  },
+  "2023": {
+   "cc": 31129,
+   "cv": 4046,
+   "vc": 3709,
+   "vv": 5715
+  },
+  "2024": {
+   "cc": 41940,
+   "cv": 5543,
+   "vc": 7011,
+   "vv": 5500
+  },
+  "2025": {
+   "cc": 38897,
+   "cv": 7921,
+   "vc": 5957,
+   "vv": 3936
+  },
+  "2026": {
+   "cc": 45400,
+   "cv": 11408,
+   "vc": 8201,
+   "vv": 6541
+  },
+  "all": {
+   "cc": 83897,
+   "cv": 27414,
+   "vc": 14951,
+   "vv": 15654
+  }
+ },
+ "by_voter_district": {
+  "2021": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 92568,
+    "same": 80420,
+    "same_pct": 86.9,
+    "to_city": 80420,
+    "to_village": 12148,
+    "people": 43348
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 5367,
+    "same": 3597,
+    "same_pct": 67.0,
+    "to_city": 661,
+    "to_village": 4706,
+    "people": 1657
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 3864,
+    "same": 1137,
+    "same_pct": 29.4,
+    "to_city": 2271,
+    "to_village": 1593,
+    "people": 1759
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 3067,
+    "same": 2710,
+    "same_pct": 88.4,
+    "to_city": 111,
+    "to_village": 2956,
+    "people": 974
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 2669,
+    "same": 2313,
+    "same_pct": 86.7,
+    "to_city": 145,
+    "to_village": 2524,
+    "people": 877
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 2502,
+    "same": 2235,
+    "same_pct": 89.3,
+    "to_city": 168,
+    "to_village": 2334,
+    "people": 863
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 2200,
+    "same": 1418,
+    "same_pct": 64.5,
+    "to_city": 467,
+    "to_village": 1733,
+    "people": 613
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 1713,
+    "same": 644,
+    "same_pct": 37.6,
+    "to_city": 630,
+    "to_village": 1083,
+    "people": 681
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 1656,
+    "same": 360,
+    "same_pct": 21.7,
+    "to_city": 1041,
+    "to_village": 615,
+    "people": 813
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 1352,
+    "same": 1052,
+    "same_pct": 77.8,
+    "to_city": 112,
+    "to_village": 1240,
+    "people": 418
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 1201,
+    "same": 1039,
+    "same_pct": 86.5,
+    "to_city": 71,
+    "to_village": 1130,
+    "people": 438
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 1081,
+    "same": 537,
+    "same_pct": 49.7,
+    "to_city": 500,
+    "to_village": 581,
+    "people": 305
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 1069,
+    "same": 606,
+    "same_pct": 56.7,
+    "to_city": 337,
+    "to_village": 732,
+    "people": 407
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 1020,
+    "same": 52,
+    "same_pct": 5.1,
+    "to_city": 859,
+    "to_village": 161,
+    "people": 466
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 901,
+    "same": 151,
+    "same_pct": 16.8,
+    "to_city": 566,
+    "to_village": 335,
+    "people": 393
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 613,
+    "same": 273,
+    "same_pct": 44.5,
+    "to_city": 251,
+    "to_village": 362,
+    "people": 257
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 441,
+    "same": 364,
+    "same_pct": 82.5,
+    "to_city": 41,
+    "to_village": 400,
+    "people": 209
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 233,
+    "same": 132,
+    "same_pct": 56.7,
+    "to_city": 65,
+    "to_village": 168,
+    "people": 99
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 85,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 67,
+    "to_village": 18,
+    "people": 51
+   }
+  ],
+  "2023": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 52100,
+    "same": 47097,
+    "same_pct": 90.4,
+    "to_city": 47097,
+    "to_village": 5003,
+    "people": 32936
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 2672,
+    "same": 1493,
+    "same_pct": 55.9,
+    "to_city": 442,
+    "to_village": 2230,
+    "people": 1103
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 2588,
+    "same": 2516,
+    "same_pct": 97.2,
+    "to_city": 59,
+    "to_village": 2529,
+    "people": 705
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 2374,
+    "same": 549,
+    "same_pct": 23.1,
+    "to_city": 1575,
+    "to_village": 799,
+    "people": 1529
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 1941,
+    "same": 1797,
+    "same_pct": 92.6,
+    "to_city": 124,
+    "to_village": 1817,
+    "people": 706
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 1746,
+    "same": 1571,
+    "same_pct": 90.0,
+    "to_city": 118,
+    "to_village": 1628,
+    "people": 897
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 1310,
+    "same": 708,
+    "same_pct": 54.0,
+    "to_city": 74,
+    "to_village": 1236,
+    "people": 414
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 996,
+    "same": 619,
+    "same_pct": 62.1,
+    "to_city": 69,
+    "to_village": 927,
+    "people": 387
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 886,
+    "same": 72,
+    "same_pct": 8.1,
+    "to_city": 741,
+    "to_village": 145,
+    "people": 559
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 641,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 578,
+    "to_village": 63,
+    "people": 410
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 555,
+    "same": 342,
+    "same_pct": 61.6,
+    "to_city": 179,
+    "to_village": 376,
+    "people": 310
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 426,
+    "same": 326,
+    "same_pct": 76.5,
+    "to_city": 79,
+    "to_village": 347,
+    "people": 207
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 407,
+    "same": 38,
+    "same_pct": 9.3,
+    "to_city": 319,
+    "to_village": 88,
+    "people": 272
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 407,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 307,
+    "to_village": 100,
+    "people": 286
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 369,
+    "same": 160,
+    "same_pct": 43.4,
+    "to_city": 168,
+    "to_village": 201,
+    "people": 297
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 342,
+    "same": 181,
+    "same_pct": 52.9,
+    "to_city": 61,
+    "to_village": 281,
+    "people": 216
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 223,
+    "same": 130,
+    "same_pct": 58.3,
+    "to_city": 89,
+    "to_village": 134,
+    "people": 144
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 92,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 66,
+    "to_village": 26,
+    "people": 53
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 38,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 31,
+    "to_village": 7,
+    "people": 25
+   }
+  ],
+  "2024": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 89991,
+    "same": 83277,
+    "same_pct": 92.5,
+    "to_city": 83277,
+    "to_village": 6714,
+    "people": 42531
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 5614,
+    "same": 3461,
+    "same_pct": 61.6,
+    "to_city": 2000,
+    "to_village": 3614,
+    "people": 1293
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 3762,
+    "same": 437,
+    "same_pct": 11.6,
+    "to_city": 3041,
+    "to_village": 721,
+    "people": 1800
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 3280,
+    "same": 1979,
+    "same_pct": 60.3,
+    "to_city": 1276,
+    "to_village": 2004,
+    "people": 840
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 2752,
+    "same": 2602,
+    "same_pct": 94.5,
+    "to_city": 143,
+    "to_village": 2609,
+    "people": 744
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 1824,
+    "same": 1196,
+    "same_pct": 65.6,
+    "to_city": 375,
+    "to_village": 1449,
+    "people": 540
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 1721,
+    "same": 533,
+    "same_pct": 31.0,
+    "to_city": 992,
+    "to_village": 729,
+    "people": 701
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 1350,
+    "same": 27,
+    "same_pct": 2.0,
+    "to_city": 1217,
+    "to_village": 133,
+    "people": 682
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 1001,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 933,
+    "to_village": 68,
+    "people": 523
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 907,
+    "same": 483,
+    "same_pct": 53.3,
+    "to_city": 392,
+    "to_village": 515,
+    "people": 423
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 869,
+    "same": 112,
+    "same_pct": 12.9,
+    "to_city": 578,
+    "to_village": 291,
+    "people": 387
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 755,
+    "same": 3,
+    "same_pct": 0.4,
+    "to_city": 575,
+    "to_village": 180,
+    "people": 363
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 540,
+    "same": 165,
+    "same_pct": 30.6,
+    "to_city": 328,
+    "to_village": 212,
+    "people": 330
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 452,
+    "same": 152,
+    "same_pct": 33.6,
+    "to_city": 262,
+    "to_village": 190,
+    "people": 248
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 254,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 220,
+    "to_village": 34,
+    "people": 126
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 208,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 141,
+    "to_village": 67,
+    "people": 118
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 174,
+    "same": 55,
+    "same_pct": 31.6,
+    "to_city": 111,
+    "to_village": 63,
+    "people": 71
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 147,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 104,
+    "to_village": 43,
+    "people": 53
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 107,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 91,
+    "to_village": 16,
+    "people": 55
+   }
+  ],
+  "2025": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 104949,
+    "same": 94998,
+    "same_pct": 90.5,
+    "to_city": 94998,
+    "to_village": 9951,
+    "people": 39761
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 4516,
+    "same": 845,
+    "same_pct": 18.7,
+    "to_city": 3326,
+    "to_village": 1190,
+    "people": 1645
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 2199,
+    "same": 1458,
+    "same_pct": 66.3,
+    "to_city": 689,
+    "to_village": 1510,
+    "people": 633
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 1870,
+    "same": 195,
+    "same_pct": 10.4,
+    "to_city": 1480,
+    "to_village": 390,
+    "people": 743
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 1620,
+    "same": 370,
+    "same_pct": 22.8,
+    "to_city": 1145,
+    "to_village": 475,
+    "people": 681
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 1370,
+    "same": 410,
+    "same_pct": 29.9,
+    "to_city": 894,
+    "to_village": 476,
+    "people": 381
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 1294,
+    "same": 714,
+    "same_pct": 55.2,
+    "to_city": 384,
+    "to_village": 910,
+    "people": 458
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 1175,
+    "same": 42,
+    "same_pct": 3.6,
+    "to_city": 1040,
+    "to_village": 135,
+    "people": 523
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 890,
+    "same": 111,
+    "same_pct": 12.5,
+    "to_city": 688,
+    "to_village": 202,
+    "people": 385
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 840,
+    "same": 37,
+    "same_pct": 4.4,
+    "to_city": 721,
+    "to_village": 119,
+    "people": 353
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 658,
+    "same": 117,
+    "same_pct": 17.8,
+    "to_city": 478,
+    "to_village": 180,
+    "people": 273
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 535,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 441,
+    "to_village": 94,
+    "people": 225
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 475,
+    "same": 161,
+    "same_pct": 33.9,
+    "to_city": 286,
+    "to_village": 189,
+    "people": 217
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 431,
+    "same": 234,
+    "same_pct": 54.3,
+    "to_city": 161,
+    "to_village": 270,
+    "people": 261
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 345,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 300,
+    "to_village": 45,
+    "people": 153
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 344,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 240,
+    "to_village": 104,
+    "people": 79
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 318,
+    "same": 67,
+    "same_pct": 21.1,
+    "to_city": 200,
+    "to_village": 118,
+    "people": 73
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 280,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 172,
+    "to_village": 108,
+    "people": 63
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 262,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 213,
+    "to_village": 49,
+    "people": 103
+   }
+  ],
+  "2026": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 161943,
+    "same": 146511,
+    "same_pct": 90.5,
+    "to_city": 146511,
+    "to_village": 15432,
+    "people": 46403
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 8831,
+    "same": 1129,
+    "same_pct": 12.8,
+    "to_city": 7220,
+    "to_village": 1611,
+    "people": 2395
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 6770,
+    "same": 3945,
+    "same_pct": 58.3,
+    "to_city": 2698,
+    "to_village": 4072,
+    "people": 1169
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 3366,
+    "same": 1495,
+    "same_pct": 44.4,
+    "to_city": 1657,
+    "to_village": 1709,
+    "people": 912
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 3350,
+    "same": 702,
+    "same_pct": 21.0,
+    "to_city": 2417,
+    "to_village": 933,
+    "people": 916
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 2423,
+    "same": 1192,
+    "same_pct": 49.2,
+    "to_city": 1016,
+    "to_village": 1407,
+    "people": 548
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 2224,
+    "same": 1620,
+    "same_pct": 72.8,
+    "to_city": 560,
+    "to_village": 1664,
+    "people": 670
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 2215,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 2039,
+    "to_village": 176,
+    "people": 666
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 1596,
+    "same": 545,
+    "same_pct": 34.1,
+    "to_city": 818,
+    "to_village": 778,
+    "people": 456
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 1414,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 1126,
+    "to_village": 288,
+    "people": 417
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 1388,
+    "same": 98,
+    "same_pct": 7.1,
+    "to_city": 1124,
+    "to_village": 264,
+    "people": 455
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 1224,
+    "same": 396,
+    "same_pct": 32.4,
+    "to_city": 687,
+    "to_village": 537,
+    "people": 377
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 954,
+    "same": 310,
+    "same_pct": 32.5,
+    "to_city": 574,
+    "to_village": 380,
+    "people": 256
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 761,
+    "same": 375,
+    "same_pct": 49.3,
+    "to_city": 303,
+    "to_village": 458,
+    "people": 274
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 663,
+    "same": 271,
+    "same_pct": 40.9,
+    "to_city": 323,
+    "to_village": 340,
+    "people": 335
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 437,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 310,
+    "to_village": 127,
+    "people": 140
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 414,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 267,
+    "to_village": 147,
+    "people": 89
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 400,
+    "same": 56,
+    "same_pct": 14.0,
+    "to_city": 268,
+    "to_village": 132,
+    "people": 70
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 301,
+    "same": 0,
+    "same_pct": 0.0,
+    "to_city": 204,
+    "to_village": 97,
+    "people": 66
+   }
+  ],
+  "all": [
+   {
+    "district": "Івано-Франківськ",
+    "type": "city",
+    "votes": 501551,
+    "same": 452303,
+    "same_pct": 90.2,
+    "to_city": 452303,
+    "to_village": 49248,
+    "people": 85720
+   },
+   {
+    "district": "Крихівці",
+    "type": "village",
+    "votes": 23347,
+    "same": 4097,
+    "same_pct": 17.5,
+    "to_city": 17433,
+    "to_village": 5914,
+    "people": 3723
+   },
+   {
+    "district": "Радча",
+    "type": "village",
+    "votes": 18998,
+    "same": 12748,
+    "same_pct": 67.1,
+    "to_city": 5650,
+    "to_village": 13348,
+    "people": 1893
+   },
+   {
+    "district": "Черніїв",
+    "type": "village",
+    "votes": 14746,
+    "same": 7488,
+    "same_pct": 50.8,
+    "to_city": 4897,
+    "to_village": 9849,
+    "people": 2333
+   },
+   {
+    "district": "Тисменичани",
+    "type": "village",
+    "votes": 11925,
+    "same": 10162,
+    "same_pct": 85.2,
+    "to_city": 1257,
+    "to_village": 10668,
+    "people": 1480
+   },
+   {
+    "district": "Драгомирчани",
+    "type": "village",
+    "votes": 9977,
+    "same": 6673,
+    "same_pct": 66.9,
+    "to_city": 2864,
+    "to_village": 7113,
+    "people": 1350
+   },
+   {
+    "district": "Угорники",
+    "type": "village",
+    "votes": 9112,
+    "same": 1356,
+    "same_pct": 14.9,
+    "to_city": 6896,
+    "to_village": 2216,
+    "people": 1643
+   },
+   {
+    "district": "Березівка",
+    "type": "village",
+    "votes": 6357,
+    "same": 3697,
+    "same_pct": 58.2,
+    "to_city": 1432,
+    "to_village": 4925,
+    "people": 882
+   },
+   {
+    "district": "Підпечери",
+    "type": "village",
+    "votes": 6138,
+    "same": 2851,
+    "same_pct": 46.4,
+    "to_city": 2807,
+    "to_village": 3331,
+    "people": 936
+   },
+   {
+    "district": "Вовчинець",
+    "type": "village",
+    "votes": 6052,
+    "same": 94,
+    "same_pct": 1.6,
+    "to_city": 5449,
+    "to_village": 603,
+    "people": 1077
+   },
+   {
+    "district": "Микитинці",
+    "type": "village",
+    "votes": 5153,
+    "same": 894,
+    "same_pct": 17.3,
+    "to_city": 3336,
+    "to_village": 1817,
+    "people": 1042
+   },
+   {
+    "district": "Чукалівка",
+    "type": "village",
+    "votes": 4431,
+    "same": 300,
+    "same_pct": 6.8,
+    "to_city": 3298,
+    "to_village": 1133,
+    "people": 761
+   },
+   {
+    "district": "Братківці",
+    "type": "village",
+    "votes": 3657,
+    "same": 2081,
+    "same_pct": 56.9,
+    "to_city": 1025,
+    "to_village": 2632,
+    "people": 823
+   },
+   {
+    "district": "Підлужжя",
+    "type": "village",
+    "votes": 3467,
+    "same": 1176,
+    "same_pct": 33.9,
+    "to_city": 1886,
+    "to_village": 1581,
+    "people": 687
+   },
+   {
+    "district": "Хриплин",
+    "type": "village",
+    "votes": 3461,
+    "same": 1849,
+    "same_pct": 53.4,
+    "to_city": 1271,
+    "to_village": 2190,
+    "people": 617
+   },
+   {
+    "district": "Камінне",
+    "type": "village",
+    "votes": 2499,
+    "same": 952,
+    "same_pct": 38.1,
+    "to_city": 1173,
+    "to_village": 1326,
+    "people": 530
+   },
+   {
+    "district": "Узин",
+    "type": "village",
+    "votes": 1398,
+    "same": 364,
+    "same_pct": 26.0,
+    "to_city": 705,
+    "to_village": 693,
+    "people": 277
+   },
+   {
+    "district": "Колодіївка",
+    "type": "village",
+    "votes": 1211,
+    "same": 317,
+    "same_pct": 26.2,
+    "to_city": 641,
+    "to_village": 570,
+    "people": 197
+   },
+   {
+    "district": "Добровляни",
+    "type": "village",
+    "votes": 988,
+    "same": 123,
+    "same_pct": 12.4,
+    "to_city": 670,
+    "to_village": 318,
+    "people": 108
+   }
+  ]
+ },
+ "matrix": {
+  "2021": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 80420
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 3597
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 3420
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Березівка",
+    "votes": 3054
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 2710
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 2313
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 2271
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 2235
+   },
+   {
+    "from": "Березівка",
+    "to": "Березівка",
+    "votes": 1418
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 1391
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 1137
+   },
+   {
+    "from": "Хриплин",
+    "to": "Хриплин",
+    "votes": 1052
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 1041
+   },
+   {
+    "from": "Братківці",
+    "to": "Братківці",
+    "votes": 1039
+   },
+   {
+    "from": "Черніїв",
+    "to": "Березівка",
+    "votes": 983
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 967
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 859
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 789
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 763
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 661
+   },
+   {
+    "from": "Микитинці",
+    "to": "Микитинці",
+    "votes": 644
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 630
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 606
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 566
+   },
+   {
+    "from": "Камінне",
+    "to": "Камінне",
+    "votes": 537
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Хриплин",
+    "votes": 508
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 500
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 467
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 455
+   },
+   {
+    "from": "Узин",
+    "to": "Узин",
+    "votes": 364
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 360
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 337
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підлужжя",
+    "votes": 273
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 263
+   },
+   {
+    "from": "Крихівці",
+    "to": "Березівка",
+    "votes": 263
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 251
+   },
+   {
+    "from": "Березівка",
+    "to": "Крихівці",
+    "votes": 229
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Березівка",
+    "votes": 224
+   },
+   {
+    "from": "Микитинці",
+    "to": "Хриплин",
+    "votes": 214
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 168
+   },
+   {
+    "from": "Хриплин",
+    "to": "Березівка",
+    "votes": 157
+   },
+   {
+    "from": "Радча",
+    "to": "Березівка",
+    "votes": 155
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Чукалівка",
+    "votes": 151
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 145
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Колодіївка",
+    "votes": 132
+   },
+   {
+    "from": "Микитинці",
+    "to": "Березівка",
+    "votes": 132
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Чукалівка",
+    "votes": 114
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 112
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 111
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 109
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Братківці",
+    "votes": 82
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 81
+   },
+   {
+    "from": "Братківці",
+    "to": "Березівка",
+    "votes": 77
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Колодіївка",
+    "votes": 74
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 71
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 71
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 67
+   },
+   {
+    "from": "Угорники",
+    "to": "Березівка",
+    "votes": 66
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 65
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 58
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підлужжя",
+    "votes": 54
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Узин",
+    "votes": 54
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Вовчинець",
+    "votes": 52
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 52
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Вовчинець",
+    "votes": 52
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Хриплин",
+    "votes": 52
+   },
+   {
+    "from": "Підпечери",
+    "to": "Березівка",
+    "votes": 47
+   },
+   {
+    "from": "Крихівці",
+    "to": "Тисменичани",
+    "votes": 45
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 41
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Березівка",
+    "votes": 39
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 37
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Березівка",
+    "votes": 36
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 35
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Березівка",
+    "votes": 35
+   },
+   {
+    "from": "Микитинці",
+    "to": "Крихівці",
+    "votes": 31
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Камінне",
+    "votes": 27
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Черніїв",
+    "votes": 27
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Березівка",
+    "votes": 25
+   },
+   {
+    "from": "Камінне",
+    "to": "Березівка",
+    "votes": 25
+   },
+   {
+    "from": "Черніїв",
+    "to": "Хриплин",
+    "votes": 25
+   },
+   {
+    "from": "Підпечери",
+    "to": "Угорники",
+    "votes": 24
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 23
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 23
+   },
+   {
+    "from": "Радча",
+    "to": "Крихівці",
+    "votes": 23
+   },
+   {
+    "from": "Підпечери",
+    "to": "Крихівці",
+    "votes": 22
+   },
+   {
+    "from": "Угорники",
+    "to": "Крихівці",
+    "votes": 22
+   },
+   {
+    "from": "Угорники",
+    "to": "Черніїв",
+    "votes": 21
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Березівка",
+    "votes": 19
+   },
+   {
+    "from": "Узин",
+    "to": "Березівка",
+    "votes": 19
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Крихівці",
+    "votes": 18
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 18
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 17
+   },
+   {
+    "from": "Крихівці",
+    "to": "Черніїв",
+    "votes": 17
+   },
+   {
+    "from": "Микитинці",
+    "to": "Радча",
+    "votes": 17
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 16
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 14
+   },
+   {
+    "from": "Черніїв",
+    "to": "Микитинці",
+    "votes": 14
+   },
+   {
+    "from": "Березівка",
+    "to": "Братківці",
+    "votes": 13
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Драгомирчани",
+    "votes": 13
+   },
+   {
+    "from": "Хриплин",
+    "to": "Крихівці",
+    "votes": 13
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Хриплин",
+    "votes": 12
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Чукалівка",
+    "votes": 12
+   },
+   {
+    "from": "Підпечери",
+    "to": "Микитинці",
+    "votes": 12
+   },
+   {
+    "from": "Радча",
+    "to": "Черніїв",
+    "votes": 12
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 11
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Микитинці",
+    "votes": 11
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Крихівці",
+    "votes": 11
+   },
+   {
+    "from": "Добровляни",
+    "to": "Колодіївка",
+    "votes": 10
+   },
+   {
+    "from": "Черніїв",
+    "to": "Драгомирчани",
+    "votes": 10
+   },
+   {
+    "from": "Крихівці",
+    "to": "Хриплин",
+    "votes": 9
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Угорники",
+    "votes": 9
+   },
+   {
+    "from": "Підпечери",
+    "to": "Тисменичани",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Підлужжя",
+    "votes": 9
+   },
+   {
+    "from": "Хриплин",
+    "to": "Микитинці",
+    "votes": 9
+   },
+   {
+    "from": "Братківці",
+    "to": "Черніїв",
+    "votes": 8
+   },
+   {
+    "from": "Добровляни",
+    "to": "Березівка",
+    "votes": 8
+   },
+   {
+    "from": "Микитинці",
+    "to": "Тисменичани",
+    "votes": 8
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Драгомирчани",
+    "votes": 8
+   },
+   {
+    "from": "Хриплин",
+    "to": "Черніїв",
+    "votes": 8
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Тисменичани",
+    "votes": 7
+   },
+   {
+    "from": "Крихівці",
+    "to": "Угорники",
+    "votes": 7
+   },
+   {
+    "from": "Крихівці",
+    "to": "Чукалівка",
+    "votes": 7
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Микитинці",
+    "votes": 7
+   },
+   {
+    "from": "Угорники",
+    "to": "Драгомирчани",
+    "votes": 7
+   },
+   {
+    "from": "Угорники",
+    "to": "Тисменичани",
+    "votes": 7
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Камінне",
+    "to": "Хриплин",
+    "votes": 6
+   },
+   {
+    "from": "Підпечери",
+    "to": "Драгомирчани",
+    "votes": 6
+   },
+   {
+    "from": "Радча",
+    "to": "Драгомирчани",
+    "votes": 6
+   },
+   {
+    "from": "Радча",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Угорники",
+    "to": "Хриплин",
+    "votes": 6
+   },
+   {
+    "from": "Узин",
+    "to": "Радча",
+    "votes": 6
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Драгомирчани",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Угорники",
+    "votes": 5
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Черніїв",
+    "votes": 5
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Крихівці",
+    "votes": 5
+   },
+   {
+    "from": "Узин",
+    "to": "Микитинці",
+    "votes": 5
+   },
+   {
+    "from": "Черніїв",
+    "to": "Радча",
+    "votes": 5
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Тисменичани",
+    "votes": 5
+   }
+  ],
+  "2023": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 47097
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 2516
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 1797
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 1575
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 1571
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 1493
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 1452
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 884
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 881
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 741
+   },
+   {
+    "from": "Березівка",
+    "to": "Березівка",
+    "votes": 708
+   },
+   {
+    "from": "Черніїв",
+    "to": "Березівка",
+    "votes": 696
+   },
+   {
+    "from": "Братківці",
+    "to": "Братківці",
+    "votes": 619
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 578
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 549
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 539
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 498
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 442
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підлужжя",
+    "votes": 342
+   },
+   {
+    "from": "Хриплин",
+    "to": "Хриплин",
+    "votes": 326
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 319
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 307
+   },
+   {
+    "from": "Братківці",
+    "to": "Березівка",
+    "votes": 296
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 270
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Хриплин",
+    "votes": 235
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Березівка",
+    "votes": 205
+   },
+   {
+    "from": "Камінне",
+    "to": "Камінне",
+    "votes": 181
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 179
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 168
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 160
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 155
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Колодіївка",
+    "votes": 130
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 124
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 118
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 108
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Колодіївка",
+    "votes": 99
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 95
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 89
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Братківці",
+    "votes": 80
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 79
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 74
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 72
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підлужжя",
+    "votes": 70
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 69
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 66
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 61
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 59
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 44
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 44
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 39
+   },
+   {
+    "from": "Микитинці",
+    "to": "Микитинці",
+    "votes": 38
+   },
+   {
+    "from": "Камінне",
+    "to": "Братківці",
+    "votes": 35
+   },
+   {
+    "from": "Крихівці",
+    "to": "Черніїв",
+    "votes": 35
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 31
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 27
+   },
+   {
+    "from": "Камінне",
+    "to": "Березівка",
+    "votes": 25
+   },
+   {
+    "from": "Крихівці",
+    "to": "Березівка",
+    "votes": 25
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Хриплин",
+    "votes": 24
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 23
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 21
+   },
+   {
+    "from": "Микитинці",
+    "to": "Хриплин",
+    "votes": 21
+   },
+   {
+    "from": "Березівка",
+    "to": "Братківці",
+    "votes": 19
+   },
+   {
+    "from": "Крихівці",
+    "to": "Тисменичани",
+    "votes": 15
+   },
+   {
+    "from": "Радча",
+    "to": "Драгомирчани",
+    "votes": 15
+   },
+   {
+    "from": "Підпечери",
+    "to": "Угорники",
+    "votes": 13
+   },
+   {
+    "from": "Узин",
+    "to": "Підлужжя",
+    "votes": 13
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Камінне",
+    "votes": 11
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Тисменичани",
+    "votes": 11
+   },
+   {
+    "from": "Радча",
+    "to": "Братківці",
+    "votes": 11
+   },
+   {
+    "from": "Хриплин",
+    "to": "Черніїв",
+    "votes": 11
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 10
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підлужжя",
+    "votes": 10
+   },
+   {
+    "from": "Радча",
+    "to": "Черніїв",
+    "votes": 10
+   },
+   {
+    "from": "Угорники",
+    "to": "Підлужжя",
+    "votes": 10
+   },
+   {
+    "from": "Черніїв",
+    "to": "Микитинці",
+    "votes": 10
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Черніїв",
+    "votes": 10
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 9
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Тисменичани",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Черніїв",
+    "votes": 9
+   },
+   {
+    "from": "Черніїв",
+    "to": "Драгомирчани",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Драгомирчани",
+    "votes": 8
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 7
+   },
+   {
+    "from": "Добровляни",
+    "to": "Колодіївка",
+    "votes": 7
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підлужжя",
+    "votes": 7
+   },
+   {
+    "from": "Радча",
+    "to": "Березівка",
+    "votes": 7
+   },
+   {
+    "from": "Угорники",
+    "to": "Крихівці",
+    "votes": 7
+   },
+   {
+    "from": "Черніїв",
+    "to": "Хриплин",
+    "votes": 7
+   },
+   {
+    "from": "Братківці",
+    "to": "Черніїв",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 6
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Камінне",
+    "votes": 6
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Драгомирчани",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Драгомирчани",
+    "votes": 5
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Колодіївка",
+    "votes": 5
+   },
+   {
+    "from": "Микитинці",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Драгомирчани",
+    "votes": 5
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Микитинці",
+    "votes": 5
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Угорники",
+    "votes": 5
+   },
+   {
+    "from": "Радча",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Узин",
+    "to": "Колодіївка",
+    "votes": 5
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 5
+   }
+  ],
+  "2024": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 83277
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 3461
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 3041
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 2602
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 2000
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 1979
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 1888
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 1630
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 1276
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 1217
+   },
+   {
+    "from": "Березівка",
+    "to": "Березівка",
+    "votes": 1196
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 1063
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 992
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 933
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 578
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 575
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 535
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 533
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 490
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 483
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 437
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Березівка",
+    "votes": 419
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 392
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 375
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 328
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 315
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 262
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 220
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 218
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підлужжя",
+    "votes": 165
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 153
+   },
+   {
+    "from": "Братківці",
+    "to": "Братківці",
+    "votes": 152
+   },
+   {
+    "from": "Черніїв",
+    "to": "Березівка",
+    "votes": 147
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 143
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 141
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 138
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 131
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Чукалівка",
+    "votes": 112
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 111
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 107
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 104
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 100
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 91
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 90
+   },
+   {
+    "from": "Радча",
+    "to": "Чукалівка",
+    "votes": 66
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Колодіївка",
+    "votes": 55
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 47
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підпечери",
+    "votes": 46
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Колодіївка",
+    "votes": 40
+   },
+   {
+    "from": "Радча",
+    "to": "Драгомирчани",
+    "votes": 40
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підлужжя",
+    "votes": 35
+   },
+   {
+    "from": "Угорники",
+    "to": "Підпечери",
+    "votes": 35
+   },
+   {
+    "from": "Добровляни",
+    "to": "Драгомирчани",
+    "votes": 32
+   },
+   {
+    "from": "Угорники",
+    "to": "Радча",
+    "votes": 30
+   },
+   {
+    "from": "Микитинці",
+    "to": "Радча",
+    "votes": 29
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 27
+   },
+   {
+    "from": "Хриплин",
+    "to": "Радча",
+    "votes": 20
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Драгомирчани",
+    "votes": 19
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 18
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Чукалівка",
+    "votes": 17
+   },
+   {
+    "from": "Крихівці",
+    "to": "Березівка",
+    "votes": 17
+   },
+   {
+    "from": "Братківці",
+    "to": "Березівка",
+    "votes": 16
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підпечери",
+    "votes": 16
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підпечери",
+    "votes": 15
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Радча",
+    "votes": 15
+   },
+   {
+    "from": "Угорники",
+    "to": "Драгомирчани",
+    "votes": 14
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Братківці",
+    "votes": 13
+   },
+   {
+    "from": "Радча",
+    "to": "Березівка",
+    "votes": 13
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Радча",
+    "votes": 12
+   },
+   {
+    "from": "Черніїв",
+    "to": "Підпечери",
+    "votes": 12
+   },
+   {
+    "from": "Черніїв",
+    "to": "Радча",
+    "votes": 12
+   },
+   {
+    "from": "Угорники",
+    "to": "Березівка",
+    "votes": 11
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 10
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Радча",
+    "votes": 10
+   },
+   {
+    "from": "Микитинці",
+    "to": "Драгомирчани",
+    "votes": 10
+   },
+   {
+    "from": "Підпечери",
+    "to": "Березівка",
+    "votes": 10
+   },
+   {
+    "from": "Радча",
+    "to": "Підпечери",
+    "votes": 10
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Підпечери",
+    "votes": 10
+   },
+   {
+    "from": "Березівка",
+    "to": "Радча",
+    "votes": 9
+   },
+   {
+    "from": "Камінне",
+    "to": "Драгомирчани",
+    "votes": 9
+   },
+   {
+    "from": "Микитинці",
+    "to": "Тисменичани",
+    "votes": 9
+   },
+   {
+    "from": "Радча",
+    "to": "Черніїв",
+    "votes": 9
+   },
+   {
+    "from": "Братківці",
+    "to": "Радча",
+    "votes": 8
+   },
+   {
+    "from": "Крихівці",
+    "to": "Черніїв",
+    "votes": 8
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Драгомирчани",
+    "votes": 8
+   },
+   {
+    "from": "Радча",
+    "to": "Крихівці",
+    "votes": 8
+   },
+   {
+    "from": "Узин",
+    "to": "Радча",
+    "votes": 8
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 7
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підлужжя",
+    "votes": 7
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 7
+   },
+   {
+    "from": "Черніїв",
+    "to": "Драгомирчани",
+    "votes": 7
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 7
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Черніїв",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Березівка",
+    "votes": 6
+   },
+   {
+    "from": "Братківці",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Братківці",
+    "to": "Черніїв",
+    "votes": 5
+   },
+   {
+    "from": "Камінне",
+    "to": "Березівка",
+    "votes": 5
+   },
+   {
+    "from": "Підпечери",
+    "to": "Радча",
+    "votes": 5
+   },
+   {
+    "from": "Радча",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Хриплин",
+    "to": "Крихівці",
+    "votes": 5
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Драгомирчани",
+    "votes": 5
+   }
+  ],
+  "2025": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 94998
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 3326
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 2997
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 1803
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 1661
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 1480
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 1458
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 1145
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 1144
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 1040
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 894
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 845
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 721
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 714
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 689
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 688
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Вовчинець",
+    "votes": 606
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 529
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 478
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 441
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 410
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 384
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Добровляни",
+    "votes": 377
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 370
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Хриплин",
+    "votes": 316
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 300
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 286
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 240
+   },
+   {
+    "from": "Камінне",
+    "to": "Камінне",
+    "votes": 234
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 213
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 203
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 200
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 195
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 172
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Камінне",
+    "votes": 171
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 161
+   },
+   {
+    "from": "Хриплин",
+    "to": "Хриплин",
+    "votes": 161
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Камінне",
+    "votes": 159
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 117
+   },
+   {
+    "from": "Микитинці",
+    "to": "Микитинці",
+    "votes": 111
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підпечери",
+    "votes": 108
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 101
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 80
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 78
+   },
+   {
+    "from": "Добровляни",
+    "to": "Добровляни",
+    "votes": 67
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 65
+   },
+   {
+    "from": "Угорники",
+    "to": "Підпечери",
+    "votes": 53
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 52
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Микитинці",
+    "votes": 48
+   },
+   {
+    "from": "Добровляни",
+    "to": "Хриплин",
+    "votes": 45
+   },
+   {
+    "from": "Узин",
+    "to": "Добровляни",
+    "votes": 43
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Вовчинець",
+    "votes": 42
+   },
+   {
+    "from": "Черніїв",
+    "to": "Микитинці",
+    "votes": 38
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Чукалівка",
+    "votes": 37
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 36
+   },
+   {
+    "from": "Узин",
+    "to": "Хриплин",
+    "votes": 35
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 33
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Микитинці",
+    "votes": 28
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Угорники",
+    "votes": 25
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 25
+   },
+   {
+    "from": "Підпечери",
+    "to": "Микитинці",
+    "votes": 25
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Хриплин",
+    "votes": 24
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підпечери",
+    "votes": 24
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 23
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 22
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Камінне",
+    "votes": 22
+   },
+   {
+    "from": "Микитинці",
+    "to": "Хриплин",
+    "votes": 22
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Хриплин",
+    "votes": 22
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 21
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підпечери",
+    "votes": 20
+   },
+   {
+    "from": "Радча",
+    "to": "Підпечери",
+    "votes": 20
+   },
+   {
+    "from": "Черніїв",
+    "to": "Підпечери",
+    "votes": 20
+   },
+   {
+    "from": "Підпечери",
+    "to": "Угорники",
+    "votes": 17
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Крихівці",
+    "votes": 15
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Радча",
+    "votes": 15
+   },
+   {
+    "from": "Крихівці",
+    "to": "Вовчинець",
+    "votes": 15
+   },
+   {
+    "from": "Крихівці",
+    "to": "Угорники",
+    "votes": 15
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підпечери",
+    "votes": 15
+   },
+   {
+    "from": "Крихівці",
+    "to": "Добровляни",
+    "votes": 14
+   },
+   {
+    "from": "Черніїв",
+    "to": "Угорники",
+    "votes": 14
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Чукалівка",
+    "votes": 12
+   },
+   {
+    "from": "Угорники",
+    "to": "Радча",
+    "votes": 12
+   },
+   {
+    "from": "Черніїв",
+    "to": "Радча",
+    "votes": 12
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 11
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Добровляни",
+    "votes": 11
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Радча",
+    "votes": 11
+   },
+   {
+    "from": "Хриплин",
+    "to": "Добровляни",
+    "votes": 11
+   },
+   {
+    "from": "Березівка",
+    "to": "Радча",
+    "votes": 10
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Підпечери",
+    "votes": 10
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Микитинці",
+    "votes": 10
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Вовчинець",
+    "votes": 9
+   },
+   {
+    "from": "Микитинці",
+    "to": "Крихівці",
+    "votes": 9
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Вовчинець",
+    "votes": 9
+   },
+   {
+    "from": "Узин",
+    "to": "Підпечери",
+    "votes": 9
+   },
+   {
+    "from": "Братківці",
+    "to": "Добровляни",
+    "votes": 8
+   },
+   {
+    "from": "Братківці",
+    "to": "Підпечери",
+    "votes": 8
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Микитинці",
+    "votes": 8
+   },
+   {
+    "from": "Підпечери",
+    "to": "Крихівці",
+    "votes": 8
+   },
+   {
+    "from": "Підпечери",
+    "to": "Хриплин",
+    "votes": 8
+   },
+   {
+    "from": "Радча",
+    "to": "Крихівці",
+    "votes": 8
+   },
+   {
+    "from": "Радча",
+    "to": "Угорники",
+    "votes": 8
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Микитинці",
+    "votes": 8
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 7
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Добровляни",
+    "votes": 7
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Угорники",
+    "votes": 7
+   },
+   {
+    "from": "Узин",
+    "to": "Радча",
+    "votes": 7
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 7
+   },
+   {
+    "from": "Березівка",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Братківці",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Угорники",
+    "votes": 6
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Крихівці",
+    "to": "Камінне",
+    "votes": 6
+   },
+   {
+    "from": "Микитинці",
+    "to": "Радча",
+    "votes": 6
+   },
+   {
+    "from": "Радча",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Угорники",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Братківці",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Братківці",
+    "to": "Хриплин",
+    "votes": 5
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Тисменичани",
+    "votes": 5
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Угорники",
+    "votes": 5
+   },
+   {
+    "from": "Угорники",
+    "to": "Хриплин",
+    "votes": 5
+   },
+   {
+    "from": "Хриплин",
+    "to": "Підпечери",
+    "votes": 5
+   },
+   {
+    "from": "Черніїв",
+    "to": "Камінне",
+    "votes": 5
+   }
+  ],
+  "2026": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 146511
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 7220
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 3945
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 3597
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 2970
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 2823
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 2698
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 2417
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 2039
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 1657
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 1620
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 1495
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 1402
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 1314
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 1192
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 1129
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 1126
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 1124
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 1016
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 818
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 702
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Хриплин",
+    "votes": 688
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 687
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 574
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 566
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 560
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 545
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Добровляни",
+    "votes": 507
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 448
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підлужжя",
+    "votes": 396
+   },
+   {
+    "from": "Березівка",
+    "to": "Березівка",
+    "votes": 375
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підлужжя",
+    "votes": 365
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Березівка",
+    "votes": 341
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 340
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 323
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 310
+   },
+   {
+    "from": "Хриплин",
+    "to": "Хриплин",
+    "votes": 310
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 303
+   },
+   {
+    "from": "Братківці",
+    "to": "Братківці",
+    "votes": 271
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 268
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 267
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 204
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 191
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 157
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Радча",
+    "votes": 109
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підлужжя",
+    "votes": 100
+   },
+   {
+    "from": "Микитинці",
+    "to": "Микитинці",
+    "votes": 98
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 91
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 83
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 82
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Братківці",
+    "votes": 71
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Угорники",
+    "votes": 63
+   },
+   {
+    "from": "Добровляни",
+    "to": "Хриплин",
+    "votes": 62
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Угорники",
+    "votes": 60
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підпечери",
+    "votes": 60
+   },
+   {
+    "from": "Черніїв",
+    "to": "Радча",
+    "votes": 59
+   },
+   {
+    "from": "Добровляни",
+    "to": "Добровляни",
+    "votes": 56
+   },
+   {
+    "from": "Підпечери",
+    "to": "Крихівці",
+    "votes": 50
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 46
+   },
+   {
+    "from": "Угорники",
+    "to": "Підпечери",
+    "votes": 44
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Крихівці",
+    "votes": 42
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 42
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 42
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Радча",
+    "votes": 40
+   },
+   {
+    "from": "Угорники",
+    "to": "Крихівці",
+    "votes": 39
+   },
+   {
+    "from": "Черніїв",
+    "to": "Березівка",
+    "votes": 37
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Хриплин",
+    "votes": 37
+   },
+   {
+    "from": "Березівка",
+    "to": "Радча",
+    "votes": 35
+   },
+   {
+    "from": "Хриплин",
+    "to": "Крихівці",
+    "votes": 34
+   },
+   {
+    "from": "Угорники",
+    "to": "Радча",
+    "votes": 33
+   },
+   {
+    "from": "Микитинці",
+    "to": "Хриплин",
+    "votes": 32
+   },
+   {
+    "from": "Радча",
+    "to": "Крихівці",
+    "votes": 32
+   },
+   {
+    "from": "Радча",
+    "to": "Угорники",
+    "votes": 32
+   },
+   {
+    "from": "Крихівці",
+    "to": "Угорники",
+    "votes": 31
+   },
+   {
+    "from": "Радча",
+    "to": "Черніїв",
+    "votes": 31
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підпечери",
+    "votes": 30
+   },
+   {
+    "from": "Узин",
+    "to": "Добровляни",
+    "votes": 30
+   },
+   {
+    "from": "Узин",
+    "to": "Підлужжя",
+    "votes": 30
+   },
+   {
+    "from": "Крихівці",
+    "to": "Черніїв",
+    "votes": 28
+   },
+   {
+    "from": "Братківці",
+    "to": "Березівка",
+    "votes": 27
+   },
+   {
+    "from": "Підпечери",
+    "to": "Угорники",
+    "votes": 27
+   },
+   {
+    "from": "Угорники",
+    "to": "Підлужжя",
+    "votes": 26
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Черніїв",
+    "votes": 26
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Крихівці",
+    "votes": 25
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 24
+   },
+   {
+    "from": "Крихівці",
+    "to": "Хриплин",
+    "votes": 23
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підпечери",
+    "votes": 23
+   },
+   {
+    "from": "Узин",
+    "to": "Радча",
+    "votes": 23
+   },
+   {
+    "from": "Черніїв",
+    "to": "Підпечери",
+    "votes": 22
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 21
+   },
+   {
+    "from": "Узин",
+    "to": "Угорники",
+    "votes": 20
+   },
+   {
+    "from": "Микитинці",
+    "to": "Радча",
+    "votes": 19
+   },
+   {
+    "from": "Угорники",
+    "to": "Драгомирчани",
+    "votes": 19
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підпечери",
+    "votes": 18
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Радча",
+    "votes": 18
+   },
+   {
+    "from": "Микитинці",
+    "to": "Крихівці",
+    "votes": 17
+   },
+   {
+    "from": "Угорники",
+    "to": "Хриплин",
+    "votes": 17
+   },
+   {
+    "from": "Черніїв",
+    "to": "Угорники",
+    "votes": 17
+   },
+   {
+    "from": "Камінне",
+    "to": "Радча",
+    "votes": 16
+   },
+   {
+    "from": "Черніїв",
+    "to": "Хриплин",
+    "votes": 16
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Підпечери",
+    "votes": 16
+   },
+   {
+    "from": "Крихівці",
+    "to": "Березівка",
+    "votes": 15
+   },
+   {
+    "from": "Узин",
+    "to": "Хриплин",
+    "votes": 15
+   },
+   {
+    "from": "Хриплин",
+    "to": "Підпечери",
+    "votes": 15
+   },
+   {
+    "from": "Братківці",
+    "to": "Радча",
+    "votes": 14
+   },
+   {
+    "from": "Крихівці",
+    "to": "Добровляни",
+    "votes": 14
+   },
+   {
+    "from": "Узин",
+    "to": "Підпечери",
+    "votes": 14
+   },
+   {
+    "from": "Крихівці",
+    "to": "Тисменичани",
+    "votes": 13
+   },
+   {
+    "from": "Підпечери",
+    "to": "Радча",
+    "votes": 13
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Драгомирчани",
+    "votes": 13
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 12
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підлужжя",
+    "votes": 12
+   },
+   {
+    "from": "Братківці",
+    "to": "Тисменичани",
+    "votes": 11
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Угорники",
+    "votes": 11
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Радча",
+    "votes": 11
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Березівка",
+    "votes": 10
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Драгомирчани",
+    "votes": 10
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підлужжя",
+    "votes": 10
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Черніїв",
+    "votes": 10
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Угорники",
+    "votes": 10
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Радча",
+    "votes": 10
+   },
+   {
+    "from": "Радча",
+    "to": "Підпечери",
+    "votes": 10
+   },
+   {
+    "from": "Черніїв",
+    "to": "Драгомирчани",
+    "votes": 10
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Добровляни",
+    "votes": 9
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Тисменичани",
+    "votes": 8
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Підпечери",
+    "votes": 8
+   },
+   {
+    "from": "Микитинці",
+    "to": "Драгомирчани",
+    "votes": 8
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 7
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Хриплин",
+    "votes": 7
+   },
+   {
+    "from": "Підпечери",
+    "to": "Драгомирчани",
+    "votes": 7
+   },
+   {
+    "from": "Радча",
+    "to": "Березівка",
+    "votes": 7
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Крихівці",
+    "votes": 7
+   },
+   {
+    "from": "Березівка",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Камінне",
+    "to": "Березівка",
+    "votes": 6
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Добровляни",
+    "votes": 6
+   },
+   {
+    "from": "Підпечери",
+    "to": "Березівка",
+    "votes": 6
+   },
+   {
+    "from": "Радча",
+    "to": "Хриплин",
+    "votes": 6
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Підпечери",
+    "votes": 6
+   },
+   {
+    "from": "Узин",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Угорники",
+    "votes": 6
+   },
+   {
+    "from": "Березівка",
+    "to": "Угорники",
+    "votes": 5
+   },
+   {
+    "from": "Братківці",
+    "to": "Драгомирчани",
+    "votes": 5
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Підлужжя",
+    "votes": 5
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Крихівці",
+    "votes": 5
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Черніїв",
+    "votes": 5
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Драгомирчани",
+    "votes": 5
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Тисменичани",
+    "votes": 5
+   }
+  ],
+  "all": [
+   {
+    "from": "Івано-Франківськ",
+    "to": "Івано-Франківськ",
+    "votes": 452303
+   },
+   {
+    "from": "Крихівці",
+    "to": "Івано-Франківськ",
+    "votes": 17433
+   },
+   {
+    "from": "Радча",
+    "to": "Радча",
+    "votes": 12748
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Тисменичани",
+    "votes": 10162
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Крихівці",
+    "votes": 9190
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підпечери",
+    "votes": 7705
+   },
+   {
+    "from": "Черніїв",
+    "to": "Черніїв",
+    "votes": 7488
+   },
+   {
+    "from": "Угорники",
+    "to": "Івано-Франківськ",
+    "votes": 6896
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Драгомирчани",
+    "votes": 6673
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Радча",
+    "votes": 5658
+   },
+   {
+    "from": "Радча",
+    "to": "Івано-Франківськ",
+    "votes": 5650
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Івано-Франківськ",
+    "votes": 5449
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Драгомирчани",
+    "votes": 4943
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Микитинці",
+    "votes": 4919
+   },
+   {
+    "from": "Черніїв",
+    "to": "Івано-Франківськ",
+    "votes": 4897
+   },
+   {
+    "from": "Крихівці",
+    "to": "Крихівці",
+    "votes": 4097
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Березівка",
+    "votes": 4019
+   },
+   {
+    "from": "Березівка",
+    "to": "Березівка",
+    "votes": 3697
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Угорники",
+    "votes": 3663
+   },
+   {
+    "from": "Микитинці",
+    "to": "Івано-Франківськ",
+    "votes": 3336
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Івано-Франківськ",
+    "votes": 3298
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Івано-Франківськ",
+    "votes": 2864
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підпечери",
+    "votes": 2851
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Тисменичани",
+    "votes": 2809
+   },
+   {
+    "from": "Підпечери",
+    "to": "Івано-Франківськ",
+    "votes": 2807
+   },
+   {
+    "from": "Братківці",
+    "to": "Братківці",
+    "votes": 2081
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Івано-Франківськ",
+    "votes": 1886
+   },
+   {
+    "from": "Черніїв",
+    "to": "Березівка",
+    "votes": 1863
+   },
+   {
+    "from": "Хриплин",
+    "to": "Хриплин",
+    "votes": 1849
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Хриплин",
+    "votes": 1747
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Черніїв",
+    "votes": 1664
+   },
+   {
+    "from": "Березівка",
+    "to": "Івано-Франківськ",
+    "votes": 1432
+   },
+   {
+    "from": "Угорники",
+    "to": "Угорники",
+    "votes": 1356
+   },
+   {
+    "from": "Хриплин",
+    "to": "Івано-Франківськ",
+    "votes": 1271
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Івано-Франківськ",
+    "votes": 1257
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підлужжя",
+    "votes": 1176
+   },
+   {
+    "from": "Камінне",
+    "to": "Івано-Франківськ",
+    "votes": 1173
+   },
+   {
+    "from": "Братківці",
+    "to": "Івано-Франківськ",
+    "votes": 1025
+   },
+   {
+    "from": "Камінне",
+    "to": "Камінне",
+    "votes": 952
+   },
+   {
+    "from": "Микитинці",
+    "to": "Микитинці",
+    "votes": 894
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Добровляни",
+    "votes": 884
+   },
+   {
+    "from": "Березівка",
+    "to": "Черніїв",
+    "votes": 800
+   },
+   {
+    "from": "Узин",
+    "to": "Івано-Франківськ",
+    "votes": 705
+   },
+   {
+    "from": "Добровляни",
+    "to": "Івано-Франківськ",
+    "votes": 670
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Вовчинець",
+    "votes": 658
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Івано-Франківськ",
+    "votes": 641
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Підлужжя",
+    "votes": 524
+   },
+   {
+    "from": "Крихівці",
+    "to": "Драгомирчани",
+    "votes": 496
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Радча",
+    "votes": 424
+   },
+   {
+    "from": "Братківці",
+    "to": "Березівка",
+    "votes": 416
+   },
+   {
+    "from": "Узин",
+    "to": "Узин",
+    "votes": 364
+   },
+   {
+    "from": "Крихівці",
+    "to": "Березівка",
+    "votes": 320
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Колодіївка",
+    "votes": 317
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Чукалівка",
+    "votes": 300
+   },
+   {
+    "from": "Микитинці",
+    "to": "Хриплин",
+    "votes": 289
+   },
+   {
+    "from": "Угорники",
+    "to": "Микитинці",
+    "votes": 282
+   },
+   {
+    "from": "Крихівці",
+    "to": "Радча",
+    "votes": 277
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Братківці",
+    "votes": 246
+   },
+   {
+    "from": "Березівка",
+    "to": "Крихівці",
+    "votes": 235
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Березівка",
+    "votes": 228
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підпечери",
+    "votes": 215
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Колодіївка",
+    "votes": 213
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Камінне",
+    "votes": 209
+   },
+   {
+    "from": "Камінне",
+    "to": "Тисменичани",
+    "votes": 205
+   },
+   {
+    "from": "Микитинці",
+    "to": "Угорники",
+    "votes": 198
+   },
+   {
+    "from": "Радча",
+    "to": "Березівка",
+    "votes": 182
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Камінне",
+    "votes": 168
+   },
+   {
+    "from": "Хриплин",
+    "to": "Березівка",
+    "votes": 165
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Крихівці",
+    "votes": 164
+   },
+   {
+    "from": "Крихівці",
+    "to": "Микитинці",
+    "votes": 158
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Чукалівка",
+    "votes": 143
+   },
+   {
+    "from": "Микитинці",
+    "to": "Березівка",
+    "votes": 140
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Радча",
+    "votes": 138
+   },
+   {
+    "from": "Угорники",
+    "to": "Підпечери",
+    "votes": 135
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Хриплин",
+    "votes": 135
+   },
+   {
+    "from": "Добровляни",
+    "to": "Добровляни",
+    "votes": 123
+   },
+   {
+    "from": "Підпечери",
+    "to": "Підлужжя",
+    "votes": 119
+   },
+   {
+    "from": "Черніїв",
+    "to": "Крихівці",
+    "votes": 119
+   },
+   {
+    "from": "Добровляни",
+    "to": "Хриплин",
+    "votes": 107
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Вовчинець",
+    "votes": 94
+   },
+   {
+    "from": "Крихівці",
+    "to": "Черніїв",
+    "votes": 90
+   },
+   {
+    "from": "Черніїв",
+    "to": "Радча",
+    "votes": 90
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Угорники",
+    "votes": 87
+   },
+   {
+    "from": "Підпечери",
+    "to": "Крихівці",
+    "votes": 85
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Крихівці",
+    "votes": 84
+   },
+   {
+    "from": "Угорники",
+    "to": "Березівка",
+    "votes": 82
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Микитинці",
+    "votes": 81
+   },
+   {
+    "from": "Підпечери",
+    "to": "Угорники",
+    "votes": 81
+   },
+   {
+    "from": "Угорники",
+    "to": "Радча",
+    "votes": 80
+   },
+   {
+    "from": "Крихівці",
+    "to": "Тисменичани",
+    "votes": 79
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підпечери",
+    "votes": 75
+   },
+   {
+    "from": "Радча",
+    "to": "Крихівці",
+    "votes": 75
+   },
+   {
+    "from": "Угорники",
+    "to": "Крихівці",
+    "votes": 74
+   },
+   {
+    "from": "Узин",
+    "to": "Добровляни",
+    "votes": 73
+   },
+   {
+    "from": "Микитинці",
+    "to": "Радча",
+    "votes": 72
+   },
+   {
+    "from": "Черніїв",
+    "to": "Микитинці",
+    "votes": 70
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Микитинці",
+    "votes": 69
+   },
+   {
+    "from": "Радча",
+    "to": "Чукалівка",
+    "votes": 69
+   },
+   {
+    "from": "Радча",
+    "to": "Драгомирчани",
+    "votes": 67
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Крихівці",
+    "votes": 66
+   },
+   {
+    "from": "Підпечери",
+    "to": "Березівка",
+    "votes": 64
+   },
+   {
+    "from": "Радча",
+    "to": "Черніїв",
+    "votes": 64
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Черніїв",
+    "votes": 64
+   },
+   {
+    "from": "Микитинці",
+    "to": "Крихівці",
+    "votes": 63
+   },
+   {
+    "from": "Камінне",
+    "to": "Березівка",
+    "votes": 61
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Угорники",
+    "votes": 61
+   },
+   {
+    "from": "Крихівці",
+    "to": "Угорники",
+    "votes": 61
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Радча",
+    "votes": 59
+   },
+   {
+    "from": "Березівка",
+    "to": "Радча",
+    "votes": 58
+   },
+   {
+    "from": "Хриплин",
+    "to": "Крихівці",
+    "votes": 57
+   },
+   {
+    "from": "Березівка",
+    "to": "Тисменичани",
+    "votes": 55
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підпечери",
+    "votes": 55
+   },
+   {
+    "from": "Івано-Франківськ",
+    "to": "Узин",
+    "votes": 54
+   },
+   {
+    "from": "Черніїв",
+    "to": "Підпечери",
+    "votes": 54
+   },
+   {
+    "from": "Черніїв",
+    "to": "Хриплин",
+    "votes": 52
+   },
+   {
+    "from": "Узин",
+    "to": "Хриплин",
+    "votes": 50
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Березівка",
+    "votes": 50
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Драгомирчани",
+    "votes": 49
+   },
+   {
+    "from": "Угорники",
+    "to": "Драгомирчани",
+    "votes": 49
+   },
+   {
+    "from": "Угорники",
+    "to": "Підлужжя",
+    "votes": 48
+   },
+   {
+    "from": "Радча",
+    "to": "Угорники",
+    "votes": 47
+   },
+   {
+    "from": "Узин",
+    "to": "Радча",
+    "votes": 47
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Крихівці",
+    "votes": 45
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Березівка",
+    "votes": 44
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Березівка",
+    "votes": 44
+   },
+   {
+    "from": "Узин",
+    "to": "Підлужжя",
+    "votes": 44
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Березівка",
+    "votes": 43
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Угорники",
+    "votes": 43
+   },
+   {
+    "from": "Підпечери",
+    "to": "Микитинці",
+    "votes": 42
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Підпечери",
+    "votes": 41
+   },
+   {
+    "from": "Крихівці",
+    "to": "Хриплин",
+    "votes": 40
+   },
+   {
+    "from": "Радча",
+    "to": "Підпечери",
+    "votes": 40
+   },
+   {
+    "from": "Березівка",
+    "to": "Братківці",
+    "votes": 39
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Радча",
+    "votes": 37
+   },
+   {
+    "from": "Угорники",
+    "to": "Черніїв",
+    "votes": 37
+   },
+   {
+    "from": "Черніїв",
+    "to": "Драгомирчани",
+    "votes": 36
+   },
+   {
+    "from": "Камінне",
+    "to": "Братківці",
+    "votes": 35
+   },
+   {
+    "from": "Черніїв",
+    "to": "Угорники",
+    "votes": 35
+   },
+   {
+    "from": "Добровляни",
+    "to": "Драгомирчани",
+    "votes": 32
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Драгомирчани",
+    "votes": 32
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Підпечери",
+    "votes": 32
+   },
+   {
+    "from": "Угорники",
+    "to": "Хриплин",
+    "votes": 31
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Микитинці",
+    "votes": 30
+   },
+   {
+    "from": "Крихівці",
+    "to": "Добровляни",
+    "votes": 28
+   },
+   {
+    "from": "Братківці",
+    "to": "Радча",
+    "votes": 26
+   },
+   {
+    "from": "Микитинці",
+    "to": "Тисменичани",
+    "votes": 26
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Радча",
+    "votes": 26
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Хриплин",
+    "votes": 25
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Підпечери",
+    "votes": 25
+   },
+   {
+    "from": "Узин",
+    "to": "Підпечери",
+    "votes": 25
+   },
+   {
+    "from": "Узин",
+    "to": "Угорники",
+    "votes": 25
+   },
+   {
+    "from": "Хриплин",
+    "to": "Радча",
+    "votes": 25
+   },
+   {
+    "from": "Братківці",
+    "to": "Тисменичани",
+    "votes": 24
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Хриплин",
+    "votes": 24
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Драгомирчани",
+    "votes": 24
+   },
+   {
+    "from": "Хриплин",
+    "to": "Підпечери",
+    "votes": 24
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Тисменичани",
+    "votes": 23
+   },
+   {
+    "from": "Микитинці",
+    "to": "Драгомирчани",
+    "votes": 23
+   },
+   {
+    "from": "Хриплин",
+    "to": "Черніїв",
+    "votes": 23
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Камінне",
+    "votes": 22
+   },
+   {
+    "from": "Камінне",
+    "to": "Радча",
+    "votes": 21
+   },
+   {
+    "from": "Підпечери",
+    "to": "Драгомирчани",
+    "votes": 21
+   },
+   {
+    "from": "Підпечери",
+    "to": "Радча",
+    "votes": 21
+   },
+   {
+    "from": "Братківці",
+    "to": "Черніїв",
+    "votes": 20
+   },
+   {
+    "from": "Добровляни",
+    "to": "Колодіївка",
+    "votes": 20
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Угорники",
+    "votes": 20
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Березівка",
+    "votes": 20
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Добровляни",
+    "votes": 20
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Микитинці",
+    "votes": 20
+   },
+   {
+    "from": "Узин",
+    "to": "Березівка",
+    "votes": 20
+   },
+   {
+    "from": "Угорники",
+    "to": "Тисменичани",
+    "votes": 19
+   },
+   {
+    "from": "Підпечери",
+    "to": "Хриплин",
+    "votes": 17
+   },
+   {
+    "from": "Крихівці",
+    "to": "Вовчинець",
+    "votes": 16
+   },
+   {
+    "from": "Хриплин",
+    "to": "Микитинці",
+    "votes": 16
+   },
+   {
+    "from": "Березівка",
+    "to": "Підпечери",
+    "votes": 15
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Черніїв",
+    "votes": 15
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Микитинці",
+    "votes": 15
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Підпечери",
+    "votes": 15
+   },
+   {
+    "from": "Микитинці",
+    "to": "Підлужжя",
+    "votes": 15
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Черніїв",
+    "votes": 14
+   },
+   {
+    "from": "Підпечери",
+    "to": "Тисменичани",
+    "votes": 14
+   },
+   {
+    "from": "Радча",
+    "to": "Микитинці",
+    "votes": 14
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Микитинці",
+    "votes": 14
+   },
+   {
+    "from": "Братківці",
+    "to": "Підпечери",
+    "votes": 13
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Тисменичани",
+    "votes": 13
+   },
+   {
+    "from": "Камінне",
+    "to": "Хриплин",
+    "votes": 13
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Чукалівка",
+    "votes": 13
+   },
+   {
+    "from": "Крихівці",
+    "to": "Підлужжя",
+    "votes": 13
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Добровляни",
+    "votes": 13
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Підпечери",
+    "votes": 13
+   },
+   {
+    "from": "Узин",
+    "to": "Крихівці",
+    "votes": 13
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Угорники",
+    "votes": 13
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Підлужжя",
+    "votes": 12
+   },
+   {
+    "from": "Камінне",
+    "to": "Драгомирчани",
+    "votes": 12
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Радча",
+    "votes": 12
+   },
+   {
+    "from": "Радча",
+    "to": "Тисменичани",
+    "votes": 12
+   },
+   {
+    "from": "Радча",
+    "to": "Хриплин",
+    "votes": 12
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Крихівці",
+    "votes": 12
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Черніїв",
+    "votes": 11
+   },
+   {
+    "from": "Радча",
+    "to": "Братківці",
+    "votes": 11
+   },
+   {
+    "from": "Хриплин",
+    "to": "Добровляни",
+    "votes": 11
+   },
+   {
+    "from": "Чукалівка",
+    "to": "Тисменичани",
+    "votes": 11
+   },
+   {
+    "from": "Братківці",
+    "to": "Крихівці",
+    "votes": 10
+   },
+   {
+    "from": "Микитинці",
+    "to": "Черніїв",
+    "votes": 10
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Тисменичани",
+    "votes": 10
+   },
+   {
+    "from": "Підпечери",
+    "to": "Черніїв",
+    "votes": 10
+   },
+   {
+    "from": "Узин",
+    "to": "Микитинці",
+    "votes": 10
+   },
+   {
+    "from": "Добровляни",
+    "to": "Березівка",
+    "votes": 9
+   },
+   {
+    "from": "Добровляни",
+    "to": "Підпечери",
+    "votes": 9
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Вовчинець",
+    "votes": 9
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Тисменичани",
+    "votes": 9
+   },
+   {
+    "from": "Угорники",
+    "to": "Вовчинець",
+    "votes": 9
+   },
+   {
+    "from": "Черніїв",
+    "to": "Тисменичани",
+    "votes": 9
+   },
+   {
+    "from": "Березівка",
+    "to": "Угорники",
+    "votes": 8
+   },
+   {
+    "from": "Братківці",
+    "to": "Добровляни",
+    "votes": 8
+   },
+   {
+    "from": "Братківці",
+    "to": "Драгомирчани",
+    "votes": 8
+   },
+   {
+    "from": "Братківці",
+    "to": "Микитинці",
+    "votes": 8
+   },
+   {
+    "from": "Крихівці",
+    "to": "Чукалівка",
+    "votes": 8
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Угорники",
+    "votes": 8
+   },
+   {
+    "from": "Узин",
+    "to": "Колодіївка",
+    "votes": 8
+   },
+   {
+    "from": "Хриплин",
+    "to": "Угорники",
+    "votes": 8
+   },
+   {
+    "from": "Черніїв",
+    "to": "Добровляни",
+    "votes": 8
+   },
+   {
+    "from": "Черніїв",
+    "to": "Камінне",
+    "votes": 8
+   },
+   {
+    "from": "Братківці",
+    "to": "Хриплин",
+    "votes": 7
+   },
+   {
+    "from": "Драгомирчани",
+    "to": "Підлужжя",
+    "votes": 7
+   },
+   {
+    "from": "Колодіївка",
+    "to": "Крихівці",
+    "votes": 7
+   },
+   {
+    "from": "Крихівці",
+    "to": "Камінне",
+    "votes": 7
+   },
+   {
+    "from": "Тисменичани",
+    "to": "Драгомирчани",
+    "votes": 7
+   },
+   {
+    "from": "Черніїв",
+    "to": "Братківці",
+    "votes": 7
+   },
+   {
+    "from": "Березівка",
+    "to": "Камінне",
+    "votes": 6
+   },
+   {
+    "from": "Березівка",
+    "to": "Микитинці",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Добровляни",
+    "votes": 6
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Колодіївка",
+    "votes": 6
+   },
+   {
+    "from": "Камінне",
+    "to": "Крихівці",
+    "votes": 6
+   },
+   {
+    "from": "Камінне",
+    "to": "Угорники",
+    "votes": 6
+   },
+   {
+    "from": "Камінне",
+    "to": "Черніїв",
+    "votes": 6
+   },
+   {
+    "from": "Підлужжя",
+    "to": "Колодіївка",
+    "votes": 6
+   },
+   {
+    "from": "Угорники",
+    "to": "Добровляни",
+    "votes": 6
+   },
+   {
+    "from": "Хриплин",
+    "to": "Драгомирчани",
+    "votes": 6
+   },
+   {
+    "from": "Братківці",
+    "to": "Угорники",
+    "votes": 5
+   },
+   {
+    "from": "Вовчинець",
+    "to": "Братківці",
+    "votes": 5
+   },
+   {
+    "from": "Крихівці",
+    "to": "Братківці",
+    "votes": 5
+   },
+   {
+    "from": "Микитинці",
+    "to": "Добровляни",
+    "votes": 5
+   },
+   {
+    "from": "Хриплин",
+    "to": "Підлужжя",
+    "votes": 5
+   }
+  ]
+ },
+ "projects_by_district": {
+  "2021": {
+   "Івано-Франківськ": 215,
+   "Крихівці": 4,
+   "Микитинці": 4,
+   "Тисменичани": 6,
+   "Драгомирчани": 3,
+   "Радча": 4,
+   "Березівка": 4,
+   "Камінне": 2,
+   "Черніїв": 5,
+   "Угорники": 5,
+   "Підлужжя": 3,
+   "Братківці": 4,
+   "Підпечери": 3,
+   "Хриплин": 3,
+   "Узин": 2,
+   "Чукалівка": 2,
+   "Колодіївка": 2,
+   "Вовчинець": 1
+  },
+  "2023": {
+   "Івано-Франківськ": 95,
+   "Драгомирчани": 3,
+   "Камінне": 1,
+   "Угорники": 2,
+   "Тисменичани": 5,
+   "Радча": 3,
+   "Черніїв": 3,
+   "Микитинці": 1,
+   "Підлужжя": 2,
+   "Хриплин": 3,
+   "Підпечери": 2,
+   "Березівка": 4,
+   "Братківці": 2,
+   "Колодіївка": 1,
+   "Крихівці": 2
+  },
+  "2024": {
+   "Івано-Франківськ": 80,
+   "Радча": 3,
+   "Березівка": 3,
+   "Крихівці": 1,
+   "Тисменичани": 4,
+   "Чукалівка": 1,
+   "Микитинці": 1,
+   "Драгомирчани": 3,
+   "Братківці": 1,
+   "Угорники": 1,
+   "Підлужжя": 1,
+   "Черніїв": 3,
+   "Підпечери": 2,
+   "Колодіївка": 2
+  },
+  "2025": {
+   "Вовчинець": 2,
+   "Івано-Франківськ": 76,
+   "Радча": 3,
+   "Крихівці": 3,
+   "Добровляни": 1,
+   "Камінне": 1,
+   "Угорники": 2,
+   "Драгомирчани": 2,
+   "Микитинці": 4,
+   "Тисменичани": 2,
+   "Підпечери": 2,
+   "Черніїв": 2,
+   "Чукалівка": 1,
+   "Хриплин": 1
+  },
+  "2026": {
+   "Івано-Франківськ": 96,
+   "Тисменичани": 3,
+   "Драгомирчани": 2,
+   "Радча": 4,
+   "Підлужжя": 2,
+   "Підпечери": 6,
+   "Угорники": 5,
+   "Черніїв": 6,
+   "Березівка": 2,
+   "Братківці": 1,
+   "Крихівці": 1,
+   "Микитинці": 1,
+   "Добровляни": 1,
+   "Хриплин": 2
+  },
+  "all": {
+   "Івано-Франківськ": 562,
+   "Крихівці": 11,
+   "Микитинці": 11,
+   "Тисменичани": 20,
+   "Драгомирчани": 13,
+   "Радча": 17,
+   "Березівка": 13,
+   "Камінне": 4,
+   "Черніїв": 19,
+   "Угорники": 15,
+   "Підлужжя": 8,
+   "Братківці": 8,
+   "Підпечери": 15,
+   "Хриплин": 9,
+   "Узин": 2,
+   "Чукалівка": 4,
+   "Колодіївка": 5,
+   "Вовчинець": 3,
+   "Добровляни": 2
+  }
+ }
+}

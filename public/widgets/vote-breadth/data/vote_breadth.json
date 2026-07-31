@@ -1,0 +1,468 @@
+{
+ "meta": {
+  "generated": "2026-06-23",
+  "k_threshold": 5,
+  "years": [
+   2021,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "ceiling_by_year": {
+   "2021": 4,
+   "2023": 4,
+   "2024": 6,
+   "2025": 7,
+   "2026": 13
+  },
+  "channel_rule": "pure",
+  "channels": [
+   {
+    "code": "online",
+    "label": "Онлайн (BankID)",
+    "color": "#654EA3"
+   },
+   {
+    "code": "cnap",
+    "label": "Офлайн (ЦНАП)",
+    "color": "#0E7C8C"
+   }
+  ],
+  "sexes": [
+   {
+    "code": "F",
+    "label": "Жінки",
+    "color": "#9C8BCC"
+   },
+   {
+    "code": "M",
+    "label": "Чоловіки",
+    "color": "#4E3C84"
+   }
+  ],
+  "excluded": {
+   "mixed_channel_person_years": 1116,
+   "unknown_channel_person_years": 9,
+   "unknown_sex_person_years": 1
+  },
+  "district_callout": {
+   "max": {
+    "district": "Радча",
+    "mean": 4.29
+   },
+   "city": {
+    "district": "Івано-Франківськ",
+    "mean": 2.53
+   }
+  },
+  "note": "Ширина = кількість РІЗНИХ проєктів, за які людина проголосувала того року. Стеля = кількість підкатегорій того року (один голос у кожній; 2025 — 8 у правилах, 7 де-факто). Утилізація = середнє / стеля. Канал і стать доступні лише з 2021 (2022 — БУ не проводився). Зріз каналу рахується тільки на людино-роках з ОДНИМ каналом за рік (мішані 0,4% виключено, як у канон-аналізі §10); «Офлайн (ЦНАП)» — адміністратор вносив голос з документів, паперових бюлетенів не було (METHODOLOGY §2.2). Стать виведено за по-батькові (не самовизначення), U=1 нижче порога k≥5. Вік виборців у даних відсутній. k≥5 без винятків."
+ },
+ "by_year": [
+  {
+   "year": 2021,
+   "ceiling": 4,
+   "mean": 2.26,
+   "median": 2,
+   "utilization": 0.5656,
+   "n_people": 54961,
+   "max_breadth": 5,
+   "n_at_ceiling": 10318,
+   "n_over_ceiling": 4
+  },
+  {
+   "year": 2023,
+   "ceiling": 4,
+   "mean": 1.69,
+   "median": 1,
+   "utilization": 0.4225,
+   "n_people": 42047,
+   "max_breadth": 4,
+   "n_at_ceiling": 3349,
+   "n_over_ceiling": 0
+  },
+  {
+   "year": 2024,
+   "ceiling": 6,
+   "mean": 2.44,
+   "median": 2,
+   "utilization": 0.4069,
+   "n_people": 53459,
+   "max_breadth": 7,
+   "n_at_ceiling": 3914,
+   "n_over_ceiling": 5
+  },
+  {
+   "year": 2025,
+   "ceiling": 7,
+   "mean": 2.65,
+   "median": 2,
+   "utilization": 0.3784,
+   "n_people": 48127,
+   "max_breadth": 7,
+   "n_at_ceiling": 3235,
+   "n_over_ceiling": 0
+  },
+  {
+   "year": 2026,
+   "ceiling": 13,
+   "mean": 3.79,
+   "median": 3,
+   "utilization": 0.2917,
+   "n_people": 59757,
+   "max_breadth": 13,
+   "n_at_ceiling": 1490,
+   "n_over_ceiling": 0
+  }
+ ],
+ "by_year_channel": [
+  {
+   "year": 2021,
+   "channel": "online",
+   "mean": 2.11,
+   "median": 2,
+   "n_people": 43503
+  },
+  {
+   "year": 2021,
+   "channel": "cnap",
+   "mean": 2.85,
+   "median": 3,
+   "n_people": 11176
+  },
+  {
+   "year": 2023,
+   "channel": "online",
+   "mean": 1.6,
+   "median": 1,
+   "n_people": 36584
+  },
+  {
+   "year": 2023,
+   "channel": "cnap",
+   "mean": 2.29,
+   "median": 2,
+   "n_people": 5322
+  },
+  {
+   "year": 2024,
+   "channel": "online",
+   "mean": 2.26,
+   "median": 2,
+   "n_people": 45705
+  },
+  {
+   "year": 2024,
+   "channel": "cnap",
+   "mean": 3.49,
+   "median": 4,
+   "n_people": 7520
+  },
+  {
+   "year": 2025,
+   "channel": "online",
+   "mean": 2.51,
+   "median": 2,
+   "n_people": 42864
+  },
+  {
+   "year": 2025,
+   "channel": "cnap",
+   "mean": 3.76,
+   "median": 3,
+   "n_people": 5082
+  },
+  {
+   "year": 2026,
+   "channel": "online",
+   "mean": 3.59,
+   "median": 2,
+   "n_people": 54361
+  },
+  {
+   "year": 2026,
+   "channel": "cnap",
+   "mean": 5.75,
+   "median": 5,
+   "n_people": 5109
+  }
+ ],
+ "by_year_sex": [
+  {
+   "year": 2021,
+   "sex": "F",
+   "mean": 2.32,
+   "median": 2,
+   "n_people": 35409
+  },
+  {
+   "year": 2021,
+   "sex": "M",
+   "mean": 2.16,
+   "median": 2,
+   "n_people": 19552
+  },
+  {
+   "year": 2023,
+   "sex": "F",
+   "mean": 1.72,
+   "median": 1,
+   "n_people": 28162
+  },
+  {
+   "year": 2023,
+   "sex": "M",
+   "mean": 1.63,
+   "median": 1,
+   "n_people": 13885
+  },
+  {
+   "year": 2024,
+   "sex": "F",
+   "mean": 2.54,
+   "median": 2,
+   "n_people": 36185
+  },
+  {
+   "year": 2024,
+   "sex": "M",
+   "mean": 2.24,
+   "median": 2,
+   "n_people": 17273
+  },
+  {
+   "year": 2025,
+   "sex": "F",
+   "mean": 2.79,
+   "median": 2,
+   "n_people": 33070
+  },
+  {
+   "year": 2025,
+   "sex": "M",
+   "mean": 2.33,
+   "median": 2,
+   "n_people": 15057
+  },
+  {
+   "year": 2026,
+   "sex": "F",
+   "mean": 4.11,
+   "median": 3,
+   "n_people": 41139
+  },
+  {
+   "year": 2026,
+   "sex": "M",
+   "mean": 3.09,
+   "median": 2,
+   "n_people": 18618
+  }
+ ],
+ "by_year_breadth": [
+  {
+   "year": 2021,
+   "breadth": 1,
+   "people": 18208,
+   "pct": 33.1
+  },
+  {
+   "year": 2021,
+   "breadth": 2,
+   "people": 14445,
+   "pct": 26.3
+  },
+  {
+   "year": 2021,
+   "breadth": 3,
+   "people": 11986,
+   "pct": 21.8
+  },
+  {
+   "year": 2021,
+   "breadth": 4,
+   "people": 10322,
+   "pct": 18.8
+  },
+  {
+   "year": 2023,
+   "breadth": 1,
+   "people": 23778,
+   "pct": 56.6
+  },
+  {
+   "year": 2023,
+   "breadth": 2,
+   "people": 10879,
+   "pct": 25.9
+  },
+  {
+   "year": 2023,
+   "breadth": 3,
+   "people": 4041,
+   "pct": 9.6
+  },
+  {
+   "year": 2023,
+   "breadth": 4,
+   "people": 3349,
+   "pct": 8.0
+  },
+  {
+   "year": 2024,
+   "breadth": 1,
+   "people": 21110,
+   "pct": 39.5
+  },
+  {
+   "year": 2024,
+   "breadth": 2,
+   "people": 12189,
+   "pct": 22.8
+  },
+  {
+   "year": 2024,
+   "breadth": 3,
+   "people": 7374,
+   "pct": 13.8
+  },
+  {
+   "year": 2024,
+   "breadth": 4,
+   "people": 4962,
+   "pct": 9.3
+  },
+  {
+   "year": 2024,
+   "breadth": 5,
+   "people": 3905,
+   "pct": 7.3
+  },
+  {
+   "year": 2024,
+   "breadth": 6,
+   "people": 3919,
+   "pct": 7.3
+  },
+  {
+   "year": 2025,
+   "breadth": 1,
+   "people": 17612,
+   "pct": 36.6
+  },
+  {
+   "year": 2025,
+   "breadth": 2,
+   "people": 10525,
+   "pct": 21.9
+  },
+  {
+   "year": 2025,
+   "breadth": 3,
+   "people": 7298,
+   "pct": 15.2
+  },
+  {
+   "year": 2025,
+   "breadth": 4,
+   "people": 4875,
+   "pct": 10.1
+  },
+  {
+   "year": 2025,
+   "breadth": 5,
+   "people": 2731,
+   "pct": 5.7
+  },
+  {
+   "year": 2025,
+   "breadth": 6,
+   "people": 1851,
+   "pct": 3.8
+  },
+  {
+   "year": 2025,
+   "breadth": 7,
+   "people": 3235,
+   "pct": 6.7
+  },
+  {
+   "year": 2026,
+   "breadth": 1,
+   "people": 18478,
+   "pct": 30.9
+  },
+  {
+   "year": 2026,
+   "breadth": 2,
+   "people": 10492,
+   "pct": 17.6
+  },
+  {
+   "year": 2026,
+   "breadth": 3,
+   "people": 7193,
+   "pct": 12.0
+  },
+  {
+   "year": 2026,
+   "breadth": 4,
+   "people": 5214,
+   "pct": 8.7
+  },
+  {
+   "year": 2026,
+   "breadth": 5,
+   "people": 4052,
+   "pct": 6.8
+  },
+  {
+   "year": 2026,
+   "breadth": 6,
+   "people": 3178,
+   "pct": 5.3
+  },
+  {
+   "year": 2026,
+   "breadth": 7,
+   "people": 2424,
+   "pct": 4.1
+  },
+  {
+   "year": 2026,
+   "breadth": 8,
+   "people": 2024,
+   "pct": 3.4
+  },
+  {
+   "year": 2026,
+   "breadth": 9,
+   "people": 1970,
+   "pct": 3.3
+  },
+  {
+   "year": 2026,
+   "breadth": 10,
+   "people": 1414,
+   "pct": 2.4
+  },
+  {
+   "year": 2026,
+   "breadth": 11,
+   "people": 934,
+   "pct": 1.6
+  },
+  {
+   "year": 2026,
+   "breadth": 12,
+   "people": 894,
+   "pct": 1.5
+  },
+  {
+   "year": 2026,
+   "breadth": 13,
+   "people": 1490,
+   "pct": 2.5
+  }
+ ]
+}
