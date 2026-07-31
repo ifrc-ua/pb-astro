@@ -68,6 +68,12 @@ const jsonLd = {
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#654EA3" />
 
+  <!-- Підтвердження прав власності в Google Search Console. Основний спосіб —
+       автоматичний, через постачальника доменних імен; цей тег тримаємо як
+       другий незалежний, щоб зміна DNS не забрала доступ до ресурсу.
+       Видаляти не можна: Google перевіряє тег і після підтвердження. -->
+  <meta name="google-site-verification" content="Rh0sqVxTUaCsJ23JhAwxpt639Oo7jWQ8p4llNhu0owo" />
+
   <!-- Дисплейна гарнітура заголовка — найімовірніший LCP-елемент сторінки,
        тож вантажимо її одразу, а не після розбору CSS. crossorigin
        обовʼязковий навіть для свого домену, інакше preload не зарахується. -->
