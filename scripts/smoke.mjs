@@ -33,10 +33,14 @@ for (const w of WIDTHS) {
   // найменша «кнопкова» тач-ціль (правило ≥44px, design.md §8).
   // Інлайн-лінки в прозі мають окреме правило (line-height+паддінг), тож виключені;
   // те саме — текстові лінки атрибуції мапи (кнопка-перемикач ⓘ лишається під правилом).
+  // .hero__byline — теж проза: «Авторка — <a>…</a>, стаття опублікована на <a>КУРС</a>».
+  // WCAG 2.5.8 має явний виняток inline: розтягнути таке посилання до 44px означає
+  // розірвати міжрядковий інтервал абзацу, тобто зламати верстку заради числа.
   const minTap = await page.evaluate(() => {
     const sel = "button, summary, [role=button], a";
     const isInlineProse = (el) =>
-      el.tagName === "A" && el.closest(".prose p, .pb-box__body, .maplibregl-ctrl-attrib");
+      el.tagName === "A" &&
+      el.closest(".prose p, .pb-box__body, .maplibregl-ctrl-attrib, .hero__byline");
     let min = Infinity, worst = "";
     for (const el of document.querySelectorAll(sel)) {
       if (isInlineProse(el)) continue;
