@@ -35,15 +35,15 @@ CDN requests.
 
 ## Licensing
 
-This repository is mixed, so different parts carry different licenses. The full
-breakdown is in [LICENSE](LICENSE).
+This repository is mixed, so different parts carry different licenses. [LICENSE](LICENSE)
+covers the code; everything with other terms is detailed in [NOTICE.md](NOTICE.md).
 
 | What | License |
 | --- | --- |
 | Source code | [MIT](LICENSE) |
 | Aggregated data (`public/data/`, `public/widgets/*/data/`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Article text (`src/content/article/`) | all rights reserved |
-| Fonts | third-party licenses, see LICENSE |
+| Article text (`src/content/article/`) | all rights reserved — [NOTICE.md](NOTICE.md) |
+| Fonts, vendored libraries | third-party — [NOTICE.md](NOTICE.md) |
 
 The article text is journalism first published by KURS. It is **not** covered by
 the MIT license and may not be republished without permission. Phenomena ships

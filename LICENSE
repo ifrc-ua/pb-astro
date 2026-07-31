@@ -19,33 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-NOT COVERED BY THE MIT LICENSE ABOVE
-
-This repository also contains material that is licensed separately. The MIT
-license applies to the source code only.
-
-1. Aggregated participatory-budget data — CC BY 4.0
-   Files under public/data/ and public/widgets/*/data/ are published under the
-   Creative Commons Attribution 4.0 International license.
-   https://creativecommons.org/licenses/by/4.0/
-
-2. Article text and photography — all rights reserved
-   The editorial content under src/content/article/ was written by
-   Nataliia Kobylchak and first published by the online media KURS
-   (kurs.if.ua). It is not covered by the MIT license and may not be
-   republished without permission.
-
-3. Fonts — third-party licenses
-   - Phenomena (public/fonts/, public/widgets/*/fonts/): free for personal and
-     commercial use, Fontfabric Free Fonts EULA. Embedded here as self-hosted
-     WOFF2 subsets for @font-face use by this site. Redistribution of the font
-     files as fonts is not permitted; download them from
-     https://www.fontfabric.com/fonts/phenomena/ instead.
-   - Inter: SIL Open Font License 1.1. https://github.com/rsms/inter
-
-4. Bundled third-party libraries — their own licenses
-   Files under public/widgets/*/lib/ (d3, deck.gl, MapLibre GL, h3-js) are
-   vendored copies distributed under their respective upstream licenses.
