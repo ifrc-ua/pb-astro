@@ -1,0 +1,6 @@
+# Індексувати можна все. Єдиний вимикач індексації — заголовок X-Robots-Tag
+# у vercel.json: поки він стоїть на noindex, він переважує цей файл.
+User-agent: *
+Allow: /
+
+Sitemap: https://pb.ifrc.org.ua/sitemap.xml
