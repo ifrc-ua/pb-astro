@@ -4,7 +4,7 @@
 // Витягуємо числові токени (цілі з роздільником-тисяч, десяткові з комою,
 // відсотки, роки), нормалізуємо пробіли й порівнюємо мультимножини.
 // Розбіжності друкуємо списком. Код виходу 1, якщо мультимножини не збігаються.
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,6 +27,19 @@ function tokens(text) {
     m.set(t, (m.get(t) || 0) + 1);
   }
   return m;
+}
+
+// Канон живе в сусідньому репозиторії, якого в клоні цього проєкту немає.
+// Без нього скрипт не має з чим звіряти, тож виходимо з пояснення, а не зі
+// стектрейсу ENOENT.
+if (!existsSync(KURS)) {
+  console.error(
+    `Не знайдено канон: ${KURS}\n\n` +
+      "Скрипт звіряє числа статті з текстом-каноном із репозиторію ifrc-ua/pb-kurs.\n" +
+      "Клонуйте його поруч із цим проєктом:\n\n" +
+      "  git clone https://github.com/ifrc-ua/pb-kurs.git ../pb-kurs\n",
+  );
+  process.exit(1);
 }
 
 // Канон: беремо тільки прозу (числа в тексті), як єдиний рядок.

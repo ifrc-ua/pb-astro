@@ -17,7 +17,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "sync": "node scripts/sync-from-kurs.mjs",
     "check-numbers": "node scripts/check-numbers.mjs",
     "smoke": "node scripts/smoke.mjs",
     "astro": "astro"
