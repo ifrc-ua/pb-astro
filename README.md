@@ -1,43 +1,101 @@
-# Astro Starter Kit: Minimal
+# Десять весен бюджету участі
+
+Сайт-лонгрід про десять років бюджету участі Івано-Франківської міської
+територіальної громади: **1 565 проєктів**, близько **781 тисячі голосів**,
+понад **110 тисяч виборців** за 2016–2026 роки. У 2022 році конкурс не
+проводився через повномасштабне вторгнення.
+
+- **Сайт:** <https://pb.ifrc.org.ua>
+- **Первинна публікація:** [КУРС](https://kurs.if.ua/article/desyat-vesen-ivano-frankivskogo-byudzhetu-uchasti/), 11 липня 2026
+- **Авторка тексту:** [Наталія Кобильчак](https://www.linkedin.com/in/nataliia-kobylchak)
+- **Дані та код віджетів:** [ifrc-ua/pb-kurs](https://github.com/ifrc-ua/pb-kurs)
+- **Дизайн-система:** [ifrc-ua/pb-design](https://github.com/ifrc-ua/pb-design)
+
+## Що всередині
+
+Стаття складається з 13 смислових блоків у MDX. Візуалізації двох типів:
+
+- **4 скрол-керовані сцени** на React-островах — гекс-мапа міста, пульс
+  голосування за годинами, річка когорт виборців, еволюція категорій. Сцена
+  фіксується на весь екран, а картки-кроки перемикають її стани під скрол.
+- **14 вбудованих віджетів** у `public/widgets/` — самодостатні статичні
+  сторінки, які працюють і поза цим сайтом.
+
+Побудовано на d3, deck.gl і MapLibre GL. Усі бібліотеки вендорені локально,
+без CDN.
+
+## Ліцензії
+
+Репозиторій змішаний, тому ліцензії різні для різних частин. Повний перелік —
+у файлі [LICENSE](LICENSE).
+
+| Що | Ліцензія |
+| --- | --- |
+| Вихідний код | [MIT](LICENSE) |
+| Агрегованi дані (`public/data/`, `public/widgets/*/data/`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Текст статті (`src/content/article/`) | усі права застережені |
+| Шрифти | ліцензії третіх сторін, див. LICENSE |
+
+Текст статті — журналістський матеріал, опублікований КУРСом; він **не**
+покривається MIT і не може передруковуватися без дозволу. Шрифт Phenomena
+лежить тут як self-hosted WOFF2-сабсет для `@font-face` цього сайту;
+завантажуйте його окремо на [fontfabric.com](https://www.fontfabric.com/fonts/phenomena/),
+а не з цього репозиторія.
+
+## Про дані
+
+Основа — проєкти, подані на конкурс бюджету участі у 2016–2026 роках, і
+голосування за них, станом на червень 2026.
+
+Усі опубліковані файли **агреговані та знеособлені**. Персональних даних немає.
+Діє правило k-анонімності: якщо за клітинкою даних стоїть менш ніж п'ять людей,
+її приховано. Поіменний облік голосів існує лише з 2021 року, тож раніші
+кампанії представлені підсумками за проєктами.
+
+2022 рік пропущений на всіх графіках і мапах. Показники «рік до року» на кроці
+2021→2023 охоплюють два роки замість одного, тому нижчі значення там очікувані.
+
+Повна методологія — у розділі «Як ми рахували» на самому сайті.
+
+## Локальний запуск
+
+Потрібен Node.js **22.12** або новіший.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev        # dev-сервер на localhost:4321
+npm run build      # збірка у dist/
+npm run preview    # перегляд збірки локально
+npm run smoke      # скріншоти на 375 / 768 / 1440 px + перевірка тач-цілей
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> `npm run check-numbers` і `npm run sync` очікують сусідній репозиторій
+> `../pb-kurs` і поза внутрішнім оточенням не працюватимуть.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Структура
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── content/article/   13 блоків статті (MDX)
+├── scenes/            скрол-керовані React-сцени + спільна оболонка
+├── components/        Astro-компоненти (хедер, врізки, розкривні блоки)
+├── layouts/           каркас сторінки, мета-теги
+└── styles/            токени дизайн-системи та глобальні стилі
+public/
+├── data/              агреговані дані для сцен
+├── widgets/           14 самодостатніх віджетів
+└── fonts/             Phenomena WOFF2 (див. ліцензії)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## In English
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+A long-form data story on ten years of participatory budgeting in
+Ivano-Frankivsk, Ukraine (2016–2026): 1,565 submitted projects, ~781,000 votes,
+110,000+ voters. Built with Astro, React islands, MDX, d3, deck.gl and MapLibre.
+Code is MIT-licensed; the aggregated dataset is CC BY 4.0; the article text is
+copyrighted by its author and first publisher. See [LICENSE](LICENSE) for the
+full breakdown.
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Видавець — Ivano-Frankivsk Regional Center, NGO · [od@ifrc.org.ua](mailto:od@ifrc.org.ua)
